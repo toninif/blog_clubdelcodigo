@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Sobre el club",
     "section": "",
-    "text": "About this blog"
+    "text": "La idea es que podamos reunirnos para comenzar a programar usando R y RStudio. Si bien al principio vamos a ver temas muy introductorios, a medida de que avancen las reuniones se van a poner tocar temas más complejos y que estén relacionados con sus áreas de interés.\nOtra de mis intenciones es que esta pagina (acá o en otro lado) se actualice conforme vayamos reuniéndonos, así pueden tener un lugar donde volver a ver lo que charlamos en cada juntada. O mismo si quieren compartir el contenido, sepan que esto es para cualquiera que tenga un mínimo de interés, así que siéntanse libres de compartir :)"
   },
   {
     "objectID": "index.html",
@@ -26,5 +26,12 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html#indice",
+    "href": "about.html#indice",
+    "title": "Sobre el club",
+    "section": "Indice",
+    "text": "Indice\n\nLink a la reunión de cada Jueves\nArrancando con R - RStudio y Proyectos - Reunión 1\nCrear primer Proyecto y Reporte Reproducible - Reunión 2\nRecursos"
   }
 ]

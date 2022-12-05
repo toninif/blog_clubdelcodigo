@@ -1,19 +1,24 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Sobre el club (ARMANDOSE)"
+image: imgagenes/del.png
 about:
-  template: jolla
+  template: solana
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
     - icon: github
       text: Github
       href: https://github.com
-
 ---
 
-About this blog
+La idea es que podamos reunirnos para comenzar a programar usando R y RStudio. Si bien al principio vamos a ver temas muy introductorios, a medida de que avancen las reuniones se van a poner tocar temas más complejos y que estén relacionados con sus áreas de interés.
+
+Otra de mis intenciones es que esta pagina (acá o en otro lado) se actualice conforme vayamos reuniéndonos, así pueden tener un lugar donde volver a ver lo que charlamos en cada juntada. O mismo si quieren compartir el contenido, sepan que esto es para cualquiera que tenga un mínimo de interés, así que siéntanse libres de compartir :)
+
+## Indice
+
+-   [Link a la reunión de cada Jueves](https://us04web.zoom.us/j/77286932525?pwd=F061cifImWtYlEnjW2PTW3WCh36IeY.1)
+
+-   **Arrancando con R - RStudio y Proyectos** - [Reunión 1]()
+
+-   **Crear primer Proyecto y Reporte Reproducible** - Reunión 2
+
+-   [Recursos]()
