@@ -3,10 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "clubdelcodigo"
+  title: "Club~Del~Codigo"
   navbar:
     right:
       - about.qmd
+      - recursos.qmd
       - icon: github
         href: https://github.com/
 format:

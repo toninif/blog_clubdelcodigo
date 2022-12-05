@@ -1,0 +1,52 @@
+---
+title: "Recursos"
+editor: visual
+---
+
+Aca se van a cargar todos los recursos que encontremos.
+
+Por ejemplo:
+
+-   bibliometrix
+
+En este caso `bibliometrix` es un paquete para bibliometría. En pocas palabras los paquetes son conjuntos de funciones y se instalan asi `install.packages("nombre del paquete")`.
+
+```{r eval=FALSE}
+
+install.packages("bibliometrix")
+
+library(bibliometrix)
+
+```
+
+Esto se hace una sola vez. Una vez instalados, cada vez que iniciemos R vamos a tener que "llamar" o cargar los paquetes que necesitemos. Eso lo hacemos con la función library.
+
+::: {.callout-tip collapse="true"}
+## Click para expandir
+
+Podemos pensar `install.packages` y `library` como si fueran cosas para la casa. En este sentido, cuando la casa se esta construyendo se hace la instalación de las tuberías de agua. Es decir se instala el agua (`install.packages()`). Una vez instalada, se pueden usar las canillas para abrir y cerrar el agua. En este sentido, activar el agua seria como activar un paquete `library()`
+:::
+
+-   synthpop
+
+Este es un paquete que nos va a dar las herramientas necesarias para generar datos "sintéticos". Es decir, datos que no son los originales, pero que al analizarlos podemos llegar a los mismos resultados. Esto es util para aquellos casos en los que no se puede compartir los datos originales (E. datos sensibles).
+
+Se instala de la siguiente manera. Una vez instalado se lo carga utilizando la función `library()`
+
+```{r eval=FALSE}
+
+install.packages("synthpop")
+
+library(synthpop)
+
+```
+
+**Videotutorial sobre como se usa synthpop**
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OmEvkDCt3xk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+</center>
