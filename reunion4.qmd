@@ -1,6 +1,8 @@
 ---
 title: "Cuarta Reunión"
 editor: visual
+bibliography: biblio.bib
+csl: apa.csl
 ---
 
 # Referencias de forma automática

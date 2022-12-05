@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -128,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -189,7 +208,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#referencias-de-forma-automática" id="toc-referencias-de-forma-automática" class="nav-link active" data-scroll-target="#referencias-de-forma-automática">Referencias de forma automática</a>
+  <ul class="collapse">
+  <li><a href="#a-citar" id="toc-a-citar" class="nav-link" data-scroll-target="#a-citar">A citar!</a>
+  <ul class="collapse">
+  <li><a href="#paso-1-el-archivo-.bib" id="toc-paso-1-el-archivo-.bib" class="nav-link" data-scroll-target="#paso-1-el-archivo-.bib">Paso 1: el archivo <em>.bib</em></a></li>
+  <li><a href="#paso-2-el-formato-nuestro-archivo-.csl" id="toc-paso-2-el-formato-nuestro-archivo-.csl" class="nav-link" data-scroll-target="#paso-2-el-formato-nuestro-archivo-.csl">Paso 2: el formato (nuestro archivo <code>.csl</code>)</a></li>
+  <li><a href="#paso-3-agregar-todo-al-yalm" id="toc-paso-3-agregar-todo-al-yalm" class="nav-link" data-scroll-target="#paso-3-agregar-todo-al-yalm">Paso 3: Agregar todo al <em>YALM</em></a></li>
+  <li><a href="#paso-4-agregar-citas-al-texto" id="toc-paso-4-agregar-citas-al-texto" class="nav-link" data-scroll-target="#paso-4-agregar-citas-al-texto">Paso 4: Agregar citas al texto</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -211,7 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="referencias-de-forma-automática" class="level1">
 <h1>Referencias de forma automática</h1>
-<p>Como charlamos en la reunión anterior (INSERTAR LINK) existen tareas que nos demandan mucho tiempo :sparkles: <em>carga, limpieza y orden de los datos</em> :sparkles:. Otra de las tareas que consumen muchísimo tiempo y pueden realizarse de manera casi automática es la de citar y generar referencias de nuestro documentos. Y si a esto le sumamos que luego debemos formatear nuestras referencias, entonces el tiempo es mucho mayor.</p>
+<p>Como charlamos en la reunión anterior (INSERTAR LINK) existen tareas que nos demandan mucho tiempo <span class="emoji" data-emoji="sparkles">✨</span> <em>carga, limpieza y orden de los datos</em> <span class="emoji" data-emoji="sparkles">✨</span>. Otra de las tareas que consumen muchísimo tiempo y pueden realizarse de manera casi automática es la de citar y generar referencias de nuestro documentos. Y si a esto le sumamos que luego debemos formatear nuestras referencias, entonces el tiempo es mucho mayor.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgagenes/masterapa.jpg" class="img-fluid figure-img"></p>
@@ -305,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span>Los gráficos los hice con<span class="sc">*</span> <span class="er">@</span>ggplot y <span class="sc">@</span>ggstatsplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><em>Los gráficos los hice con</em> <span class="citation" data-cites="ggplot">@ggplot</span> y <span class="citation" data-cites="ggstatsplot">@ggstatsplot</span></p>
+<p><em>Los gráficos los hice con</em> <span class="citation" data-cites="ggplot">Wickham (<a href="#ref-ggplot" role="doc-biblioref">2016</a>)</span> y <span class="citation" data-cites="ggstatsplot">Patil (<a href="#ref-ggstatsplot" role="doc-biblioref">2021</a>)</span></p>
 <p>En este ejemplo podemos notar dos cosas. La primera es que se genero la cita con nombre del autor y el año incluido entre paréntesis. Ademas, si pasamos el puntero por arriba del año se va a mostrar una pequeña ventana con la referencia completa. La segunda es que si nos dirigimos al final de este sitio nos vamos a encontrar con un nuevo apartado que es el de las referencias. Ese apartado se genera automáticamente incluyendo todo lo que citemos y en el formato que especificamos en el csl del YALM. Un golazo, no?</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -329,19 +365,19 @@ Sintaxis para citar
 <tbody>
 <tr class="odd">
 <td><code>@ggplot</code></td>
-<td><span class="citation" data-cites="ggplot">@ggplot</span></td>
+<td><span class="citation" data-cites="ggplot">Wickham (<a href="#ref-ggplot" role="doc-biblioref">2016</a>)</span></td>
 </tr>
 <tr class="even">
 <td><code>[@ggplot]</code></td>
-<td><span class="citation" data-cites="ggplot">[@ggplot]</span></td>
+<td><span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">Wickham, 2016</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><code>[@ggplot; @ggstatsplot]</code></td>
-<td><span class="citation" data-cites="ggplot ggstatsplot">[@ggplot; @ggstatsplot]</span></td>
+<td><span class="citation" data-cites="ggplot ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>; <a href="#ref-ggplot" role="doc-biblioref">Wickham, 2016</a>)</span></td>
 </tr>
 <tr class="even">
 <td>[-@ggplot]</td>
-<td><span class="citation" data-cites="ggplot">[-@ggplot]</span></td>
+<td><span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">2016</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -350,11 +386,19 @@ Sintaxis para citar
 </div>
 
 
+
 </section>
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-ggstatsplot" class="csl-entry" role="doc-biblioentry">
+Patil, I. (2021). <span class="nocase">Visualizations with statistical details: The <span class="nocase">’ggstatsplot’</span> approach</span>. <em><span>Journal of Open Source Software</span></em>, <em>6</em>(61), 3167. <a href="https://doi.org/10.21105/joss.03167">https://doi.org/10.21105/joss.03167</a>
+</div>
+<div id="ref-ggplot" class="csl-entry" role="doc-biblioentry">
+Wickham, H. (2016). <em>ggplot2: Elegant graphics for data analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
