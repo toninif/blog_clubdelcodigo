@@ -15,10 +15,10 @@ Otra de mis intenciones es que esta pagina (acá o en otro lado) se actualice co
 
 ## Indice
 
--   [Link a la reunión de cada Jueves](https://us04web.zoom.us/j/77286932525?pwd=F061cifImWtYlEnjW2PTW3WCh36IeY.1)
+-   [Link a la reunión de cada Jueves](https://us02web.zoom.us/j/84578688435)
 
 -   **Arrancando con R - RStudio y Proyectos** - [Reunión 1]()
 
 -   **Crear primer Proyecto y Reporte Reproducible** - Reunión 2
 
--   [Recursos]()
+-   [Recursos](https://toninif.github.io/blog_clubdelcodigo/recursos.html)
