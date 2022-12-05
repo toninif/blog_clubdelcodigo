@@ -8,8 +8,14 @@ website:
     right:
       - about.qmd
       - recursos.qmd
+      - text: "Reuniones"
+        menu: 
+          - reunion1.qmd
+          - reunion2.qmd
+          - reunion3.qmd
+          - reunion4.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/toninif/clubdelcodigo/blob/main/README.md
 format:
   html:
     theme: 

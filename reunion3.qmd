@@ -1,0 +1,275 @@
+---
+title: "Tercera Reunion"
+editor: visual
+---
+
+# Manejo de datos: Intro
+
+El manejo de datos (carga, limpieza, orden, visualización, modelado, *ver imagen de abajo*) es una de las tareas a las que mayor tiempo le dedicaremos cuando estemos trabajando con R. Uno de los paquetes más utilizados para llevar adelante esta tarea es `dplyr`. Este paquete forma parte del `tidyverse` y contiene una serie de funciones que nos dejaran `seleccionar`, `renombrar`, `filtrar`, `re-acomodar` y `resumir` las variables de nuestra base de datos. Conviene pensar en `dplyr` como una gramática para el manejo de datos.
+
+![](/imgagenes/flowDatos.png){fig-align="center"}
+
+## Datos utilizaremos
+
+Aca la realidad es que se pueden utilizar todo tipo de bases de datos. Se podrían usar las bases que vienen en el mismo R como por ejemplo `iris` o también la base de pinguinos del paquete `palmerpenguins`. Esas bases siempre las tendremos a disposición. Sin embargo hoy vamos a trabajar con algunas funciona de dplyr utilizando una base con datos bibliométricos que fue generada utilizando la herramienta Constellate de jstor. Esta base es bastante cercana a lo que podriamos conseguir en "el mundo real" porque tiene datos faltantes, esta re desordanada, tiene malos nombres de variables etc...
+
+Para acceder a los datos podemos hacer [click aca](https://osf.io/download/cp2kz) o directamente entrar al repositorio y descargarlos manualmente: https://osf.io/bwdvy/?view_only=
+
+Una vez descargados los datos es conveniente guardarlos en la carpeta datos de nuestro proyecto.
+
+Otra opción es ejecurtar este codigo. De esta manera la funcion dowload.file tomara la url que ingresemos, desgarcará el archivo y lo guardará donde le indiquemos. En este caso en la carpeta datos de nuestro proyecto
+
+::: {.callout-tip collapse="true"}
+## ATENCIÓN!!
+
+Para que esto funcione ya debemos tener creada la carpeta datos en nuestro proyecto
+:::
+
+```{r eval=FALSE}
+
+download.file(url = "https://osf.io/download/cp2kz", # URL donde esta el archivo a descargar
+              destfile = "datos/datos_cdc.csv") # carpeta donde se guardara el archivo
+
+library(readr) # Para leer datos
+datos_cdc <- read_csv("datos/datos_cdc.csv") # Funcion para leer datos csv (separados por coma)
+
+glimpse() # Esto es para darle un vistazo a la base
+
+```
+
+## Pero... ¿Cómo?
+
+Podemos pensar el manejo de datos con dplyr como si las funciones del paquete fueran verbos. Cuales son esos verbos?
+
+| Verbo       | Función       | Descripción                                                                                                                                                                                                                                   |
+|-------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Filtrar     | `filter()`    | Esta función maneja los datos según sus filas. Lo que hace es filtrar datos según la lógica que le indiquemos.                                                                                                                                |
+| Seleccionar | `select()`    | Esta funciona maneja los datos según las columnas. Lo que hace es seleccionar (*o también quitar*) variables (columnas de nuestra base de datos)                                                                                              |
+| Crear       | `mutate()`    | Esta función también modifica columnas y lo que hace es crear variables nuevas.                                                                                                                                                               |
+| Ordenar     | `arrange()`   | Esta función maneja según las filas de alguna columna seleccionada. Lo que hace es ordenar la base de datos de menor a mayor (*o viceversa*) segun los datos de una variable. **Básicamente es como el botón de Ordenar y Filtrar de excel**. |
+| Acomodar    | `relocate()`  | Esta función también trabaja con columnas y lo que hace es re-ordenarlas. Emula lo que comúnmente se hace con el mouse. Indicamos que variables queremos mover y hacia donde.                                                                 |
+| Renombrar   | `rename()`    | Esta función trabaja con columnas y lo que hace es renombrarlas. El orden es: nombre nuevo = nombre viejo                                                                                                                                     |
+| Resumir     | `summarise()` | Esta función genera un resumen de nuestros datos ya sean generales o agrupados utilizando la función de abajo `group_by()`                                                                                                                    |
+| Agrupar     | `group_by()`  | Esta función agrupa los datos según una variable categórica en particular.                                                                                                                                                                    |
+
+La manera de utilizar estas herramientas es bastante simple. Se escribe la función que necesitemos, se indican los datos en los que vamos a trabajar y luego se indica aquello que necesitemos hacer.
+
+### Filtrar
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+funcion(datos, lo que necesitamos)
+
+```
+
+Pseudocodigo con un objetivo más claro
+
+```{r eval=FALSE}
+
+filtrar(datos, variable mayor que 1)
+
+```
+
+Codigo para alcanzar el objetivo
+
+```{r}
+filter(.data = starwars, height > 175) # En este caso solo necesito aquellos datos de quienes tengan una altura mayor a 175 cm
+
+filter(.data = starwars, species == "Wookiee") # En este caso solo necesito los datos de quienes sean de la especie Wookiee
+
+```
+
+### Seleccionar
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+seleccionar(datos, variable(s) de interes)
+
+```
+
+Código
+
+```{r}
+
+select(.data = starwars, c(name, height, mass, gender)) # En este caso solo me interesaban las variables nombre, altura, masa y genero
+
+seleccion1 <- select(.data = starwars, c(name, height, mass, gender))
+
+select(.data = seleccion1, -height) # En este caso se puede usar el select para quitar una variable. Eso se hace usando un - antes de la variable que queremos quitar.
+
+select(.data = starwars, starts_with("h"))
+
+```
+
+### Crear
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+crear(datos, variable(s) que necesito crear = contenido)
+
+```
+
+Código
+
+```{r}
+
+mutate(.data = seleccion1, altura = height/100) # En este caso vamos a crear una nueva variable que contenta la transformacion de height de centimetros a metros
+
+
+
+
+```
+
+::: {.callout-tip collapse="true"}
+## A tener en cuenta!
+
+Cuando usemos mutate() con una variable que ya existe en el dataset conviene no sobreescribirla. Esto afectaría la reproducibilidad del código. Lo mejor es generar una nueva variable con algún identificador.
+
+Por ejemplo: Cuando cargamos el dataset vemos que la variable de agrupación gender es de tipo chr y lo que necesitamos es que sea un factor. En ese caso se haría lo siguiente:
+
+```{r}
+
+mutate(.data = seleccion1, gender_fct = as_factor(gender)) # Nos quedan ambas variables y solo utilizamos la que necesitemos
+
+
+```
+:::
+
+### Ordenar
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+ordenar(datos, variable seleccionada)
+
+```
+
+Código
+
+```{r}
+
+arrange(.data = starwars, height) # Orden de menor a mayor
+
+arrange(.data = starwars, desc(height)) # Orden de mayor a menor
+
+```
+
+### Acomodar
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+acomodar(datos, variable, antes/despues de)
+
+```
+
+Código
+
+```{r}
+
+relocate(.data = seleccion1, gender, .after = name) # En este caso acomodamos gender despues de name
+
+
+relocate(.data = seleccion1, name, .before = mass) # En este caso acomodamos name despues de mass
+
+
+```
+
+### Renombrar
+
+Pseudocodigo
+
+```{r eval=FALSE}
+
+renombrar(datos, nombre nuevo = nombre viejo)
+
+```
+
+Código
+
+```{r}
+
+seleccion1_traducida <- rename(seleccion1,
+                               nombre = name,
+                               altura = height,
+                               masa_kg = mass,
+                               genero = gender)
+
+names(seleccion1)
+names(seleccion1_traducida)
+
+```
+
+## Pipe, Pipa, Encadenamiento, Tuberias...
+
+Los verbos que proporciona dplyr son geniales y muy faciles de utilizar, pero para todo lo que hicimos más arriba se necesito una linea de codigo para cada verbo. Es decir, cada codigo era independiente del otro. Una gran funcion que permite unificar todos los verbos en un solo programa es la pipa, tuberia o lo que se dice piping.
+
+Les presento a ella `%>%` el operador del paquete `magrittr`. Lo que hace es **tomar el resultado de una función y pasarla a otra función como argumento. Esto nos permite vincular una secuencia de pasos de análisis. O en otras palabras, utilizar varios verbos de dplyr en un mismo programa.**
+
+Por ejemplo: Se necesita seleccionar algunas variables, renombrarlas y crear variables que sean del tipo correcto. Por ultimo, graficar la altura según el sexo del personaje
+
+*Sin %\>%*
+
+```{r}
+
+paso_1 <- select(.data = starwars, c(name, sex, gender, species, mass, height))
+
+paso_2 <- rename(.data = paso_1, nombre = name,
+                                 sexo = sex,
+                                 genero = gender,
+                                 especie = species,
+                                 masa_kg = mass,
+                                 altura = height)
+
+paso_3 <- mutate(.data = paso_2, sexo_fct = as_factor(sexo),
+                                 genero_fct = as_factor(genero),
+                                 especie_fct = as_factor(especie))
+
+ggplot(data = select(paso_3, c(sexo_fct, altura, genero_fct)), mapping = aes(x = sexo_fct, y = altura)) +
+  geom_boxplot() +
+  coord_flip() +
+  theme_bw()
+```
+
+*Con %\>%*
+
+```{r}
+starwars %>% # Selecciono los datos Y DESPUES
+  select(name, sex, gender, species, mass, height) %>% #Selecciono las variables Y DESPUES
+  rename(nombre = name, 
+         sexo = sex,
+         genero = gender,
+         especie = species,
+         masa_kg = mass,
+         altura = height) %>% # Renombro las variables Y DESPUES
+  mutate(sexo_fct = as_factor(sexo),
+         genero_fct = as_factor(genero),
+         especie_fct = as_factor(especie)) %>% # Creo nuevas variables Y DESPUES
+  ggplot()+ # Grafico
+  geom_boxplot(mapping = aes(x = sexo_fct, y = altura)) +
+  coord_flip() +
+  theme_bw()
+
+
+
+```
+
+::: {.callout-tip collapse="true"}
+## Aspectos a tener en cuenta!!
+
+-   Me encanto la pipa, pero es medio complicada de escribir. Si, es verdad. Para eso usamos el siguiente atajo del teclado `CTRL + SHIFT + M` y ya tenemos la pipa. Con un poco de practica ya sale sola.
+
+-   Existe otra pipa que fue introducida recientemente. Yo le digo el pinguinito. Es la pipa nativa de R y es así \|\>. En general cumple la misma función. Yo como soy viejo y me acostumbre a usar %\>% entonces sigo con esa. Ustedes usen la que mas les guste y cumpla mejor con sus objetivos. Hay debate sobre que pipa usar. Quedara para otro momento.
+:::

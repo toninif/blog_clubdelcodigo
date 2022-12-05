@@ -1,0 +1,9 @@
+---
+editor: visual
+---
+
+# Segunda reunión
+
+![](/imgagenes/meme_perdon.jpg){fig-align="center"}
+
+Ahora hablando en serio: esta reunión se hablo mucho así que demanda bastante tiempo pasarla a papel (o archivo .qmd :p)
