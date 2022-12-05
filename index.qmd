@@ -1,5 +1,5 @@
 ---
-title: "clubdelcodigo"
+title: "Blog del Club"
 listing:
   contents: posts
   sort: "date desc"

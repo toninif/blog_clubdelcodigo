@@ -1,0 +1,9 @@
+---
+title: "Próximamente"
+author: ["Participante", "CdC"]
+date: "2022-12-05"
+categories: [opinion, club]
+image: "catatwork.jpg"
+---
+
+Con la *migración forzada* de la web, se me ocurrió agregar un sección tipo blog donde se puedan ir agregando post que escribamos. Tal vez a modo de experiencias o comentando algo nuevo que aprendimos

@@ -2,37 +2,30 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Sobre el club (ARMANDOSE)",
+    "title": "Sobre el club",
     "section": "",
     "text": "La idea es que podamos reunirnos para comenzar a programar usando R y RStudio. Si bien al principio vamos a ver temas muy introductorios, a medida de que avancen las reuniones se van a poner tocar temas más complejos y que estén relacionados con sus áreas de interés.\nOtra de mis intenciones es que esta pagina (acá o en otro lado) se actualice conforme vayamos reuniéndonos, así pueden tener un lugar donde volver a ver lo que charlamos en cada juntada. O mismo si quieren compartir el contenido, sepan que esto es para cualquiera que tenga un mínimo de interés, así que siéntanse libres de compartir :)"
   },
   {
     "objectID": "about.html#indice",
     "href": "about.html#indice",
-    "title": "Sobre el club (ARMANDOSE)",
+    "title": "Sobre el club",
     "section": "Indice",
     "text": "Indice\n\nLink a la reunión de cada Jueves\nArrancando con R - RStudio y Proyectos - Reunión 1\nCrear primer Proyecto y Reporte Reproducible - Reunión 2\nManejo de datos: dplyr Reunion 3\nTrabajando con referencias Reunion 4\nA graficar!! 🚧 🚧 🚧 (En desarrollo) 🚧 🚧 🚧 Reunion 5\nRecursos"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "clubdelcodigo",
+    "title": "Blog del Club",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nDec 2, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "opinion\n\n\nclub\n\n\n\n\n\n\n\n\n\n\n\nDec 5, 2022\n\n\nParticipante, CdC\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/nueva-seccion/index.html",
+    "href": "posts/nueva-seccion/index.html",
+    "title": "Próximamente",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Con la migración forzada de la web, se me ocurrió agregar un sección tipo blog donde se puedan ir agregando post que escribamos. Tal vez a modo de experiencias o comentando algo nuevo que aprendimos"
   },
   {
     "objectID": "recursos.html",
