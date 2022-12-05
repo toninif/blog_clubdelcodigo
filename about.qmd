@@ -17,8 +17,14 @@ Otra de mis intenciones es que esta pagina (acá o en otro lado) se actualice co
 
 -   [Link a la reunión de cada Jueves](https://us02web.zoom.us/j/84578688435)
 
--   **Arrancando con R - RStudio y Proyectos** - [Reunión 1]()
+-   **Arrancando con R - RStudio y Proyectos** - [Reunión 1](https://toninif.github.io/blog_clubdelcodigo/reunion1.html)
 
--   **Crear primer Proyecto y Reporte Reproducible** - Reunión 2
+-   **Crear primer Proyecto y Reporte Reproducible** - [Reunión 2](https://toninif.github.io/blog_clubdelcodigo/reunion2.html)
+
+-   **Manejo de datos: `dplyr`** [Reunion 3](https://toninif.github.io/blog_clubdelcodigo/reunion3.html)
+
+-   **Trabajando con referencias** [Reunion 4](https://toninif.github.io/blog_clubdelcodigo/reunion4.html)
+
+-   **A graficar!!** :construction: :construction: :construction: (En desarrollo) :construction: :construction: :construction: [Reunion 5](https://toninif.github.io/blog_clubdelcodigo/reunion5.html)
 
 -   [Recursos](https://toninif.github.io/blog_clubdelcodigo/recursos.html)
