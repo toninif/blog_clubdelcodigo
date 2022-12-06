@@ -1,0 +1,10 @@
+---
+title: "Quinta Reunión"
+bibliography: biblio.bib
+csl: apa.csl
+---
+
+## Graficando con R
+
+El paquete que se utilizará para esto será ggplot2 [@ggplot2] que forma parte del tidyverse [@tidyverse]
+

@@ -14,6 +14,7 @@ website:
           - reunion2.qmd
           - reunion3.qmd
           - reunion4.qmd
+          - reunion5.qmd
       - icon: github
         href: https://github.com/toninif/clubdelcodigo/blob/main/README.md
 format:

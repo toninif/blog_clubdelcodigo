@@ -61,5 +61,12 @@
     "title": "Cuarta Reunión",
     "section": "",
     "text": "References\n\nPatil, I. (2021). Visualizations with statistical details: The ’ggstatsplot’ approach. Journal of Open Source Software, 6(61), 3167. https://doi.org/10.21105/joss.03167\n\n\nWickham, H. (2016). ggplot2: Elegant graphics for data analysis. Springer-Verlag New York. https://ggplot2.tidyverse.org"
+  },
+  {
+    "objectID": "reunion5.html",
+    "href": "reunion5.html",
+    "title": "Quinta Reunión",
+    "section": "",
+    "text": "References\n\nWickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686. https://doi.org/10.21105/joss.01686"
   }
 ]
