@@ -6,7 +6,7 @@ about:
   links:
     - icon: github
       text: Github
-      href: https://github.com/toninif/clubdelcodigo/blob/main/README.md
+      href: https://github.com/toninif/practicaClubDelCodigo
 ---
 
 La idea es que podamos reunirnos para comenzar a programar usando R y RStudio. Si bien al principio vamos a ver temas muy introductorios, a medida de que avancen las reuniones se van a poner tocar temas más complejos y que estén relacionados con sus áreas de interés.

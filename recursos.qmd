@@ -3,7 +3,7 @@ title: "Recursos"
 editor: visual
 ---
 
--   código comentado [:link: Click acá :link:](https://github.com/toninif/clubdelcodigo/blob/main/README.md)
+-   código comentado [:link: Click acá :link:](https://github.com/toninif/practicaClubDelCodigo)
 
 El link de arriba lleva al repositorio del club. Ahí van a poder encontrar ejemplos de código comentado. Lo importante es tener un recurso que se pueda leer en español y en R.
 
