@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -155,6 +218,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#graficando-con-r" id="toc-graficando-con-r" class="nav-link active" data-scroll-target="#graficando-con-r">Graficando con R</a></li>
+  <li><a href="#instalación-y-carga" id="toc-instalación-y-carga" class="nav-link" data-scroll-target="#instalación-y-carga">Instalación y carga</a></li>
   </ul>
 </nav>
     </div>
@@ -179,13 +243,48 @@ div.csl-indent {
 
 <section id="graficando-con-r" class="level2">
 <h2 class="anchored" data-anchor-id="graficando-con-r">Graficando con R</h2>
-<p>El paquete que se utilizará para esto será ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref"><strong>ggplot2?</strong></a>)</span> que forma parte del tidyverse <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al., 2019</a>)</span></p>
+<p>Existen muchos paquetes que nos permiten visualizar nuestros datos. En R base tenemos la funcion <code>plot()</code> y sus variantes, pero también podemos encontrar a <code>Plotly</code> <span class="citation" data-cites="plotly">(<a href="#ref-plotly" role="doc-biblioref">Sievert, 2020</a>)</span>, <code>RGL</code>, <code>Lattice</code> <span class="citation" data-cites="lattice">(<a href="#ref-lattice" role="doc-biblioref">Sarkar, 2008</a>)</span>, <code>ggstatsplot</code> <span class="citation" data-cites="ggstatsplot">(<a href="#ref-ggstatsplot" role="doc-biblioref">Patil, 2021</a>)</span> y varios más. El paquete que vamos a utilizar nosotros será <code>ggplot2</code> <span class="citation" data-cites="ggplot">(<a href="#ref-ggplot" role="doc-biblioref">Wickham, 2016</a>)</span> que forma parte del <code>tidyverse</code> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al., 2019</a>)</span>.</p>
+<p>Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo que, al visualizar datos, también podremos utilizar funciones de paquetes como <code>dplyr</code>, <code>forcats</code> o cualquier otro dentro del universo <code>tidy</code>. <code>ggplot</code> trabaja por capas. En principio se crea una base del gráfico (1ra capa) y luego se van agregando las demás (datos, estéticas, aspectos y otras más). Eso es a grandes rasgos lo que se hace con este paquete.</p>
+</section>
+<section id="instalación-y-carga" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-y-carga">Instalación y carga</h2>
+<ul>
+<li><p><strong>Instalación</strong> <code>install.packages("ggplot2")</code> (o si ya instalaron el tidyverse entonces viene incluido)</p></li>
+<li><p><strong>Carga</strong> <code>library("ggplot2")</code> (o si ya cargaron el tidyverse entonces viene incluido. Ver abajo)</p></li>
+<li><p><strong>Tidyverse</strong></p></li>
+</ul>
+<div class="cell">
+<details open="">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> ── Attaching packages ────────────────────────────────────────── tidyverse <span class="dv">1</span>.<span class="fl">3.1</span> ──</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> ✔ ggplot2 <span class="dv">3</span>.<span class="fl">3.6</span>     ✔ purrr   <span class="dv">0</span>.<span class="fl">3.4</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> ✔ tibble  <span class="dv">3</span>.<span class="fl">1.7</span>     ✔ dplyr   <span class="dv">1</span>.<span class="fl">0.9</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> ✔ tidyr   <span class="dv">1</span>.<span class="fl">2.0</span>     ✔ stringr <span class="dv">1</span>.<span class="fl">4.0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> ✔ readr   <span class="dv">2</span>.<span class="fl">1.2</span>     ✔ forcats <span class="dv">0</span>.<span class="fl">5.1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> ── Conflicts ───────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> ✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a> ✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-ggstatsplot" class="csl-entry" role="doc-biblioentry">
+Patil, I. (2021). <span class="nocase">Visualizations with statistical details: The <span class="nocase">’ggstatsplot’</span> approach</span>. <em><span>Journal of Open Source Software</span></em>, <em>6</em>(61), 3167. <a href="https://doi.org/10.21105/joss.03167">https://doi.org/10.21105/joss.03167</a>
+</div>
+<div id="ref-lattice" class="csl-entry" role="doc-biblioentry">
+Sarkar, D. (2008). <em>Lattice: Multivariate data visualization with r</em>. Springer. <a href="http://lmdvr.r-forge.r-project.org">http://lmdvr.r-forge.r-project.org</a>
+</div>
+<div id="ref-plotly" class="csl-entry" role="doc-biblioentry">
+Sievert, C. (2020). <em>Interactive web-based data visualization with r, plotly, and shiny</em>. Chapman; Hall/CRC. <a href="https://plotly-r.com">https://plotly-r.com</a>
+</div>
+<div id="ref-ggplot" class="csl-entry" role="doc-biblioentry">
+Wickham, H. (2016). <em>ggplot2: Elegant graphics for data analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
+</div>
 <div id="ref-tidyverse" class="csl-entry" role="doc-biblioentry">
 Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the <span class="nocase">tidyverse</span>. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
 </div>

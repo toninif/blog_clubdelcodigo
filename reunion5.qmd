@@ -6,5 +6,33 @@ csl: apa.csl
 
 ## Graficando con R
 
-El paquete que se utilizará para esto será ggplot2 [@ggplot2] que forma parte del tidyverse [@tidyverse]
+Existen muchos paquetes que nos permiten visualizar nuestros datos. En R base tenemos la funcion `plot()` y sus variantes, pero también podemos encontrar a `Plotly` [@plotly], `RGL`, `Lattice` [@lattice], `ggstatsplot` [@ggstatsplot] y varios más. El paquete que vamos a utilizar nosotros será `ggplot2` [@ggplot] que forma parte del `tidyverse` [@tidyverse].
+
+Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo que, al visualizar datos, también podremos utilizar funciones de paquetes como `dplyr`, `forcats` o cualquier otro dentro del universo `tidy`. `ggplot` trabaja por capas. En principio se crea una base del gráfico (1ra capa) y luego se van agregando las demás (datos, estéticas, aspectos y otras más). Eso es a grandes rasgos lo que se hace con este paquete.
+
+## Instalación y carga
+
+-   **Instalación** `install.packages("ggplot2")` (o si ya instalaron el tidyverse entonces viene incluido)
+
+-   **Carga** `library("ggplot2")` (o si ya cargaron el tidyverse entonces viene incluido. Ver abajo)
+
+-   **Tidyverse** 
+```{r}
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+ ── Attaching packages ────────────────────────────────────────── tidyverse 1.3.1 ──
+ ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+ ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+ ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+ ✔ readr   2.1.2     ✔ forcats 0.5.1
+ ── Conflicts ───────────────────────────────────────────── tidyverse_conflicts() ──
+ ✖ dplyr::filter() masks stats::filter()
+ ✖ dplyr::lag()    masks stats::lag()
+
+
+```
+
+
 

@@ -25,6 +25,8 @@ format:
     css: styles.css
     toc: true
     from: markdown+emoji
+    code-fold: show
+    code-summary: "Ver código"
 
 editor: visual
 
