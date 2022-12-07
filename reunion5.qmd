@@ -25,7 +25,8 @@ Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo q
 
 -   **Carga** `library("ggplot2")` (o si ya cargaron el tidyverse entonces viene incluido. Ver abajo)
 
--   **Tidyverse** 
+-   **Tidyverse**
+
 ```{r}
 #| echo: true
 #| eval: false
@@ -48,8 +49,7 @@ library(tidyverse) # Esto carga una serie de paquetes, entre ellos ggplot
 
 Como se menciona más arriba, el paquete ggplot ofrece una gramática para graficar que funciona a través de capas (si alguna vez usaste programas de diseño como por ej. Photoshop entones la lógica es más o menos la misma)
 
--   **Capa 1**
-Si tan solo usamos la función ggplot(), lo que obtenemos es lo siguiente:
+-   **Capa 1** Si tan solo usamos la función ggplot(), lo que obtenemos es lo siguiente:
 
 ```{r capa 1}
 #| echo: true
@@ -60,12 +60,11 @@ ggplot()
 
 ```
 
-Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico. 
-
+Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico.
 
 -   **Capa 2.1**
 
-Esta segunda capa comprende los datos que se visualizaran. Entones dentro de la función `ggplot()` el primer argumento es `data` y allí es donde ingresamos nuestro objeto con los datos. Como pueden ver abajo, si solo se ingresan los datos el resulado no cambia. Para eso hay que agregar aspectos. 
+Esta segunda capa comprende los datos que se visualizaran. Entones dentro de la función `ggplot()` el primer argumento es `data` y allí es donde ingresamos nuestro objeto con los datos. Como pueden ver abajo, si solo se ingresan los datos el resulado no cambia. Para eso hay que agregar aspectos.
 
 ```{r capa 2}
 #| echo: true
@@ -80,10 +79,9 @@ ggplot(data = datosEj)
 
 ```
 
-
 -   **Capa 2.2**
 
-Para agregar los aspectos o `aes()` lo que hay que hacer es incluir un nuevo argumento luego de `data.` Como se ve en el código de abajo, luego de `data` se agrega `mapping` y dentro de este argumento se especifican las `aes()`. El resultado que se obtiene en esta instancia es que ahora a la base del grafico se le suman los ejes y el rango de valores. Esto puede variar en funcion del tipo de variable que incluyamos en cada eje. 
+Para agregar los aspectos o `aes()` lo que hay que hacer es incluir un nuevo argumento luego de `data.` Como se ve en el código de abajo, luego de `data` se agrega `mapping` y dentro de este argumento se especifican las `aes()`. El resultado que se obtiene en esta instancia es que ahora a la base del grafico se le suman los ejes y el rango de valores. Esto puede variar en funcion del tipo de variable que incluyamos en cada eje.
 
 ```{r capa 2.2}
 #| echo: true
@@ -97,8 +95,6 @@ datosEj <- tibble(Eje_X = 1:9,
 ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) 
 
 ```
-
-
 
 El resultado que se obtiene en esta instancia es que ahora a la base del gráfico se le suman los ejes y el rango de valores. Esto puede variar en función del tipo de variable que incluyamos en cada eje. Arriba graficamos dos variables *numéricas*, mientras que en el resultado de abajo se grafica una variable *numérica* y otra *categórica* con tres niveles (A; B; C)
 
@@ -114,14 +110,93 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) # En el eje X inclui
 
 ```
 
+-   **Capa 3**
+
+Ya tenemos una base, los datos, los ejes definidos. Qué más falta? Los aspectos geométricos!! Barras? Columnas? Puntos? Tortas?. Bueno, estos últimos tal vez casi nunca (por si quieren leer sobre esto: [Link 1](https://evolytics.com/blog/8-dont-use-pie-charts/); [Link 2](https://www.data-to-viz.com/caveat/pie.html); [Link 3](https://scc.ms.unimelb.edu.au/resources/data-visualisation-and-exploration/no_pie-charts); [Link 4](https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657)).
+
+Vamos con el primer ejemplo con dos variables *numéricas*. Para este caso uno de los `geom_` utilizados puede ser `geom_point()`. Esto nos genera un gráfico de dispersión o *scatterplot*. La manera de agregar esta capa es utilizando el `+`. 
+
+```{r capa 3}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = 1:9,
+                  Eje_Y = 1:9)
 
 
 
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) + # Con el + sumamos la siguiente capa
+  geom_point() 
+
+```
+
+Pueden utilizarse varios `geom` dentro del mismo gráfico. Se agrega una capa más y listo.
+
+
+```{r capa 3.2}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = 1:9,
+                  Eje_Y = 1:9,
+                  Eje_Xinvertido = 1:9,
+                  Eje_Yinvertido = 9:1)
 
 
 
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) + # Con el + sumamos la siguiente capa
+  geom_point() + # En este caso son puntos
+  geom_point(mapping = aes(x = Eje_Xinvertido, y = Eje_Yinvertido))  # Incluso puede sumarse otra capa mas
+
+```
 
 
+En el caso de la base con variables numéricas y categóricas. En este caso, podria sernos de utilidad `geom_col`
+
+```{r capa 3.2cat}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
 
 
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
+  geom_col()
 
+
+```
+
+
+Si necesitamos dar un poco más de información, entonces podríamos usar `geom_boxplot` o `geom_violin`. Con el primero hacemos un gráfico de cajas y con el según un gráfico con violines
+
+-   **Cajas**
+
+```{r capa 3.3}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
+  geom_boxplot()
+
+
+```
+
+-   **Violines** 
+
+```{r capa 3.4}
+#| echo: true
+#| eval: true
+
+datosEj <- palmerpenguins::penguins # En este ejemplo use pinguinos porque quedaba mejor que los datos inventados
+
+
+ggplot(data = datosEj, mapping = aes(x = species, y = body_mass_g)) +
+  geom_violin()
+
+
+```
