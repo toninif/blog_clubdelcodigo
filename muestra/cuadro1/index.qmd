@@ -1,9 +1,39 @@
 ---
-title: "Próximamente"
-author: ["Participante", "CdC"]
-date: "2022-12-05"
-categories: [opinion, club]
-image: "catatwork.jpg"
+title: "Primer gráfico"
+author: ["Fer", "CdC"]
+date: "2022-12-07"
+categories: [grafico, club]
+image: "dino.png"
+format: 
+  html: 
+    code-fold: false
+    code-summary: "Mostrar/Ocultar código"
+bibliography: biblio.bib
 ---
 
-Con la *migración forzada* de la web, se me ocurrió agregar un sección tipo blog donde se puedan ir agregando post que escribamos. Tal vez a modo de experiencias o comentando algo nuevo que aprendimos
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+
+library(datasauRus)
+library(ggplot2)
+library(dplyr)
+
+
+```
+
+Dinoplot[^1]
+
+[^1]: Datos de [@dino]
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+
+ggplot(data = datasaurus_dozen |>  filter(dataset == "dino"), mapping = aes(x = x, y = y)) +
+  geom_point(colour = "darkgreen") +
+  theme_minimal()
+
+```

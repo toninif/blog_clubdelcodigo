@@ -18,7 +18,7 @@
     "href": "galeria.html",
     "title": "Galeria de gráficos",
     "section": "",
-    "text": "opinion\n\n\nclub\n\n\n\n\n\n\n\nParticipante, CdC\n\n\nDec 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "grafico\n\n\nclub\n\n\n\n\n\n\n\nFer, CdC\n\n\nDec 7, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -30,9 +30,9 @@
   {
     "objectID": "muestra/cuadro1/index.html",
     "href": "muestra/cuadro1/index.html",
-    "title": "Próximamente",
+    "title": "Primer gráfico",
     "section": "",
-    "text": "Con la migración forzada de la web, se me ocurrió agregar un sección tipo blog donde se puedan ir agregando post que escribamos. Tal vez a modo de experiencias o comentando algo nuevo que aprendimos"
+    "text": "Dinoplot1\n\n\n\n\n\n\n\n\n\n\nReferences\n\nDavies, Rhian, Steph Locke, and Lucy D’Agostino McGowan. 2022. datasauRus: Datasets from the Datasaurus Dozen. https://CRAN.R-project.org/package=datasauRus.\n\nFootnotes\n\nDatos de (Davies, Locke, and D’Agostino McGowan 2022)↩︎"
   },
   {
     "objectID": "posts/nueva-seccion/index.html",
