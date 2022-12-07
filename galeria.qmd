@@ -1,0 +1,15 @@
+---
+title: "Galeria de gráficos"
+listing:
+  contents: muestra
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+format: 
+  html:
+    code-tools: false
+---

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ClubDelCódigo - Blog del Club</title>
+<title>ClubDelCódigo - Galeria de gráficos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./galeria.html">Galeria de gráficos</a>
+    <a class="nav-link active" href="./galeria.html" aria-current="page">Galeria de gráficos</a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/toninif/clubdelcodigo/blob/main/README.md"><i class="bi bi-github" role="img">
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog del Club</h1>
+<h1 class="title">Galeria de gráficos</h1>
 </div>
 
 
@@ -191,21 +191,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="opinion,club" data-listing-date-sort="1670209200000" data-listing-file-modified-sort="1670282731084" data-listing-reading-time-sort="0.175">
-<div class="thumbnail">
-<p><a href="./posts/nueva-seccion/index.html"> <img src="./posts/nueva-seccion/catatwork.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/nueva-seccion/index.html">
-<h3 class="no-anchor listing-title">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="opinion,club" data-listing-date-sort="1670209200000" data-listing-file-modified-sort="1670282731084" data-listing-reading-time-sort="0.175">
+<a href="./muestra/cuadro1/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./muestra/cuadro1/catatwork.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Próximamente
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('opinion'); return false;">
 opinion
@@ -214,22 +211,20 @@ opinion
 club
 </div>
 </div>
-<a href="./posts/nueva-seccion/index.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 Con la <em>migración forzada</em> de la web, se me ocurrió agregar un sección tipo blog donde se puedan ir agregando post que escribamos. Tal vez a modo de experiencias o comentando algo nuevo que aprendimos
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/nueva-seccion/index.html">
-<div class="listing-date">
-Dec 5, 2022
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Participante, CdC
 </div>
-</a>
+<div class="listing-date">
+Dec 5, 2022
 </div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">

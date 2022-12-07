@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/galeria.html",
+    "items": [
+      "/muestra/cuadro1/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/nueva-seccion/index.html"
