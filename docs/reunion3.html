@@ -245,7 +245,7 @@ ATENCIÓN!!
 </div>
 </div>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="st">"https://osf.io/download/cp2kz"</span>, <span class="co"># URL donde esta el archivo a descargar</span></span>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">download.file</span>(<span class="at">url =</span> <span class="st">"https://osf.io/download/cp2kz"</span>, <span class="co"># URL donde esta el archivo a descargar</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>              <span class="at">destfile =</span> <span class="st">"datos/datos_cdc.csv"</span>) <span class="co"># carpeta donde se guardara el archivo</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(readr) <span class="co"># Para leer datos</span></span>
@@ -314,22 +314,22 @@ ATENCIÓN!!
 <p>La manera de utilizar estas herramientas es bastante simple. Se escribe la función que necesitemos, se indican los datos en los que vamos a trabajar y luego se indica aquello que necesitemos hacer.</p>
 <section id="filtrar" class="level3"><h3 class="anchored" data-anchor-id="filtrar">Filtrar</h3>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">funcion</span>(datos, lo que necesitamos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">funcion</span>(datos, lo que necesitamos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Pseudocodigo con un objetivo más claro</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">filtrar</span>(datos, variable mayor que <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">filtrar</span>(datos, variable mayor que <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Codigo para alcanzar el objetivo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">filter</span>(<span class="at">.data =</span> starwars, height <span class="sc">&gt;</span> <span class="dv">175</span>) <span class="co"># En este caso solo necesito aquellos datos de quienes tengan una altura mayor a 175 cm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">filter</span>(<span class="at">.data =</span> starwars, height <span class="sc">&gt;</span> <span class="dv">175</span>) <span class="co"># En este caso solo necesito aquellos datos de quienes tengan una altura mayor a 175 cm</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 48 × 14
    name     height  mass hair_color skin_color eye_color birth_year sex   gender
@@ -347,7 +347,7 @@ ATENCIÓN!!
 # … with 38 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
 #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">filter</span>(<span class="at">.data =</span> starwars, species <span class="sc">==</span> <span class="st">"Wookiee"</span>) <span class="co"># En este caso solo necesito los datos de quienes sean de la especie Wookiee</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">filter</span>(<span class="at">.data =</span> starwars, species <span class="sc">==</span> <span class="st">"Wookiee"</span>) <span class="co"># En este caso solo necesito los datos de quienes sean de la especie Wookiee</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
@@ -361,12 +361,12 @@ ATENCIÓN!!
 </section><section id="seleccionar" class="level3"><h3 class="anchored" data-anchor-id="seleccionar">Seleccionar</h3>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">seleccionar</span>(datos, <span class="fu">variable</span>(s) de interes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">seleccionar</span>(datos, <span class="fu">variable</span>(s) de interes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Código</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, height, mass, gender)) <span class="co"># En este caso solo me interesaban las variables nombre, altura, masa y genero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, height, mass, gender)) <span class="co"># En este caso solo me interesaban las variables nombre, altura, masa y genero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 4
    name               height  mass gender   
@@ -383,7 +383,7 @@ ATENCIÓN!!
 10 Obi-Wan Kenobi        182    77 masculine
 # … with 77 more rows</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>seleccion1 <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, height, mass, gender))</span>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>seleccion1 <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, height, mass, gender))</span>
 <span id="cb12-2"><a href="#cb12-2"></a></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="fu">select</span>(<span class="at">.data =</span> seleccion1, <span class="sc">-</span>height) <span class="co"># En este caso se puede usar el select para quitar una variable. Eso se hace usando un - antes de la variable que queremos quitar.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
@@ -402,7 +402,7 @@ ATENCIÓN!!
 10 Obi-Wan Kenobi        77 masculine
 # … with 77 more rows</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">starts_with</span>(<span class="st">"h"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">starts_with</span>(<span class="st">"h"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 3
    height hair_color    homeworld
@@ -423,12 +423,12 @@ ATENCIÓN!!
 </section><section id="crear" class="level3"><h3 class="anchored" data-anchor-id="crear">Crear</h3>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">crear</span>(datos, <span class="fu">variable</span>(s) que necesito <span class="at">crear =</span> contenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">crear</span>(datos, <span class="fu">variable</span>(s) que necesito <span class="at">crear =</span> contenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Código</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mutate</span>(<span class="at">.data =</span> seleccion1, <span class="at">altura =</span> height<span class="sc">/</span><span class="dv">100</span>) <span class="co"># En este caso vamos a crear una nueva variable que contenta la transformacion de height de centimetros a metros</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mutate</span>(<span class="at">.data =</span> seleccion1, <span class="at">altura =</span> height<span class="sc">/</span><span class="dv">100</span>) <span class="co"># En este caso vamos a crear una nueva variable que contenta la transformacion de height de centimetros a metros</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 5
    name               height  mass gender    altura
@@ -461,7 +461,7 @@ A tener en cuenta!
 <p>Cuando usemos mutate() con una variable que ya existe en el dataset conviene no sobreescribirla. Esto afectaría la reproducibilidad del código. Lo mejor es generar una nueva variable con algún identificador.</p>
 <p>Por ejemplo: Cuando cargamos el dataset vemos que la variable de agrupación gender es de tipo chr y lo que necesitamos es que sea un factor. En ese caso se haría lo siguiente:</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mutate</span>(<span class="at">.data =</span> seleccion1, <span class="at">gender_fct =</span> <span class="fu">as_factor</span>(gender)) <span class="co"># Nos quedan ambas variables y solo utilizamos la que necesitemos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">mutate</span>(<span class="at">.data =</span> seleccion1, <span class="at">gender_fct =</span> <span class="fu">as_factor</span>(gender)) <span class="co"># Nos quedan ambas variables y solo utilizamos la que necesitemos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 5
    name               height  mass gender    gender_fct
@@ -485,12 +485,12 @@ A tener en cuenta!
 </section><section id="ordenar" class="level3"><h3 class="anchored" data-anchor-id="ordenar">Ordenar</h3>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ordenar</span>(datos, variable seleccionada)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ordenar</span>(datos, variable seleccionada)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Código</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">arrange</span>(<span class="at">.data =</span> starwars, height) <span class="co"># Orden de menor a mayor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">arrange</span>(<span class="at">.data =</span> starwars, height) <span class="co"># Orden de menor a mayor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 14
    name     height  mass hair_color skin_color eye_color birth_year sex   gender
@@ -508,7 +508,7 @@ A tener en cuenta!
 # … with 77 more rows, and 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;,
 #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">arrange</span>(<span class="at">.data =</span> starwars, <span class="fu">desc</span>(height)) <span class="co"># Orden de mayor a menor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">arrange</span>(<span class="at">.data =</span> starwars, <span class="fu">desc</span>(height)) <span class="co"># Orden de mayor a menor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 14
    name     height  mass hair_color skin_color eye_color birth_year sex   gender
@@ -530,12 +530,12 @@ A tener en cuenta!
 </section><section id="acomodar" class="level3"><h3 class="anchored" data-anchor-id="acomodar">Acomodar</h3>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">acomodar</span>(datos, variable, antes<span class="sc">/</span>despues de)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">acomodar</span>(datos, variable, antes<span class="sc">/</span>despues de)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Código</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">relocate</span>(<span class="at">.data =</span> seleccion1, gender, <span class="at">.after =</span> name) <span class="co"># En este caso acomodamos gender despues de name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">relocate</span>(<span class="at">.data =</span> seleccion1, gender, <span class="at">.after =</span> name) <span class="co"># En este caso acomodamos gender despues de name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 4
    name               gender    height  mass
@@ -552,7 +552,7 @@ A tener en cuenta!
 10 Obi-Wan Kenobi     masculine    182    77
 # … with 77 more rows</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">relocate</span>(<span class="at">.data =</span> seleccion1, name, <span class="at">.before =</span> mass) <span class="co"># En este caso acomodamos name despues de mass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">relocate</span>(<span class="at">.data =</span> seleccion1, name, <span class="at">.before =</span> mass) <span class="co"># En este caso acomodamos name despues de mass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 87 × 4
    height name                mass gender   
@@ -573,12 +573,12 @@ A tener en cuenta!
 </section><section id="renombrar" class="level3"><h3 class="anchored" data-anchor-id="renombrar">Renombrar</h3>
 <p>Pseudocodigo</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">renombrar</span>(datos, nombre <span class="at">nuevo =</span> nombre viejo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">renombrar</span>(datos, nombre <span class="at">nuevo =</span> nombre viejo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Código</p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>seleccion1_traducida <span class="ot">&lt;-</span> <span class="fu">rename</span>(seleccion1,</span>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>seleccion1_traducida <span class="ot">&lt;-</span> <span class="fu">rename</span>(seleccion1,</span>
 <span id="cb32-2"><a href="#cb32-2"></a>                               <span class="at">nombre =</span> name,</span>
 <span id="cb32-3"><a href="#cb32-3"></a>                               <span class="at">altura =</span> height,</span>
 <span id="cb32-4"><a href="#cb32-4"></a>                               <span class="at">masa_kg =</span> mass,</span>
@@ -588,7 +588,7 @@ A tener en cuenta!
 </details><div class="cell-output cell-output-stdout">
 <pre><code>[1] "name"   "height" "mass"   "gender"</code></pre>
 </div>
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">names</span>(seleccion1_traducida)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">names</span>(seleccion1_traducida)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>[1] "nombre"  "altura"  "masa_kg" "genero" </code></pre>
 </div>
@@ -599,7 +599,7 @@ A tener en cuenta!
 <p>Por ejemplo: Se necesita seleccionar algunas variables, renombrarlas y crear variables que sean del tipo correcto. Por ultimo, graficar la altura según el sexo del personaje</p>
 <p><em>Sin %&gt;%</em></p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>paso_1 <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, sex, gender, species, mass, height))</span>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>paso_1 <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> starwars, <span class="fu">c</span>(name, sex, gender, species, mass, height))</span>
 <span id="cb36-2"><a href="#cb36-2"></a></span>
 <span id="cb36-3"><a href="#cb36-3"></a>paso_2 <span class="ot">&lt;-</span> <span class="fu">rename</span>(<span class="at">.data =</span> paso_1, <span class="at">nombre =</span> name,</span>
 <span id="cb36-4"><a href="#cb36-4"></a>                                 <span class="at">sexo =</span> sex,</span>
@@ -625,7 +625,7 @@ A tener en cuenta!
 </div>
 <p><em>Con %&gt;%</em></p>
 <div class="cell">
-<details open=""><summary>Ver código</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>starwars <span class="sc">%&gt;%</span> <span class="co"># Selecciono los datos Y DESPUES</span></span>
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>starwars <span class="sc">%&gt;%</span> <span class="co"># Selecciono los datos Y DESPUES</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">select</span>(name, sex, gender, species, mass, height) <span class="sc">%&gt;%</span> <span class="co">#Selecciono las variables Y DESPUES</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">rename</span>(<span class="at">nombre =</span> name, </span>
 <span id="cb38-4"><a href="#cb38-4"></a>         <span class="at">sexo =</span> sex,</span>

@@ -26,7 +26,7 @@ format:
     toc: true
     from: markdown+emoji
     code-fold: show
-    code-summary: "Ver código"
+    code-summary: "Ver/Ocultar código"
     code-tools: true
     code-block-border-left: true
     code-line-numbers: true

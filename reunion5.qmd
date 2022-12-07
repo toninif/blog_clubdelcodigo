@@ -4,6 +4,15 @@ bibliography: biblio.bib
 csl: apa.csl
 ---
 
+```{r}
+#| echo: false
+#| eval: true
+
+library(tidyverse)
+
+
+```
+
 ## Graficando con R
 
 Existen muchos paquetes que nos permiten visualizar nuestros datos. En R base tenemos la funcion `plot()` y sus variantes, pero también podemos encontrar a `Plotly` [@plotly], `RGL`, `Lattice` [@lattice], `ggstatsplot` [@ggstatsplot] y varios más. El paquete que vamos a utilizar nosotros será `ggplot2` [@ggplot] que forma parte del `tidyverse` [@tidyverse].
@@ -21,7 +30,8 @@ Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo q
 #| echo: true
 #| eval: false
 
-library(tidyverse)
+library(tidyverse) # Esto carga una serie de paquetes, entre ellos ggplot
+
  ── Attaching packages ────────────────────────────────────────── tidyverse 1.3.1 ──
  ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
  ✔ tibble  3.1.7     ✔ dplyr   1.0.9
@@ -33,6 +43,85 @@ library(tidyverse)
 
 
 ```
+
+## Arrancando con ggplot
+
+Como se menciona más arriba, el paquete ggplot ofrece una gramática para graficar que funciona a través de capas (si alguna vez usaste programas de diseño como por ej. Photoshop entones la lógica es más o menos la misma)
+
+-   **Capa 1**
+Si tan solo usamos la función ggplot(), lo que obtenemos es lo siguiente:
+
+```{r capa 1}
+#| echo: true
+#| eval: true
+
+
+ggplot()
+
+```
+
+Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico. 
+
+
+-   **Capa 2.1**
+
+Esta segunda capa comprende los datos que se visualizaran. Entones dentro de la función `ggplot()` el primer argumento es `data` y allí es donde ingresamos nuestro objeto con los datos. Como pueden ver abajo, si solo se ingresan los datos el resulado no cambia. Para eso hay que agregar aspectos. 
+
+```{r capa 2}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(ejex = 1:9, # Este el objeto con los datos. En este caso no tiene mucho sentido
+                  ejey = 1:9) # mas alla del ejemplo, pero es necesario para poner algo en el argumento data
+
+
+ggplot(data = datosEj)
+
+
+```
+
+
+-   **Capa 2.2**
+
+Para agregar los aspectos o `aes()` lo que hay que hacer es incluir un nuevo argumento luego de `data.` Como se ve en el código de abajo, luego de `data` se agrega `mapping` y dentro de este argumento se especifican las `aes()`. El resultado que se obtiene en esta instancia es que ahora a la base del grafico se le suman los ejes y el rango de valores. Esto puede variar en funcion del tipo de variable que incluyamos en cada eje. 
+
+```{r capa 2.2}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = 1:9,
+                  Eje_Y = 1:9)
+
+# Aqui es donde se incluyen las variables para # los ejes X e Y
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) 
+
+```
+
+
+
+El resultado que se obtiene en esta instancia es que ahora a la base del gráfico se le suman los ejes y el rango de valores. Esto puede variar en función del tipo de variable que incluyamos en cada eje. Arriba graficamos dos variables *numéricas*, mientras que en el resultado de abajo se grafica una variable *numérica* y otra *categórica* con tres niveles (A; B; C)
+
+```{r capa 2.2cat}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) # En el eje X incluimos la variable categórica
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
