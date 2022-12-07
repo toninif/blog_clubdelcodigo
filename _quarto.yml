@@ -27,6 +27,10 @@ format:
     from: markdown+emoji
     code-fold: show
     code-summary: "Ver código"
+    code-tools: true
+    code-block-border-left: true
+    code-line-numbers: true
+    code-link: true
 
 editor: visual
 
