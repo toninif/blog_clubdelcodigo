@@ -114,7 +114,7 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) # En el eje X inclui
 
 Ya tenemos una base, los datos, los ejes definidos. Qué más falta? Los aspectos geométricos!! Barras? Columnas? Puntos? Tortas?. Bueno, estos últimos tal vez casi nunca (por si quieren leer sobre esto: [Link 1](https://evolytics.com/blog/8-dont-use-pie-charts/); [Link 2](https://www.data-to-viz.com/caveat/pie.html); [Link 3](https://scc.ms.unimelb.edu.au/resources/data-visualisation-and-exploration/no_pie-charts); [Link 4](https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657)).
 
-Vamos con el primer ejemplo con dos variables *numéricas*. Para este caso uno de los `geom_` utilizados puede ser `geom_point()`. Esto nos genera un gráfico de dispersión o *scatterplot*. La manera de agregar esta capa es utilizando el `+`. 
+Vamos con el primer ejemplo con dos variables *numéricas*. Para este caso uno de los `geom_` utilizados puede ser `geom_point()`. Esto nos genera un gráfico de dispersión o *scatterplot*. La manera de agregar esta capa es utilizando el `+`.
 
 ```{r capa 3}
 #| echo: true
@@ -131,7 +131,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) + # Con el + sumamos
 ```
 
 Pueden utilizarse varios `geom` dentro del mismo gráfico. Se agrega una capa más y listo.
-
 
 ```{r capa 3.2}
 #| echo: true
@@ -150,7 +149,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) + # Con el + sumamos
 
 ```
 
-
 En el caso de la base con variables numéricas y categóricas. En este caso, podria sernos de utilidad `geom_col`
 
 ```{r capa 3.2cat}
@@ -166,7 +164,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
 
 
 ```
-
 
 Si necesitamos dar un poco más de información, entonces podríamos usar `geom_boxplot` o `geom_violin`. Con el primero hacemos un gráfico de cajas y con el según un gráfico con violines
 
@@ -186,7 +183,7 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
 
 ```
 
--   **Violines** 
+-   **Violines**
 
 ```{r capa 3.4}
 #| echo: true
@@ -201,5 +198,114 @@ ggplot(data = datosEj, mapping = aes(x = species, y = body_mass_g)) +
 
 ```
 
-## **Más y más capas** 
+## **Más y más capas**
+
+Otras capas muy utilizadas son las del titulo, subtitulo y nombres de los ejes. Esto se puede modificar agregando otra capa que incluya labs
+
+
+```{r capa titulos}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
+  geom_col() +
+  labs(title = "Grafico con tres columnas",
+       x = "Variable categorica",
+       y = "Variable numerica")
+
+
+```
+
+
+Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es `coord_flip` Por ejemplo, rotemos el gráfico de arriba
+
+
+```{r capa rotar}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
+  geom_col() +
+  labs(title = "Grafico con tres columnas",
+       x = "Variable categorica",
+       y = "Variable numerica") +
+  coord_flip()
+
+
+```
+
+
+**¿Y donde esta el color?**
+
+Los colores pueden incluirse de muchas maneras. Una de ellas es incluir colour o color (como gusten) en las aes del principio. Otra opcion es rellenar el geom con fill. Por ejemplo:
+
+```{r capa color}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9)
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y, fill = "orange")) +
+  geom_col() +
+  labs(title = "Grafico con tres columnas",
+       x = "Variable categorica",
+       y = "Variable numerica") +
+  coord_flip()
+
+
+```
+
+No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo
+
+
+```{r capa mascolor}
+#| echo: true
+#| eval: true
+
+datosEj <- tibble(Eje_X = rep(c("A","B", "C"), 3), # Creamos la variable categórica. Repetimos A B y C tres veces
+                  Eje_Y = 1:9,
+                  mascolor = rep(c("D", "E", "F"), 3))
+
+
+ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y, fill = mascolor)) +
+  geom_col() +
+  labs(title = "Grafico con tres columnas",
+       x = "Variable categorica",
+       y = "Variable numerica") +
+  coord_flip()
+
+
+```
+
+
+Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.
+
+```{r capa mascolor2}
+#| echo: true
+#| eval: true
+
+datosEj <- palmerpenguins::penguins |> na.omit()
+
+
+ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Tamaño del pico en función del peso",
+       x = "Peso en gramos",
+       y = "Tamaño del pico")
+
+
+```
+
+
+
 

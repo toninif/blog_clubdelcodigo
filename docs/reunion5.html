@@ -392,13 +392,92 @@ div.csl-indent {
 <p><img src="reunion5_files/figure-html/capa%203.4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="más-y-más-capas" class="level2">
+</section><section id="más-y-más-capas" class="level2"><h2 class="anchored" data-anchor-id="más-y-más-capas"><strong>Más y más capas</strong></h2>
+<p>Otras capas muy utilizadas son las del titulo, subtitulo y nombres de los ejes. Esto se puede modificar agregando otra capa que incluya labs</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="reunion5_files/figure-html/capa%20titulos-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es <code>coord_flip</code> Por ejemplo, rotemos el gráfico de arriba</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="reunion5_files/figure-html/capa%20rotar-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>¿Y donde esta el color?</strong></p>
+<p>Los colores pueden incluirse de muchas maneras. Una de ellas es incluir colour o color (como gusten) en las aes del principio. Otra opcion es rellenar el geom con fill. Por ejemplo:</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> <span class="st">"orange"</span>)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="reunion5_files/figure-html/capa%20color-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb18-3"><a href="#cb18-3"></a>                  <span class="at">mascolor =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>), <span class="dv">3</span>))</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> mascolor)) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="reunion5_files/figure-html/capa%20mascolor-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="reunion5_files/figure-html/capa%20mascolor2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 <!-- -->
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Más y más capas</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
 <div id="ref-ggstatsplot" class="csl-entry" role="doc-biblioentry">
 Patil, I. (2021). <span class="nocase">Visualizations with statistical details: The <span class="nocase">’ggstatsplot’</span> approach</span>. <em><span>Journal of Open Source Software</span></em>, <em>6</em>(61), 3167. <a href="https://doi.org/10.21105/joss.03167">https://doi.org/10.21105/joss.03167</a>
 </div>
@@ -676,210 +755,316 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">---</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="an">title:</span><span class="co"> "Quinta Reunión"</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="an">bibliography:</span><span class="co"> biblio.bib</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="co">---</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="in">```{r}</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a><span class="co">#| echo: false</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a></span>
-<span id="cb15-13"><a href="#cb15-13"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb15-14"><a href="#cb15-14"></a></span>
-<span id="cb15-15"><a href="#cb15-15"></a></span>
-<span id="cb15-16"><a href="#cb15-16"></a><span class="in">```</span></span>
-<span id="cb15-17"><a href="#cb15-17"></a></span>
-<span id="cb15-18"><a href="#cb15-18"></a><span class="fu">## Graficando con R</span></span>
-<span id="cb15-19"><a href="#cb15-19"></a></span>
-<span id="cb15-20"><a href="#cb15-20"></a>Existen muchos paquetes que nos permiten visualizar nuestros datos. En R base tenemos la funcion <span class="in">`plot()`</span> y sus variantes, pero también podemos encontrar a <span class="in">`Plotly`</span> <span class="co">[</span><span class="ot">@plotly</span><span class="co">]</span>, <span class="in">`RGL`</span>, <span class="in">`Lattice`</span> <span class="co">[</span><span class="ot">@lattice</span><span class="co">]</span>, <span class="in">`ggstatsplot`</span> <span class="co">[</span><span class="ot">@ggstatsplot</span><span class="co">]</span> y varios más. El paquete que vamos a utilizar nosotros será <span class="in">`ggplot2`</span> <span class="co">[</span><span class="ot">@ggplot</span><span class="co">]</span> que forma parte del <span class="in">`tidyverse`</span> <span class="co">[</span><span class="ot">@tidyverse</span><span class="co">]</span>.</span>
-<span id="cb15-21"><a href="#cb15-21"></a></span>
-<span id="cb15-22"><a href="#cb15-22"></a>Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo que, al visualizar datos, también podremos utilizar funciones de paquetes como <span class="in">`dplyr`</span>, <span class="in">`forcats`</span> o cualquier otro dentro del universo <span class="in">`tidy`</span>. <span class="in">`ggplot`</span> trabaja por capas. En principio se crea una base del gráfico (1ra capa) y luego se van agregando las demás (datos, estéticas, aspectos y otras más). Eso es a grandes rasgos lo que se hace con este paquete.</span>
-<span id="cb15-23"><a href="#cb15-23"></a></span>
-<span id="cb15-24"><a href="#cb15-24"></a><span class="fu">## Instalación y carga</span></span>
-<span id="cb15-25"><a href="#cb15-25"></a></span>
-<span id="cb15-26"><a href="#cb15-26"></a><span class="ss">-   </span>**Instalación** <span class="in">`install.packages("ggplot2")`</span> (o si ya instalaron el tidyverse entonces viene incluido)</span>
-<span id="cb15-27"><a href="#cb15-27"></a></span>
-<span id="cb15-28"><a href="#cb15-28"></a><span class="ss">-   </span>**Carga** <span class="in">`library("ggplot2")`</span> (o si ya cargaron el tidyverse entonces viene incluido. Ver abajo)</span>
-<span id="cb15-29"><a href="#cb15-29"></a></span>
-<span id="cb15-30"><a href="#cb15-30"></a><span class="ss">-   </span>**Tidyverse**</span>
-<span id="cb15-31"><a href="#cb15-31"></a></span>
-<span id="cb15-34"><a href="#cb15-34"></a><span class="in">```{r}</span></span>
-<span id="cb15-35"><a href="#cb15-35"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-36"><a href="#cb15-36"></a><span class="co">#| eval: false</span></span>
-<span id="cb15-37"><a href="#cb15-37"></a></span>
-<span id="cb15-38"><a href="#cb15-38"></a><span class="fu">library</span>(tidyverse) <span class="co"># Esto carga una serie de paquetes, entre ellos ggplot</span></span>
-<span id="cb15-39"><a href="#cb15-39"></a></span>
-<span id="cb15-40"><a href="#cb15-40"></a> ── Attaching packages ────────────────────────────────────────── tidyverse <span class="dv">1</span>.<span class="fl">3.1</span> ──</span>
-<span id="cb15-41"><a href="#cb15-41"></a> ✔ ggplot2 <span class="dv">3</span>.<span class="fl">3.6</span>     ✔ purrr   <span class="dv">0</span>.<span class="fl">3.4</span></span>
-<span id="cb15-42"><a href="#cb15-42"></a> ✔ tibble  <span class="dv">3</span>.<span class="fl">1.7</span>     ✔ dplyr   <span class="dv">1</span>.<span class="fl">0.9</span></span>
-<span id="cb15-43"><a href="#cb15-43"></a> ✔ tidyr   <span class="dv">1</span>.<span class="fl">2.0</span>     ✔ stringr <span class="dv">1</span>.<span class="fl">4.0</span></span>
-<span id="cb15-44"><a href="#cb15-44"></a> ✔ readr   <span class="dv">2</span>.<span class="fl">1.2</span>     ✔ forcats <span class="dv">0</span>.<span class="fl">5.1</span></span>
-<span id="cb15-45"><a href="#cb15-45"></a> ── Conflicts ───────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
-<span id="cb15-46"><a href="#cb15-46"></a> ✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
-<span id="cb15-47"><a href="#cb15-47"></a> ✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
-<span id="cb15-48"><a href="#cb15-48"></a></span>
-<span id="cb15-49"><a href="#cb15-49"></a></span>
-<span id="cb15-50"><a href="#cb15-50"></a><span class="in">```</span></span>
-<span id="cb15-51"><a href="#cb15-51"></a></span>
-<span id="cb15-52"><a href="#cb15-52"></a><span class="fu">## Arrancando con ggplot</span></span>
-<span id="cb15-53"><a href="#cb15-53"></a></span>
-<span id="cb15-54"><a href="#cb15-54"></a>Como se menciona más arriba, el paquete ggplot ofrece una gramática para graficar que funciona a través de capas (si alguna vez usaste programas de diseño como por ej. Photoshop entones la lógica es más o menos la misma)</span>
-<span id="cb15-55"><a href="#cb15-55"></a></span>
-<span id="cb15-56"><a href="#cb15-56"></a><span class="ss">-   </span>**Capa 1** Si tan solo usamos la función ggplot(), lo que obtenemos es lo siguiente:</span>
-<span id="cb15-57"><a href="#cb15-57"></a></span>
-<span id="cb15-58"><a href="#cb15-58"></a><span class="in">```{r capa 1}</span></span>
-<span id="cb15-59"><a href="#cb15-59"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-60"><a href="#cb15-60"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-61"><a href="#cb15-61"></a></span>
-<span id="cb15-62"><a href="#cb15-62"></a></span>
-<span id="cb15-63"><a href="#cb15-63"></a><span class="fu">ggplot</span>()</span>
-<span id="cb15-64"><a href="#cb15-64"></a></span>
-<span id="cb15-65"><a href="#cb15-65"></a><span class="in">```</span></span>
-<span id="cb15-66"><a href="#cb15-66"></a></span>
-<span id="cb15-67"><a href="#cb15-67"></a>Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico.</span>
-<span id="cb15-68"><a href="#cb15-68"></a></span>
-<span id="cb15-69"><a href="#cb15-69"></a><span class="ss">-   </span>**Capa 2.1**</span>
-<span id="cb15-70"><a href="#cb15-70"></a></span>
-<span id="cb15-71"><a href="#cb15-71"></a>Esta segunda capa comprende los datos que se visualizaran. Entones dentro de la función <span class="in">`ggplot()`</span> el primer argumento es <span class="in">`data`</span> y allí es donde ingresamos nuestro objeto con los datos. Como pueden ver abajo, si solo se ingresan los datos el resulado no cambia. Para eso hay que agregar aspectos.</span>
-<span id="cb15-72"><a href="#cb15-72"></a></span>
-<span id="cb15-73"><a href="#cb15-73"></a><span class="in">```{r capa 2}</span></span>
-<span id="cb15-74"><a href="#cb15-74"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-75"><a href="#cb15-75"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-76"><a href="#cb15-76"></a></span>
-<span id="cb15-77"><a href="#cb15-77"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ejex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="co"># Este el objeto con los datos. En este caso no tiene mucho sentido</span></span>
-<span id="cb15-78"><a href="#cb15-78"></a>                  <span class="at">ejey =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) <span class="co"># mas alla del ejemplo, pero es necesario para poner algo en el argumento data</span></span>
-<span id="cb15-79"><a href="#cb15-79"></a></span>
-<span id="cb15-80"><a href="#cb15-80"></a></span>
-<span id="cb15-81"><a href="#cb15-81"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj)</span>
-<span id="cb15-82"><a href="#cb15-82"></a></span>
-<span id="cb15-83"><a href="#cb15-83"></a></span>
-<span id="cb15-84"><a href="#cb15-84"></a><span class="in">```</span></span>
-<span id="cb15-85"><a href="#cb15-85"></a></span>
-<span id="cb15-86"><a href="#cb15-86"></a><span class="ss">-   </span>**Capa 2.2**</span>
-<span id="cb15-87"><a href="#cb15-87"></a></span>
-<span id="cb15-88"><a href="#cb15-88"></a>Para agregar los aspectos o <span class="in">`aes()`</span> lo que hay que hacer es incluir un nuevo argumento luego de <span class="in">`data.`</span> Como se ve en el código de abajo, luego de <span class="in">`data`</span> se agrega <span class="in">`mapping`</span> y dentro de este argumento se especifican las <span class="in">`aes()`</span>. El resultado que se obtiene en esta instancia es que ahora a la base del grafico se le suman los ejes y el rango de valores. Esto puede variar en funcion del tipo de variable que incluyamos en cada eje.</span>
-<span id="cb15-89"><a href="#cb15-89"></a></span>
-<span id="cb15-90"><a href="#cb15-90"></a><span class="in">```{r capa 2.2}</span></span>
-<span id="cb15-91"><a href="#cb15-91"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-92"><a href="#cb15-92"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-93"><a href="#cb15-93"></a></span>
-<span id="cb15-94"><a href="#cb15-94"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb15-95"><a href="#cb15-95"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb15-96"><a href="#cb15-96"></a></span>
-<span id="cb15-97"><a href="#cb15-97"></a><span class="co"># Aqui es donde se incluyen las variables para # los ejes X e Y</span></span>
-<span id="cb15-98"><a href="#cb15-98"></a></span>
-<span id="cb15-99"><a href="#cb15-99"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) </span>
-<span id="cb15-100"><a href="#cb15-100"></a></span>
-<span id="cb15-101"><a href="#cb15-101"></a><span class="in">```</span></span>
-<span id="cb15-102"><a href="#cb15-102"></a></span>
-<span id="cb15-103"><a href="#cb15-103"></a>El resultado que se obtiene en esta instancia es que ahora a la base del gráfico se le suman los ejes y el rango de valores. Esto puede variar en función del tipo de variable que incluyamos en cada eje. Arriba graficamos dos variables *numéricas*, mientras que en el resultado de abajo se grafica una variable *numérica* y otra *categórica* con tres niveles (A; B; C)</span>
-<span id="cb15-104"><a href="#cb15-104"></a></span>
-<span id="cb15-105"><a href="#cb15-105"></a><span class="in">```{r capa 2.2cat}</span></span>
-<span id="cb15-106"><a href="#cb15-106"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-107"><a href="#cb15-107"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-108"><a href="#cb15-108"></a></span>
-<span id="cb15-109"><a href="#cb15-109"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb15-110"><a href="#cb15-110"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb15-111"><a href="#cb15-111"></a></span>
-<span id="cb15-112"><a href="#cb15-112"></a></span>
-<span id="cb15-113"><a href="#cb15-113"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="co"># En el eje X incluimos la variable categórica</span></span>
-<span id="cb15-114"><a href="#cb15-114"></a></span>
-<span id="cb15-115"><a href="#cb15-115"></a><span class="in">```</span></span>
-<span id="cb15-116"><a href="#cb15-116"></a></span>
-<span id="cb15-117"><a href="#cb15-117"></a><span class="ss">-   </span>**Capa 3**</span>
-<span id="cb15-118"><a href="#cb15-118"></a></span>
-<span id="cb15-119"><a href="#cb15-119"></a>Ya tenemos una base, los datos, los ejes definidos. Qué más falta? Los aspectos geométricos!! Barras? Columnas? Puntos? Tortas?. Bueno, estos últimos tal vez casi nunca (por si quieren leer sobre esto: <span class="co">[</span><span class="ot">Link 1</span><span class="co">](https://evolytics.com/blog/8-dont-use-pie-charts/)</span>; <span class="co">[</span><span class="ot">Link 2</span><span class="co">](https://www.data-to-viz.com/caveat/pie.html)</span>; <span class="co">[</span><span class="ot">Link 3</span><span class="co">](https://scc.ms.unimelb.edu.au/resources/data-visualisation-and-exploration/no_pie-charts)</span>; <span class="co">[</span><span class="ot">Link 4</span><span class="co">](https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657)</span>).</span>
-<span id="cb15-120"><a href="#cb15-120"></a></span>
-<span id="cb15-121"><a href="#cb15-121"></a>Vamos con el primer ejemplo con dos variables *numéricas*. Para este caso uno de los `geom_` utilizados puede ser `geom_point()`. Esto nos genera un gráfico de dispersión o *scatterplot*. La manera de agregar esta capa es utilizando el <span class="in">`+`</span>. </span>
-<span id="cb15-122"><a href="#cb15-122"></a></span>
-<span id="cb15-123"><a href="#cb15-123"></a><span class="in">```{r capa 3}</span></span>
-<span id="cb15-124"><a href="#cb15-124"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-125"><a href="#cb15-125"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-126"><a href="#cb15-126"></a></span>
-<span id="cb15-127"><a href="#cb15-127"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb15-128"><a href="#cb15-128"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb15-129"><a href="#cb15-129"></a></span>
-<span id="cb15-130"><a href="#cb15-130"></a></span>
-<span id="cb15-131"><a href="#cb15-131"></a></span>
-<span id="cb15-132"><a href="#cb15-132"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span> <span class="co"># Con el + sumamos la siguiente capa</span></span>
-<span id="cb15-133"><a href="#cb15-133"></a>  <span class="fu">geom_point</span>() </span>
-<span id="cb15-134"><a href="#cb15-134"></a></span>
-<span id="cb15-135"><a href="#cb15-135"></a><span class="in">```</span></span>
-<span id="cb15-136"><a href="#cb15-136"></a></span>
-<span id="cb15-137"><a href="#cb15-137"></a>Pueden utilizarse varios <span class="in">`geom`</span> dentro del mismo gráfico. Se agrega una capa más y listo.</span>
-<span id="cb15-138"><a href="#cb15-138"></a></span>
-<span id="cb15-139"><a href="#cb15-139"></a></span>
-<span id="cb15-140"><a href="#cb15-140"></a><span class="in">```{r capa 3.2}</span></span>
-<span id="cb15-141"><a href="#cb15-141"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-142"><a href="#cb15-142"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-143"><a href="#cb15-143"></a></span>
-<span id="cb15-144"><a href="#cb15-144"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb15-145"><a href="#cb15-145"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb15-146"><a href="#cb15-146"></a>                  <span class="at">Eje_Xinvertido =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb15-147"><a href="#cb15-147"></a>                  <span class="at">Eje_Yinvertido =</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">1</span>)</span>
-<span id="cb15-148"><a href="#cb15-148"></a></span>
-<span id="cb15-149"><a href="#cb15-149"></a></span>
-<span id="cb15-150"><a href="#cb15-150"></a></span>
-<span id="cb15-151"><a href="#cb15-151"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span> <span class="co"># Con el + sumamos la siguiente capa</span></span>
-<span id="cb15-152"><a href="#cb15-152"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># En este caso son puntos</span></span>
-<span id="cb15-153"><a href="#cb15-153"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_Xinvertido, <span class="at">y =</span> Eje_Yinvertido))  <span class="co"># Incluso puede sumarse otra capa mas</span></span>
-<span id="cb15-154"><a href="#cb15-154"></a></span>
-<span id="cb15-155"><a href="#cb15-155"></a><span class="in">```</span></span>
-<span id="cb15-156"><a href="#cb15-156"></a></span>
-<span id="cb15-157"><a href="#cb15-157"></a></span>
-<span id="cb15-158"><a href="#cb15-158"></a>En el caso de la base con variables numéricas y categóricas. En este caso, podria sernos de utilidad <span class="in">`geom_col`</span></span>
-<span id="cb15-159"><a href="#cb15-159"></a></span>
-<span id="cb15-160"><a href="#cb15-160"></a><span class="in">```{r capa 3.2cat}</span></span>
-<span id="cb15-161"><a href="#cb15-161"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-162"><a href="#cb15-162"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-163"><a href="#cb15-163"></a></span>
-<span id="cb15-164"><a href="#cb15-164"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb15-165"><a href="#cb15-165"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb15-166"><a href="#cb15-166"></a></span>
-<span id="cb15-167"><a href="#cb15-167"></a></span>
-<span id="cb15-168"><a href="#cb15-168"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
-<span id="cb15-169"><a href="#cb15-169"></a>  <span class="fu">geom_col</span>()</span>
-<span id="cb15-170"><a href="#cb15-170"></a></span>
-<span id="cb15-171"><a href="#cb15-171"></a></span>
-<span id="cb15-172"><a href="#cb15-172"></a><span class="in">```</span></span>
-<span id="cb15-173"><a href="#cb15-173"></a></span>
-<span id="cb15-174"><a href="#cb15-174"></a></span>
-<span id="cb15-175"><a href="#cb15-175"></a>Si necesitamos dar un poco más de información, entonces podríamos usar <span class="in">`geom_boxplot`</span> o <span class="in">`geom_violin`</span>. Con el primero hacemos un gráfico de cajas y con el según un gráfico con violines</span>
-<span id="cb15-176"><a href="#cb15-176"></a></span>
-<span id="cb15-177"><a href="#cb15-177"></a><span class="ss">-   </span>**Cajas**</span>
-<span id="cb15-178"><a href="#cb15-178"></a></span>
-<span id="cb15-179"><a href="#cb15-179"></a><span class="in">```{r capa 3.3}</span></span>
-<span id="cb15-180"><a href="#cb15-180"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-181"><a href="#cb15-181"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-182"><a href="#cb15-182"></a></span>
-<span id="cb15-183"><a href="#cb15-183"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb15-184"><a href="#cb15-184"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb15-185"><a href="#cb15-185"></a></span>
-<span id="cb15-186"><a href="#cb15-186"></a></span>
-<span id="cb15-187"><a href="#cb15-187"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
-<span id="cb15-188"><a href="#cb15-188"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb15-189"><a href="#cb15-189"></a></span>
-<span id="cb15-190"><a href="#cb15-190"></a></span>
-<span id="cb15-191"><a href="#cb15-191"></a><span class="in">```</span></span>
-<span id="cb15-192"><a href="#cb15-192"></a></span>
-<span id="cb15-193"><a href="#cb15-193"></a><span class="ss">-   </span>**Violines** </span>
-<span id="cb15-194"><a href="#cb15-194"></a></span>
-<span id="cb15-195"><a href="#cb15-195"></a><span class="in">```{r capa 3.4}</span></span>
-<span id="cb15-196"><a href="#cb15-196"></a><span class="co">#| echo: true</span></span>
-<span id="cb15-197"><a href="#cb15-197"></a><span class="co">#| eval: true</span></span>
-<span id="cb15-198"><a href="#cb15-198"></a></span>
-<span id="cb15-199"><a href="#cb15-199"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="co"># En este ejemplo use pinguinos porque quedaba mejor que los datos inventados</span></span>
-<span id="cb15-200"><a href="#cb15-200"></a></span>
-<span id="cb15-201"><a href="#cb15-201"></a></span>
-<span id="cb15-202"><a href="#cb15-202"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb15-203"><a href="#cb15-203"></a>  <span class="fu">geom_violin</span>()</span>
-<span id="cb15-204"><a href="#cb15-204"></a></span>
-<span id="cb15-205"><a href="#cb15-205"></a></span>
-<span id="cb15-206"><a href="#cb15-206"></a><span class="in">```</span></span>
-<span id="cb15-207"><a href="#cb15-207"></a></span>
-<span id="cb15-208"><a href="#cb15-208"></a><span class="fu">## **Más y más capas** </span></span>
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="an">title:</span><span class="co"> "Quinta Reunión"</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="an">bibliography:</span><span class="co"> biblio.bib</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="co">---</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="in">```{r}</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a><span class="co">#| echo: false</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-12"><a href="#cb20-12"></a></span>
+<span id="cb20-13"><a href="#cb20-13"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb20-14"><a href="#cb20-14"></a></span>
+<span id="cb20-15"><a href="#cb20-15"></a></span>
+<span id="cb20-16"><a href="#cb20-16"></a><span class="in">```</span></span>
+<span id="cb20-17"><a href="#cb20-17"></a></span>
+<span id="cb20-18"><a href="#cb20-18"></a><span class="fu">## Graficando con R</span></span>
+<span id="cb20-19"><a href="#cb20-19"></a></span>
+<span id="cb20-20"><a href="#cb20-20"></a>Existen muchos paquetes que nos permiten visualizar nuestros datos. En R base tenemos la funcion <span class="in">`plot()`</span> y sus variantes, pero también podemos encontrar a <span class="in">`Plotly`</span> <span class="co">[</span><span class="ot">@plotly</span><span class="co">]</span>, <span class="in">`RGL`</span>, <span class="in">`Lattice`</span> <span class="co">[</span><span class="ot">@lattice</span><span class="co">]</span>, <span class="in">`ggstatsplot`</span> <span class="co">[</span><span class="ot">@ggstatsplot</span><span class="co">]</span> y varios más. El paquete que vamos a utilizar nosotros será <span class="in">`ggplot2`</span> <span class="co">[</span><span class="ot">@ggplot</span><span class="co">]</span> que forma parte del <span class="in">`tidyverse`</span> <span class="co">[</span><span class="ot">@tidyverse</span><span class="co">]</span>.</span>
+<span id="cb20-21"><a href="#cb20-21"></a></span>
+<span id="cb20-22"><a href="#cb20-22"></a>Lo bueno de este paquete es que tiene la misma filosofía del tidyverse por lo que, al visualizar datos, también podremos utilizar funciones de paquetes como <span class="in">`dplyr`</span>, <span class="in">`forcats`</span> o cualquier otro dentro del universo <span class="in">`tidy`</span>. <span class="in">`ggplot`</span> trabaja por capas. En principio se crea una base del gráfico (1ra capa) y luego se van agregando las demás (datos, estéticas, aspectos y otras más). Eso es a grandes rasgos lo que se hace con este paquete.</span>
+<span id="cb20-23"><a href="#cb20-23"></a></span>
+<span id="cb20-24"><a href="#cb20-24"></a><span class="fu">## Instalación y carga</span></span>
+<span id="cb20-25"><a href="#cb20-25"></a></span>
+<span id="cb20-26"><a href="#cb20-26"></a><span class="ss">-   </span>**Instalación** <span class="in">`install.packages("ggplot2")`</span> (o si ya instalaron el tidyverse entonces viene incluido)</span>
+<span id="cb20-27"><a href="#cb20-27"></a></span>
+<span id="cb20-28"><a href="#cb20-28"></a><span class="ss">-   </span>**Carga** <span class="in">`library("ggplot2")`</span> (o si ya cargaron el tidyverse entonces viene incluido. Ver abajo)</span>
+<span id="cb20-29"><a href="#cb20-29"></a></span>
+<span id="cb20-30"><a href="#cb20-30"></a><span class="ss">-   </span>**Tidyverse**</span>
+<span id="cb20-31"><a href="#cb20-31"></a></span>
+<span id="cb20-34"><a href="#cb20-34"></a><span class="in">```{r}</span></span>
+<span id="cb20-35"><a href="#cb20-35"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-36"><a href="#cb20-36"></a><span class="co">#| eval: false</span></span>
+<span id="cb20-37"><a href="#cb20-37"></a></span>
+<span id="cb20-38"><a href="#cb20-38"></a><span class="fu">library</span>(tidyverse) <span class="co"># Esto carga una serie de paquetes, entre ellos ggplot</span></span>
+<span id="cb20-39"><a href="#cb20-39"></a></span>
+<span id="cb20-40"><a href="#cb20-40"></a> ── Attaching packages ────────────────────────────────────────── tidyverse <span class="dv">1</span>.<span class="fl">3.1</span> ──</span>
+<span id="cb20-41"><a href="#cb20-41"></a> ✔ ggplot2 <span class="dv">3</span>.<span class="fl">3.6</span>     ✔ purrr   <span class="dv">0</span>.<span class="fl">3.4</span></span>
+<span id="cb20-42"><a href="#cb20-42"></a> ✔ tibble  <span class="dv">3</span>.<span class="fl">1.7</span>     ✔ dplyr   <span class="dv">1</span>.<span class="fl">0.9</span></span>
+<span id="cb20-43"><a href="#cb20-43"></a> ✔ tidyr   <span class="dv">1</span>.<span class="fl">2.0</span>     ✔ stringr <span class="dv">1</span>.<span class="fl">4.0</span></span>
+<span id="cb20-44"><a href="#cb20-44"></a> ✔ readr   <span class="dv">2</span>.<span class="fl">1.2</span>     ✔ forcats <span class="dv">0</span>.<span class="fl">5.1</span></span>
+<span id="cb20-45"><a href="#cb20-45"></a> ── Conflicts ───────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
+<span id="cb20-46"><a href="#cb20-46"></a> ✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
+<span id="cb20-47"><a href="#cb20-47"></a> ✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
+<span id="cb20-48"><a href="#cb20-48"></a></span>
+<span id="cb20-49"><a href="#cb20-49"></a></span>
+<span id="cb20-50"><a href="#cb20-50"></a><span class="in">```</span></span>
+<span id="cb20-51"><a href="#cb20-51"></a></span>
+<span id="cb20-52"><a href="#cb20-52"></a><span class="fu">## Arrancando con ggplot</span></span>
+<span id="cb20-53"><a href="#cb20-53"></a></span>
+<span id="cb20-54"><a href="#cb20-54"></a>Como se menciona más arriba, el paquete ggplot ofrece una gramática para graficar que funciona a través de capas (si alguna vez usaste programas de diseño como por ej. Photoshop entones la lógica es más o menos la misma)</span>
+<span id="cb20-55"><a href="#cb20-55"></a></span>
+<span id="cb20-56"><a href="#cb20-56"></a><span class="ss">-   </span>**Capa 1** Si tan solo usamos la función ggplot(), lo que obtenemos es lo siguiente:</span>
+<span id="cb20-57"><a href="#cb20-57"></a></span>
+<span id="cb20-58"><a href="#cb20-58"></a><span class="in">```{r capa 1}</span></span>
+<span id="cb20-59"><a href="#cb20-59"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-60"><a href="#cb20-60"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-61"><a href="#cb20-61"></a></span>
+<span id="cb20-62"><a href="#cb20-62"></a></span>
+<span id="cb20-63"><a href="#cb20-63"></a><span class="fu">ggplot</span>()</span>
+<span id="cb20-64"><a href="#cb20-64"></a></span>
+<span id="cb20-65"><a href="#cb20-65"></a><span class="in">```</span></span>
+<span id="cb20-66"><a href="#cb20-66"></a></span>
+<span id="cb20-67"><a href="#cb20-67"></a>Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico.</span>
+<span id="cb20-68"><a href="#cb20-68"></a></span>
+<span id="cb20-69"><a href="#cb20-69"></a><span class="ss">-   </span>**Capa 2.1**</span>
+<span id="cb20-70"><a href="#cb20-70"></a></span>
+<span id="cb20-71"><a href="#cb20-71"></a>Esta segunda capa comprende los datos que se visualizaran. Entones dentro de la función <span class="in">`ggplot()`</span> el primer argumento es <span class="in">`data`</span> y allí es donde ingresamos nuestro objeto con los datos. Como pueden ver abajo, si solo se ingresan los datos el resulado no cambia. Para eso hay que agregar aspectos.</span>
+<span id="cb20-72"><a href="#cb20-72"></a></span>
+<span id="cb20-73"><a href="#cb20-73"></a><span class="in">```{r capa 2}</span></span>
+<span id="cb20-74"><a href="#cb20-74"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-75"><a href="#cb20-75"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-76"><a href="#cb20-76"></a></span>
+<span id="cb20-77"><a href="#cb20-77"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ejex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="co"># Este el objeto con los datos. En este caso no tiene mucho sentido</span></span>
+<span id="cb20-78"><a href="#cb20-78"></a>                  <span class="at">ejey =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) <span class="co"># mas alla del ejemplo, pero es necesario para poner algo en el argumento data</span></span>
+<span id="cb20-79"><a href="#cb20-79"></a></span>
+<span id="cb20-80"><a href="#cb20-80"></a></span>
+<span id="cb20-81"><a href="#cb20-81"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj)</span>
+<span id="cb20-82"><a href="#cb20-82"></a></span>
+<span id="cb20-83"><a href="#cb20-83"></a></span>
+<span id="cb20-84"><a href="#cb20-84"></a><span class="in">```</span></span>
+<span id="cb20-85"><a href="#cb20-85"></a></span>
+<span id="cb20-86"><a href="#cb20-86"></a><span class="ss">-   </span>**Capa 2.2**</span>
+<span id="cb20-87"><a href="#cb20-87"></a></span>
+<span id="cb20-88"><a href="#cb20-88"></a>Para agregar los aspectos o <span class="in">`aes()`</span> lo que hay que hacer es incluir un nuevo argumento luego de <span class="in">`data.`</span> Como se ve en el código de abajo, luego de <span class="in">`data`</span> se agrega <span class="in">`mapping`</span> y dentro de este argumento se especifican las <span class="in">`aes()`</span>. El resultado que se obtiene en esta instancia es que ahora a la base del grafico se le suman los ejes y el rango de valores. Esto puede variar en funcion del tipo de variable que incluyamos en cada eje.</span>
+<span id="cb20-89"><a href="#cb20-89"></a></span>
+<span id="cb20-90"><a href="#cb20-90"></a><span class="in">```{r capa 2.2}</span></span>
+<span id="cb20-91"><a href="#cb20-91"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-92"><a href="#cb20-92"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-93"><a href="#cb20-93"></a></span>
+<span id="cb20-94"><a href="#cb20-94"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-95"><a href="#cb20-95"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-96"><a href="#cb20-96"></a></span>
+<span id="cb20-97"><a href="#cb20-97"></a><span class="co"># Aqui es donde se incluyen las variables para # los ejes X e Y</span></span>
+<span id="cb20-98"><a href="#cb20-98"></a></span>
+<span id="cb20-99"><a href="#cb20-99"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) </span>
+<span id="cb20-100"><a href="#cb20-100"></a></span>
+<span id="cb20-101"><a href="#cb20-101"></a><span class="in">```</span></span>
+<span id="cb20-102"><a href="#cb20-102"></a></span>
+<span id="cb20-103"><a href="#cb20-103"></a>El resultado que se obtiene en esta instancia es que ahora a la base del gráfico se le suman los ejes y el rango de valores. Esto puede variar en función del tipo de variable que incluyamos en cada eje. Arriba graficamos dos variables *numéricas*, mientras que en el resultado de abajo se grafica una variable *numérica* y otra *categórica* con tres niveles (A; B; C)</span>
+<span id="cb20-104"><a href="#cb20-104"></a></span>
+<span id="cb20-105"><a href="#cb20-105"></a><span class="in">```{r capa 2.2cat}</span></span>
+<span id="cb20-106"><a href="#cb20-106"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-107"><a href="#cb20-107"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-108"><a href="#cb20-108"></a></span>
+<span id="cb20-109"><a href="#cb20-109"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-110"><a href="#cb20-110"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-111"><a href="#cb20-111"></a></span>
+<span id="cb20-112"><a href="#cb20-112"></a></span>
+<span id="cb20-113"><a href="#cb20-113"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="co"># En el eje X incluimos la variable categórica</span></span>
+<span id="cb20-114"><a href="#cb20-114"></a></span>
+<span id="cb20-115"><a href="#cb20-115"></a><span class="in">```</span></span>
+<span id="cb20-116"><a href="#cb20-116"></a></span>
+<span id="cb20-117"><a href="#cb20-117"></a><span class="ss">-   </span>**Capa 3**</span>
+<span id="cb20-118"><a href="#cb20-118"></a></span>
+<span id="cb20-119"><a href="#cb20-119"></a>Ya tenemos una base, los datos, los ejes definidos. Qué más falta? Los aspectos geométricos!! Barras? Columnas? Puntos? Tortas?. Bueno, estos últimos tal vez casi nunca (por si quieren leer sobre esto: <span class="co">[</span><span class="ot">Link 1</span><span class="co">](https://evolytics.com/blog/8-dont-use-pie-charts/)</span>; <span class="co">[</span><span class="ot">Link 2</span><span class="co">](https://www.data-to-viz.com/caveat/pie.html)</span>; <span class="co">[</span><span class="ot">Link 3</span><span class="co">](https://scc.ms.unimelb.edu.au/resources/data-visualisation-and-exploration/no_pie-charts)</span>; <span class="co">[</span><span class="ot">Link 4</span><span class="co">](https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657)</span>).</span>
+<span id="cb20-120"><a href="#cb20-120"></a></span>
+<span id="cb20-121"><a href="#cb20-121"></a>Vamos con el primer ejemplo con dos variables *numéricas*. Para este caso uno de los `geom_` utilizados puede ser `geom_point()`. Esto nos genera un gráfico de dispersión o *scatterplot*. La manera de agregar esta capa es utilizando el <span class="in">`+`</span>.</span>
+<span id="cb20-122"><a href="#cb20-122"></a></span>
+<span id="cb20-123"><a href="#cb20-123"></a><span class="in">```{r capa 3}</span></span>
+<span id="cb20-124"><a href="#cb20-124"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-125"><a href="#cb20-125"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-126"><a href="#cb20-126"></a></span>
+<span id="cb20-127"><a href="#cb20-127"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-128"><a href="#cb20-128"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-129"><a href="#cb20-129"></a></span>
+<span id="cb20-130"><a href="#cb20-130"></a></span>
+<span id="cb20-131"><a href="#cb20-131"></a></span>
+<span id="cb20-132"><a href="#cb20-132"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span> <span class="co"># Con el + sumamos la siguiente capa</span></span>
+<span id="cb20-133"><a href="#cb20-133"></a>  <span class="fu">geom_point</span>() </span>
+<span id="cb20-134"><a href="#cb20-134"></a></span>
+<span id="cb20-135"><a href="#cb20-135"></a><span class="in">```</span></span>
+<span id="cb20-136"><a href="#cb20-136"></a></span>
+<span id="cb20-137"><a href="#cb20-137"></a>Pueden utilizarse varios <span class="in">`geom`</span> dentro del mismo gráfico. Se agrega una capa más y listo.</span>
+<span id="cb20-138"><a href="#cb20-138"></a></span>
+<span id="cb20-139"><a href="#cb20-139"></a><span class="in">```{r capa 3.2}</span></span>
+<span id="cb20-140"><a href="#cb20-140"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-141"><a href="#cb20-141"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-142"><a href="#cb20-142"></a></span>
+<span id="cb20-143"><a href="#cb20-143"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-144"><a href="#cb20-144"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-145"><a href="#cb20-145"></a>                  <span class="at">Eje_Xinvertido =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-146"><a href="#cb20-146"></a>                  <span class="at">Eje_Yinvertido =</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb20-147"><a href="#cb20-147"></a></span>
+<span id="cb20-148"><a href="#cb20-148"></a></span>
+<span id="cb20-149"><a href="#cb20-149"></a></span>
+<span id="cb20-150"><a href="#cb20-150"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span> <span class="co"># Con el + sumamos la siguiente capa</span></span>
+<span id="cb20-151"><a href="#cb20-151"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># En este caso son puntos</span></span>
+<span id="cb20-152"><a href="#cb20-152"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_Xinvertido, <span class="at">y =</span> Eje_Yinvertido))  <span class="co"># Incluso puede sumarse otra capa mas</span></span>
+<span id="cb20-153"><a href="#cb20-153"></a></span>
+<span id="cb20-154"><a href="#cb20-154"></a><span class="in">```</span></span>
+<span id="cb20-155"><a href="#cb20-155"></a></span>
+<span id="cb20-156"><a href="#cb20-156"></a>En el caso de la base con variables numéricas y categóricas. En este caso, podria sernos de utilidad <span class="in">`geom_col`</span></span>
+<span id="cb20-157"><a href="#cb20-157"></a></span>
+<span id="cb20-158"><a href="#cb20-158"></a><span class="in">```{r capa 3.2cat}</span></span>
+<span id="cb20-159"><a href="#cb20-159"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-160"><a href="#cb20-160"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-161"><a href="#cb20-161"></a></span>
+<span id="cb20-162"><a href="#cb20-162"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-163"><a href="#cb20-163"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-164"><a href="#cb20-164"></a></span>
+<span id="cb20-165"><a href="#cb20-165"></a></span>
+<span id="cb20-166"><a href="#cb20-166"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb20-167"><a href="#cb20-167"></a>  <span class="fu">geom_col</span>()</span>
+<span id="cb20-168"><a href="#cb20-168"></a></span>
+<span id="cb20-169"><a href="#cb20-169"></a></span>
+<span id="cb20-170"><a href="#cb20-170"></a><span class="in">```</span></span>
+<span id="cb20-171"><a href="#cb20-171"></a></span>
+<span id="cb20-172"><a href="#cb20-172"></a>Si necesitamos dar un poco más de información, entonces podríamos usar <span class="in">`geom_boxplot`</span> o <span class="in">`geom_violin`</span>. Con el primero hacemos un gráfico de cajas y con el según un gráfico con violines</span>
+<span id="cb20-173"><a href="#cb20-173"></a></span>
+<span id="cb20-174"><a href="#cb20-174"></a><span class="ss">-   </span>**Cajas**</span>
+<span id="cb20-175"><a href="#cb20-175"></a></span>
+<span id="cb20-176"><a href="#cb20-176"></a><span class="in">```{r capa 3.3}</span></span>
+<span id="cb20-177"><a href="#cb20-177"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-178"><a href="#cb20-178"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-179"><a href="#cb20-179"></a></span>
+<span id="cb20-180"><a href="#cb20-180"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-181"><a href="#cb20-181"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-182"><a href="#cb20-182"></a></span>
+<span id="cb20-183"><a href="#cb20-183"></a></span>
+<span id="cb20-184"><a href="#cb20-184"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb20-185"><a href="#cb20-185"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb20-186"><a href="#cb20-186"></a></span>
+<span id="cb20-187"><a href="#cb20-187"></a></span>
+<span id="cb20-188"><a href="#cb20-188"></a><span class="in">```</span></span>
+<span id="cb20-189"><a href="#cb20-189"></a></span>
+<span id="cb20-190"><a href="#cb20-190"></a><span class="ss">-   </span>**Violines**</span>
+<span id="cb20-191"><a href="#cb20-191"></a></span>
+<span id="cb20-192"><a href="#cb20-192"></a><span class="in">```{r capa 3.4}</span></span>
+<span id="cb20-193"><a href="#cb20-193"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-194"><a href="#cb20-194"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-195"><a href="#cb20-195"></a></span>
+<span id="cb20-196"><a href="#cb20-196"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="co"># En este ejemplo use pinguinos porque quedaba mejor que los datos inventados</span></span>
+<span id="cb20-197"><a href="#cb20-197"></a></span>
+<span id="cb20-198"><a href="#cb20-198"></a></span>
+<span id="cb20-199"><a href="#cb20-199"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb20-200"><a href="#cb20-200"></a>  <span class="fu">geom_violin</span>()</span>
+<span id="cb20-201"><a href="#cb20-201"></a></span>
+<span id="cb20-202"><a href="#cb20-202"></a></span>
+<span id="cb20-203"><a href="#cb20-203"></a><span class="in">```</span></span>
+<span id="cb20-204"><a href="#cb20-204"></a></span>
+<span id="cb20-205"><a href="#cb20-205"></a><span class="fu">## **Más y más capas**</span></span>
+<span id="cb20-206"><a href="#cb20-206"></a></span>
+<span id="cb20-207"><a href="#cb20-207"></a>Otras capas muy utilizadas son las del titulo, subtitulo y nombres de los ejes. Esto se puede modificar agregando otra capa que incluya labs</span>
+<span id="cb20-208"><a href="#cb20-208"></a></span>
+<span id="cb20-209"><a href="#cb20-209"></a></span>
+<span id="cb20-210"><a href="#cb20-210"></a><span class="in">```{r capa titulos}</span></span>
+<span id="cb20-211"><a href="#cb20-211"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-212"><a href="#cb20-212"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-213"><a href="#cb20-213"></a></span>
+<span id="cb20-214"><a href="#cb20-214"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-215"><a href="#cb20-215"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-216"><a href="#cb20-216"></a></span>
+<span id="cb20-217"><a href="#cb20-217"></a></span>
+<span id="cb20-218"><a href="#cb20-218"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb20-219"><a href="#cb20-219"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-220"><a href="#cb20-220"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb20-221"><a href="#cb20-221"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb20-222"><a href="#cb20-222"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>)</span>
+<span id="cb20-223"><a href="#cb20-223"></a></span>
+<span id="cb20-224"><a href="#cb20-224"></a></span>
+<span id="cb20-225"><a href="#cb20-225"></a><span class="in">```</span></span>
+<span id="cb20-226"><a href="#cb20-226"></a></span>
+<span id="cb20-227"><a href="#cb20-227"></a></span>
+<span id="cb20-228"><a href="#cb20-228"></a>Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es <span class="in">`coord_flip`</span> Por ejemplo, rotemos el gráfico de arriba</span>
+<span id="cb20-229"><a href="#cb20-229"></a></span>
+<span id="cb20-230"><a href="#cb20-230"></a></span>
+<span id="cb20-231"><a href="#cb20-231"></a><span class="in">```{r capa rotar}</span></span>
+<span id="cb20-232"><a href="#cb20-232"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-233"><a href="#cb20-233"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-234"><a href="#cb20-234"></a></span>
+<span id="cb20-235"><a href="#cb20-235"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-236"><a href="#cb20-236"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-237"><a href="#cb20-237"></a></span>
+<span id="cb20-238"><a href="#cb20-238"></a></span>
+<span id="cb20-239"><a href="#cb20-239"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb20-240"><a href="#cb20-240"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-241"><a href="#cb20-241"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb20-242"><a href="#cb20-242"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb20-243"><a href="#cb20-243"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb20-244"><a href="#cb20-244"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb20-245"><a href="#cb20-245"></a></span>
+<span id="cb20-246"><a href="#cb20-246"></a></span>
+<span id="cb20-247"><a href="#cb20-247"></a><span class="in">```</span></span>
+<span id="cb20-248"><a href="#cb20-248"></a></span>
+<span id="cb20-249"><a href="#cb20-249"></a></span>
+<span id="cb20-250"><a href="#cb20-250"></a>**¿Y donde esta el color?**</span>
+<span id="cb20-251"><a href="#cb20-251"></a></span>
+<span id="cb20-252"><a href="#cb20-252"></a>Los colores pueden incluirse de muchas maneras. Una de ellas es incluir colour o color (como gusten) en las aes del principio. Otra opcion es rellenar el geom con fill. Por ejemplo:</span>
+<span id="cb20-253"><a href="#cb20-253"></a></span>
+<span id="cb20-254"><a href="#cb20-254"></a><span class="in">```{r capa color}</span></span>
+<span id="cb20-255"><a href="#cb20-255"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-256"><a href="#cb20-256"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-257"><a href="#cb20-257"></a></span>
+<span id="cb20-258"><a href="#cb20-258"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-259"><a href="#cb20-259"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb20-260"><a href="#cb20-260"></a></span>
+<span id="cb20-261"><a href="#cb20-261"></a></span>
+<span id="cb20-262"><a href="#cb20-262"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> <span class="st">"orange"</span>)) <span class="sc">+</span></span>
+<span id="cb20-263"><a href="#cb20-263"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-264"><a href="#cb20-264"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb20-265"><a href="#cb20-265"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb20-266"><a href="#cb20-266"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb20-267"><a href="#cb20-267"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb20-268"><a href="#cb20-268"></a></span>
+<span id="cb20-269"><a href="#cb20-269"></a></span>
+<span id="cb20-270"><a href="#cb20-270"></a><span class="in">```</span></span>
+<span id="cb20-271"><a href="#cb20-271"></a></span>
+<span id="cb20-272"><a href="#cb20-272"></a>No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo</span>
+<span id="cb20-273"><a href="#cb20-273"></a></span>
+<span id="cb20-274"><a href="#cb20-274"></a></span>
+<span id="cb20-275"><a href="#cb20-275"></a><span class="in">```{r capa mascolor}</span></span>
+<span id="cb20-276"><a href="#cb20-276"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-277"><a href="#cb20-277"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-278"><a href="#cb20-278"></a></span>
+<span id="cb20-279"><a href="#cb20-279"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb20-280"><a href="#cb20-280"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb20-281"><a href="#cb20-281"></a>                  <span class="at">mascolor =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>), <span class="dv">3</span>))</span>
+<span id="cb20-282"><a href="#cb20-282"></a></span>
+<span id="cb20-283"><a href="#cb20-283"></a></span>
+<span id="cb20-284"><a href="#cb20-284"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> mascolor)) <span class="sc">+</span></span>
+<span id="cb20-285"><a href="#cb20-285"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-286"><a href="#cb20-286"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb20-287"><a href="#cb20-287"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb20-288"><a href="#cb20-288"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb20-289"><a href="#cb20-289"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb20-290"><a href="#cb20-290"></a></span>
+<span id="cb20-291"><a href="#cb20-291"></a></span>
+<span id="cb20-292"><a href="#cb20-292"></a><span class="in">```</span></span>
+<span id="cb20-293"><a href="#cb20-293"></a></span>
+<span id="cb20-294"><a href="#cb20-294"></a></span>
+<span id="cb20-295"><a href="#cb20-295"></a>Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.</span>
+<span id="cb20-296"><a href="#cb20-296"></a></span>
+<span id="cb20-297"><a href="#cb20-297"></a><span class="in">```{r capa mascolor2}</span></span>
+<span id="cb20-298"><a href="#cb20-298"></a><span class="co">#| echo: true</span></span>
+<span id="cb20-299"><a href="#cb20-299"></a><span class="co">#| eval: true</span></span>
+<span id="cb20-300"><a href="#cb20-300"></a></span>
+<span id="cb20-301"><a href="#cb20-301"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
+<span id="cb20-302"><a href="#cb20-302"></a></span>
+<span id="cb20-303"><a href="#cb20-303"></a></span>
+<span id="cb20-304"><a href="#cb20-304"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-305"><a href="#cb20-305"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-306"><a href="#cb20-306"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
+<span id="cb20-307"><a href="#cb20-307"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb20-308"><a href="#cb20-308"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>)</span>
+<span id="cb20-309"><a href="#cb20-309"></a></span>
+<span id="cb20-310"><a href="#cb20-310"></a></span>
+<span id="cb20-311"><a href="#cb20-311"></a><span class="in">```</span></span>
+<span id="cb20-312"><a href="#cb20-312"></a></span>
+<span id="cb20-313"><a href="#cb20-313"></a></span>
+<span id="cb20-314"><a href="#cb20-314"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
