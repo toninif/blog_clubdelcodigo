@@ -309,22 +309,87 @@ ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour
 
 ## Ultima capa
 
-Lo último que suele agregarse a un gráfico es el tema (traducción directa de `theme`). Esto lo que hace es cambiar el aspecto general del gráfico. Existen `themes` predeterminados como por ejemplo: `theme_bw`, `theme_grey`, `theme_gray`, `theme_minimal` y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).
+Lo último que suele agregarse a un gráfico es el tema (traducción directa de `theme`). Esto lo que hace es cambiar el aspecto general del gráfico. Existen `themes` predeterminados como por ejemplo: `theme_bw`, `theme_light`, `theme_linedraw`, `theme_minimal` y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).
 
 ¿Como se agrega el theme? Como todas las capas, con el `+` y la función `theme_NOMBRE`. Veamos algunos de los mencionados arriba.
 
 -   `theme_bw`
 
+```{r capa mascolor2bw}
+#| echo: true
+#| eval: true
 
--   `theme_grey`
+datosEj <- palmerpenguins::penguins |> na.omit()
+
+
+ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Tamaño del pico en función del peso",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_bw()
+
+
+```
+
+
+-   `theme_light`
+
+```{r capa mascolor2grey}
+#| echo: true
+#| eval: true
+
+datosEj <- palmerpenguins::penguins |> na.omit()
+
+
+ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Tamaño del pico en función del peso",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_light()
+
+
+```
 
 
 -   `theme_minimal`
 
+```{r capa mascolor2minimal}
+#| echo: true
+#| eval: true
 
--   `theme_gray`
+datosEj <- palmerpenguins::penguins |> na.omit()
 
 
+ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Tamaño del pico en función del peso",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_minimal()
+
+
+```
+
+-   `theme_linedraw`
+
+```{r capa mascolor2line}
+#| echo: true
+#| eval: true
+
+datosEj <- palmerpenguins::penguins |> na.omit()
+
+
+ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Tamaño del pico en función del peso",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_linedraw()
+
+
+```
 
 
 
