@@ -301,10 +301,48 @@ ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour
   geom_point() +
   labs(title = "Tamaño del pico en función del peso",
        x = "Peso en gramos",
-       y = "Tamaño del pico")
+       y = "Tamaño del pico") 
 
 
 ```
+
+
+## Ultima capa
+
+Lo último que suele agregarse a un gráfico es el tema (traducción directa de `theme`). Esto lo que hace es cambiar el aspecto general del gráfico. Existen `themes` predeterminados como por ejemplo: `theme_bw`, `theme_grey`, `theme_gray`, `theme_minimal` y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).
+
+¿Como se agrega el theme? Como todas las capas, con el `+` y la función `theme_NOMBRE`. Veamos algunos de los mencionados arriba.
+
+-   `theme_bw`
+
+
+-   `theme_grey`
+
+
+-   `theme_minimal`
+
+
+-   `theme_gray`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

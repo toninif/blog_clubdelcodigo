@@ -209,6 +209,7 @@ div.csl-indent {
   <li><a href="#instalaci%C3%B3n-y-carga" id="toc-instalación-y-carga" class="nav-link" data-scroll-target="#instalaci%C3%B3n-y-carga">Instalación y carga</a></li>
   <li><a href="#arrancando-con-ggplot" id="toc-arrancando-con-ggplot" class="nav-link" data-scroll-target="#arrancando-con-ggplot">Arrancando con ggplot</a></li>
   <li><a href="#m%C3%A1s-y-m%C3%A1s-capas" id="toc-más-y-más-capas" class="nav-link" data-scroll-target="#m%C3%A1s-y-m%C3%A1s-capas"><strong>Más y más capas</strong></a></li>
+  <li><a href="#ultima-capa" id="toc-ultima-capa" class="nav-link" data-scroll-target="#ultima-capa">Ultima capa</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -467,11 +468,20 @@ div.csl-indent {
 <span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
 <span id="cb19-7"><a href="#cb19-7"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb19-8"><a href="#cb19-8"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-8"><a href="#cb19-8"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="reunion5_files/figure-html/capa%20mascolor2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section><section id="ultima-capa" class="level2"><h2 class="anchored" data-anchor-id="ultima-capa">Ultima capa</h2>
+<p>Lo último que suele agregarse a un gráfico es el tema (traducción directa de <code>theme</code>). Esto lo que hace es cambiar el aspecto general del gráfico. Existen <code>themes</code> predeterminados como por ejemplo: <code>theme_bw</code>, <code>theme_grey</code>, <code>theme_gray</code>, <code>theme_minimal</code> y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).</p>
+<p>¿Como se agrega el theme? Como todas las capas, con el <code>+</code> y la función <code>theme_NOMBRE</code>. Veamos algunos de los mencionados arriba.</p>
+<ul>
+<li><p><code>theme_bw</code></p></li>
+<li><p><code>theme_grey</code></p></li>
+<li><p><code>theme_minimal</code></p></li>
+<li><p><code>theme_gray</code></p></li>
+</ul>
 
 
 <!-- -->
@@ -1058,13 +1068,51 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-305"><a href="#cb20-305"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb20-306"><a href="#cb20-306"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
 <span id="cb20-307"><a href="#cb20-307"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb20-308"><a href="#cb20-308"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>)</span>
+<span id="cb20-308"><a href="#cb20-308"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) </span>
 <span id="cb20-309"><a href="#cb20-309"></a></span>
 <span id="cb20-310"><a href="#cb20-310"></a></span>
 <span id="cb20-311"><a href="#cb20-311"></a><span class="in">```</span></span>
 <span id="cb20-312"><a href="#cb20-312"></a></span>
 <span id="cb20-313"><a href="#cb20-313"></a></span>
-<span id="cb20-314"><a href="#cb20-314"></a></span>
+<span id="cb20-314"><a href="#cb20-314"></a><span class="fu">## Ultima capa</span></span>
+<span id="cb20-315"><a href="#cb20-315"></a></span>
+<span id="cb20-316"><a href="#cb20-316"></a>Lo último que suele agregarse a un gráfico es el tema (traducción directa de <span class="in">`theme`</span>). Esto lo que hace es cambiar el aspecto general del gráfico. Existen <span class="in">`themes`</span> predeterminados como por ejemplo: <span class="in">`theme_bw`</span>, <span class="in">`theme_grey`</span>, <span class="in">`theme_gray`</span>, <span class="in">`theme_minimal`</span> y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).</span>
+<span id="cb20-317"><a href="#cb20-317"></a></span>
+<span id="cb20-318"><a href="#cb20-318"></a>¿Como se agrega el theme? Como todas las capas, con el <span class="in">`+`</span> y la función <span class="in">`theme_NOMBRE`</span>. Veamos algunos de los mencionados arriba.</span>
+<span id="cb20-319"><a href="#cb20-319"></a></span>
+<span id="cb20-320"><a href="#cb20-320"></a><span class="ss">-   </span><span class="in">`theme_bw`</span></span>
+<span id="cb20-321"><a href="#cb20-321"></a></span>
+<span id="cb20-322"><a href="#cb20-322"></a></span>
+<span id="cb20-323"><a href="#cb20-323"></a><span class="ss">-   </span><span class="in">`theme_grey`</span></span>
+<span id="cb20-324"><a href="#cb20-324"></a></span>
+<span id="cb20-325"><a href="#cb20-325"></a></span>
+<span id="cb20-326"><a href="#cb20-326"></a><span class="ss">-   </span><span class="in">`theme_minimal`</span></span>
+<span id="cb20-327"><a href="#cb20-327"></a></span>
+<span id="cb20-328"><a href="#cb20-328"></a></span>
+<span id="cb20-329"><a href="#cb20-329"></a><span class="ss">-   </span><span class="in">`theme_gray`</span></span>
+<span id="cb20-330"><a href="#cb20-330"></a></span>
+<span id="cb20-331"><a href="#cb20-331"></a></span>
+<span id="cb20-332"><a href="#cb20-332"></a></span>
+<span id="cb20-333"><a href="#cb20-333"></a></span>
+<span id="cb20-334"><a href="#cb20-334"></a></span>
+<span id="cb20-335"><a href="#cb20-335"></a></span>
+<span id="cb20-336"><a href="#cb20-336"></a></span>
+<span id="cb20-337"><a href="#cb20-337"></a></span>
+<span id="cb20-338"><a href="#cb20-338"></a></span>
+<span id="cb20-339"><a href="#cb20-339"></a></span>
+<span id="cb20-340"><a href="#cb20-340"></a></span>
+<span id="cb20-341"><a href="#cb20-341"></a></span>
+<span id="cb20-342"><a href="#cb20-342"></a></span>
+<span id="cb20-343"><a href="#cb20-343"></a></span>
+<span id="cb20-344"><a href="#cb20-344"></a></span>
+<span id="cb20-345"><a href="#cb20-345"></a></span>
+<span id="cb20-346"><a href="#cb20-346"></a></span>
+<span id="cb20-347"><a href="#cb20-347"></a></span>
+<span id="cb20-348"><a href="#cb20-348"></a></span>
+<span id="cb20-349"><a href="#cb20-349"></a></span>
+<span id="cb20-350"><a href="#cb20-350"></a></span>
+<span id="cb20-351"><a href="#cb20-351"></a></span>
+<span id="cb20-352"><a href="#cb20-352"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
