@@ -10,6 +10,7 @@ csl: apa.csl
 
 library(tidyverse)
 
+library(patchwork)
 
 ```
 
@@ -313,7 +314,7 @@ Lo último que suele agregarse a un gráfico es el tema (traducción directa de 
 
 ¿Como se agrega el theme? Como todas las capas, con el `+` y la función `theme_NOMBRE`. Veamos algunos de los mencionados arriba.
 
--   `theme_bw`
+
 
 ```{r capa mascolor2bw}
 #| echo: true
@@ -322,74 +323,50 @@ Lo último que suele agregarse a un gráfico es el tema (traducción directa de 
 datosEj <- palmerpenguins::penguins |> na.omit()
 
 
-ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+p1 <- ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
   geom_point() +
-  labs(title = "Tamaño del pico en función del peso",
+  labs(title = "theme_bw",
        x = "Peso en gramos",
        y = "Tamaño del pico") +
-  theme_bw()
+  theme_bw() +
+  theme(legend.position = "none")
+
+p2 <- ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "theme_light",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_light() +
+  theme(legend.position = "none")
+
+p3 <- ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "theme_minimal",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+p4 <- ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "theme_linedraw",
+       x = "Peso en gramos",
+       y = "Tamaño del pico") +
+  theme_linedraw() +
+  theme(legend.position = "bottom")
+
+
+p1 + p2 + p3 + p4
 
 
 ```
 
 
--   `theme_light`
-
-```{r capa mascolor2grey}
-#| echo: true
-#| eval: true
-
-datosEj <- palmerpenguins::penguins |> na.omit()
 
 
-ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
-  geom_point() +
-  labs(title = "Tamaño del pico en función del peso",
-       x = "Peso en gramos",
-       y = "Tamaño del pico") +
-  theme_light()
 
 
-```
 
-
--   `theme_minimal`
-
-```{r capa mascolor2minimal}
-#| echo: true
-#| eval: true
-
-datosEj <- palmerpenguins::penguins |> na.omit()
-
-
-ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
-  geom_point() +
-  labs(title = "Tamaño del pico en función del peso",
-       x = "Peso en gramos",
-       y = "Tamaño del pico") +
-  theme_minimal()
-
-
-```
-
--   `theme_linedraw`
-
-```{r capa mascolor2line}
-#| echo: true
-#| eval: true
-
-datosEj <- palmerpenguins::penguins |> na.omit()
-
-
-ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour = species)) +
-  geom_point() +
-  labs(title = "Tamaño del pico en función del peso",
-       x = "Peso en gramos",
-       y = "Tamaño del pico") +
-  theme_linedraw()
-
-
-```
 
 
 
