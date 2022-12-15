@@ -5,6 +5,7 @@ format:
     include-in-header: 
     - file: submit_form.md
     toc: true
+    code-tools: false
 
 form:
   id: MyFormID
