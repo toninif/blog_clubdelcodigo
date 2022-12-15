@@ -1,0 +1,70 @@
+---
+title: "Sexta Reunión"
+bibliography: biblio.bib
+csl: apa.csl
+---
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+
+library(tidyverse) # Manejo de datos
+
+library(apaTables) # Tablas formato apa
+
+library(apa) # Tablas en formato apa
+
+library(gt) # Gramatica de tablas
+
+library(readxl) # Para leer datos de excel
+```
+
+## Haciendo tablas con R
+
+Datos 
+
+```{r datos}
+#| echo: false
+#| eval: true
+#| warning: false
+
+datos <- read_excel("datos/argentina_esp.xlsx") # Asi cargamos los datos
+
+
+datos %>% glimpse() # Le damos un primer vistazo a los datos 
+
+```
+
+
+Ordenando un poco...
+
+```{r datos_orden}
+#| echo: false
+#| eval: true
+#| warning: false
+
+
+datos_ordenados <- datos %>% 
+  select(pais, starts_with(c("valencia", "arousal", "dominancia"))) %>% 
+  mutate(
+    pais_factor = as_factor(pais)
+  ) %>% 
+  relocate(
+    c("pais_factor", "pais"), .after = dominancia_DE_general
+  )
+
+datos_ordenados
+
+```
+
+
+
+
+
+
+
+
+
+
+
