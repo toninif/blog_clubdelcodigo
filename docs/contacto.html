@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ClubDelCódigo - Forms Documentation</title>
+<title>ClubDelCódigo - Formulario de Contacto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./contacto.html" aria-current="page">
- <span class="menu-text">Forms Documentation</span></a>
+ <span class="menu-text">Formulario de Contacto</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./recursos.html">
@@ -211,13 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#form-elements" id="toc-form-elements" class="nav-link active" data-scroll-target="#form-elements">Form Elements</a>
-  <ul class="collapse">
-  <li><a href="#form-fields" id="toc-form-fields" class="nav-link" data-scroll-target="#form-fields">Form Fields</a></li>
-  <li><a href="#form-field-values" id="toc-form-field-values" class="nav-link" data-scroll-target="#form-field-values">Form Field Values</a></li>
-  <li><a href="#non-field-form-entries" id="toc-non-field-form-entries" class="nav-link" data-scroll-target="#non-field-form-entries">Non-field Form Entries</a></li>
-  </ul></li>
-  <li><a href="#example-form" id="toc-example-form" class="nav-link" data-scroll-target="#example-form">Example Form</a></li>
+  <li><a href="#formulario-en-construccion" id="toc-formulario-en-construccion" class="nav-link active" data-scroll-target="#formulario-en-construccion">Formulario en construccion</a></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Forms Documentation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Formulario de Contacto</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -241,290 +235,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>This page demonstrates how to use the <code>form</code> shortcode. A form consists of a set of YAML keys and a shortcode.</p>
-<p>Insert the shortcode where you want the form to appear. The form is wrapped in a <code>div</code> which you can use to style the form, using CSS. The default form style uses whatever theme you have chosen from the <a href="https://bootswatch.com/">Bootswatch</a> themes supported by Quarto.</p>
-<p>If you use a custom theme, you will likely need to provide CSS for the form element classes, if you don’t like the default.</p>
-<section id="form-elements" class="level1">
-<h1>Form Elements</h1>
-<div class="warning">
-<p>For most of the form elements that are not intended as labels, you should use HTML-safe names. Calling an form’s name <code>"?&gt;&lt;div ali --: !---</code> is probably a bad idea and will break your form.</p>
-</div>
-<p>The form elements are:</p>
-<table class="table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 31%">
-<col style="width: 23%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key</th>
-<th>Purpose</th>
-<th>Values</th>
-<th>Required?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>action</code></td>
-<td>path to action</td>
-<td><code>filepath</code></td>
-<td>Required</td>
-</tr>
-<tr class="even">
-<td><code>submit</code></td>
-<td>text for submit button</td>
-<td><code>string</code></td>
-<td>Optional (Default: <code>Submit</code>)</td>
-</tr>
-<tr class="odd">
-<td><code>fields</code></td>
-<td>list of fields</td>
-<td><code>...</code></td>
-<td><code>fields</code></td>
-</tr>
-<tr class="even">
-<td><code>id</code></td>
-<td>an id for the form</td>
-<td><code>string</code></td>
-<td>Option (Default: <code>form</code>)</td>
-</tr>
-</tbody>
-</table>
-<p>This is specified as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">"pathto/action/file.js"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="at">  </span><span class="fu">submit</span><span class="kw">:</span><span class="at"> </span><span class="st">"Submit Form"</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> FormID</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="form-fields" class="level2">
-<h2 class="anchored" data-anchor-id="form-fields">Form Fields</h2>
-<p>The <code>fields</code> element is a list of fields, as outlined below. All inputs are strings, unless mentioned:</p>
-<table class="table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 66%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key</th>
-<th>Description</th>
-<th>Required?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>name</code></td>
-<td>The name for the field</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td><code>type</code></td>
-<td>The input type: see list below</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td><code>id</code></td>
-<td>The id for the input</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td><code>label</code></td>
-<td>The label to display for the input</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td><code>values</code></td>
-<td>A list of values for multiple inputs</td>
-<td><code>radio</code>, <code>checkbox</code>, <code>select</code></td>
-</tr>
-<tr class="even">
-<td><code>width</code></td>
-<td><code>integer</code>: Width of input</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td><code>height</code></td>
-<td><code>integer</code>: Height of input</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td><code>required</code></td>
-<td><code>boolean</code>: Require a response<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td><code>multiple</code></td>
-<td><code>boolean</code>: Allow multiple values</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td><code>size</code></td>
-<td><code>integer</code>: Number of inputs to display</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-<p>The currently supported input <code>type</code>-s are:</p>
-<table class="table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 45%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Description</th>
-<th>Requireable?</th>
-<th>Multiple valued</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>text</code></td>
-<td>Single-line text input</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td><code>textarea</code></td>
-<td>A large, multi-line text input</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td><code>checkbox</code></td>
-<td>A series of checkboxes</td>
-<td>Yes<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td><code>radio</code></td>
-<td>Series of radio options</td>
-<td>Yes<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td><code>select</code></td>
-<td>Dropdown selection, styled by CSS</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td><code>email</code></td>
-<td>Email-only text input</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td><code>file</code></td>
-<td>File-submission button</td>
-<td>No</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="form-field-values" class="level2">
-<h2 class="anchored" data-anchor-id="form-field-values">Form Field Values</h2>
-<p>The <code>values</code> for multi-line inputs are specified as</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="at">  ...</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">...</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="at">    </span><span class="fu">values</span><span class="kw">:</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Radio 1</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="at">      </span><span class="fu">value</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>text</code> is the label text for the option to be displayed</li>
-<li><code>value</code> is the value selecting the option will select</li>
-</ul>
-</section>
-<section id="non-field-form-entries" class="level2">
-<h2 class="anchored" data-anchor-id="non-field-form-entries">Non-field Form Entries</h2>
-<p>You can also add arbitrary text using the <code>text</code> field:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="at">  ...</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Some  text"</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Using <code>---</code> will insert a horizontal rule in the form.</p>
-</section>
-</section>
-<section id="example-form" class="level1">
-<h1>Example Form</h1>
+<section id="formulario-en-construccion" class="level1">
+<h1>Formulario en construccion</h1>
 <p></p><div id="form-div" class="form-wrapper">
  <form id="form" action="javascript:submit()">
-<br><p>This is a form spacer</p>
+<br><p>Sugerencias? Queres formar parte? Ponete en contacto!</p>
 <div class="form-group">
-<label for="textid" class="form-label mt-4">A text field (1)</label>
+<label for="textid" class="form-label mt-4">Nombre</label>
   <input type="text" id="textid" name="Text1" class="form-control" required="">
 </div>
 <div class="form-group">
-<label for="textid2" class="form-label mt-4">Another text field (2)</label>
-  <input type="text" id="textid2" name="Text2" class="form-control">
-</div>
-<br><p>This is a form spacer</p>
-<hr>
-<div class="form-group">
-<fieldset class="form-group">
-<p class="form-label">My Radio Button</p>
-<div class="form-check">
-  <input type="radio" id="radio11" name="Radio" value="1" class="form-check-input" autocomplete="off" checked="">
-  <label for="radio11" class="form-check-label">&nbsp;Good</label>
-</div>
-<div class="form-check">
-  <input type="radio" id="radio12" name="Radio" value="0" class="form-check-input" autocomplete="off" checked="">
-  <label for="radio12" class="form-check-label">&nbsp;Bad</label>
-</div>
-</fieldset>
+<label for="textid2" class="form-label mt-4">Apellido</label>
+  <input type="text" id="textid2" name="Text2" class="form-control" required="">
 </div>
 <div class="form-group">
-<fieldset class="form-group">
-<p class="form-label">My Checkbox</p>
-<div class="form-check">
-  <input type="checkbox" id="checkbox11" name="Checkbox" value="hi" class="form-check-input" autocomplete="off">
-  <label for="checkbox11" class="form-check-label">&nbsp;High</label>
-</div>
-<div class="form-check">
-  <input type="checkbox" id="checkbox12" name="Checkbox" value="lo" class="form-check-input" autocomplete="off">
-  <label for="checkbox12" class="form-check-label">&nbsp;Low</label>
-</div>
-<div class="form-check">
-  <input type="checkbox" id="checkbox13" name="Checkbox" value="mid" class="form-check-input" autocomplete="off">
-  <label for="checkbox13" class="form-check-label">&nbsp;Mid</label>
-</div>
-</fieldset>
-</div>
-<div class="form-group">
-<label for="selector1" class="form-label mt-4">My Selector</label>
-<select id="selector1" size="3" multiple="" class="form-select">
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3</option>
-  <option value="4">Option 4</option>
-</select>
-</div>
-<div class="form-group">
-<label for="textarea1">Enter lots of text</label>
+<label for="textarea1">Tu mensaje :)</label>
 <textarea name="BigText" id="textarea1" rows="..&quot;30&quot;" cols="30" class="form-control"></textarea>
 </div>
 <div class="form-group">
-<label for="email1" class="form-label mt-4">Enter your email</label>
-<input type="email" id="email1" name="" class="form-control">
-</div>
-<div class="form-group">
-<label for="file1" class="form-label mt-4">Upload a file</label>
-<input type="file" id="file1" name="FileUpload" class="form-control">
+<label for="email1" class="form-label mt-4">Un mail de contacto</label>
+<input type="email" id="email1" name="" class="form-control" required="">
 </div>
 <br>
 <div class="form-group">
-  <input type="submit" value="Submit" class="btn btn-primary">
+  <input type="submit" value="Enviar" class="btn btn-primary">
 </div>
 </form></div>
 <p></p>
@@ -534,15 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Only works for certain types of fields<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>*poorly<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>*poorly<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -842,181 +568,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "Forms Documentation"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">  html:</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">    include-in-header: </span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">    - file: submit_form.md</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">    toc: true</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="an">form:</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">  id: MyFormID</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">  submit: "Submit"</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">  action: "javascript:submit()"</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">  fields:</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co">  - text: "This is a form spacer"</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="co">  - name: Text1</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">    type: text</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="co">    id: textid</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="co">    label: "A text field (1)"</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="co">    required: true</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="co">  - name: Text2</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="co">    type: text</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="co">    id: textid2</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="co">    label: "Another text field (2)"</span></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="co">  - text: "This is a form spacer"</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="co">  - text: ---</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a><span class="co">  - name: Radio</span></span>
-<span id="cb4-27"><a href="#cb4-27"></a><span class="co">    type: radio</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a><span class="co">    label: "My Radio Button"</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="co">    id: radio1</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a><span class="co">    values:</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a><span class="co">    - text: Good</span></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="co">      value: 1</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="co">    - text: Bad</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a><span class="co">      value: 0</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a><span class="co">  - name: Checkbox</span></span>
-<span id="cb4-36"><a href="#cb4-36"></a><span class="co">    type: checkbox</span></span>
-<span id="cb4-37"><a href="#cb4-37"></a><span class="co">    id: checkbox1</span></span>
-<span id="cb4-38"><a href="#cb4-38"></a><span class="co">    label: "My Checkbox"</span></span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="co">    values:</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="co">    - text: "High"</span></span>
-<span id="cb4-41"><a href="#cb4-41"></a><span class="co">      value: "hi"</span></span>
-<span id="cb4-42"><a href="#cb4-42"></a><span class="co">    - text: "Low"</span></span>
-<span id="cb4-43"><a href="#cb4-43"></a><span class="co">      value: "lo"</span></span>
-<span id="cb4-44"><a href="#cb4-44"></a><span class="co">    - text: "Mid"</span></span>
-<span id="cb4-45"><a href="#cb4-45"></a><span class="co">      value: "mid"</span></span>
-<span id="cb4-46"><a href="#cb4-46"></a><span class="co">  - name: Selector</span></span>
-<span id="cb4-47"><a href="#cb4-47"></a><span class="co">    type: select</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a><span class="co">    id: selector1</span></span>
-<span id="cb4-49"><a href="#cb4-49"></a><span class="co">    label: My Selector</span></span>
-<span id="cb4-50"><a href="#cb4-50"></a><span class="co">    multiple: true #multiple selections?</span></span>
-<span id="cb4-51"><a href="#cb4-51"></a><span class="co">    size: 3 #number to size</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a><span class="co">    values:</span></span>
-<span id="cb4-53"><a href="#cb4-53"></a><span class="co">    - text: Option 1</span></span>
-<span id="cb4-54"><a href="#cb4-54"></a><span class="co">      value: 1</span></span>
-<span id="cb4-55"><a href="#cb4-55"></a><span class="co">    - text: Option 2</span></span>
-<span id="cb4-56"><a href="#cb4-56"></a><span class="co">      value: 2</span></span>
-<span id="cb4-57"><a href="#cb4-57"></a><span class="co">    - text: Option 3</span></span>
-<span id="cb4-58"><a href="#cb4-58"></a><span class="co">      value: 3</span></span>
-<span id="cb4-59"><a href="#cb4-59"></a><span class="co">    - text: Option 4</span></span>
-<span id="cb4-60"><a href="#cb4-60"></a><span class="co">      value: 4</span></span>
-<span id="cb4-61"><a href="#cb4-61"></a><span class="co">  - name: BigText</span></span>
-<span id="cb4-62"><a href="#cb4-62"></a><span class="co">    id: textarea1</span></span>
-<span id="cb4-63"><a href="#cb4-63"></a><span class="co">    type: textarea</span></span>
-<span id="cb4-64"><a href="#cb4-64"></a><span class="co">    label: Enter lots of text</span></span>
-<span id="cb4-65"><a href="#cb4-65"></a><span class="co">    width: 30 #in rows</span></span>
-<span id="cb4-66"><a href="#cb4-66"></a><span class="co">    height: 30 #in cols</span></span>
-<span id="cb4-67"><a href="#cb4-67"></a><span class="co">  - name: MyEmail</span></span>
-<span id="cb4-68"><a href="#cb4-68"></a><span class="co">    id: email1</span></span>
-<span id="cb4-69"><a href="#cb4-69"></a><span class="co">    type: email</span></span>
-<span id="cb4-70"><a href="#cb4-70"></a><span class="co">    label: "Enter your email"</span></span>
-<span id="cb4-71"><a href="#cb4-71"></a><span class="co">  - name: FileUpload</span></span>
-<span id="cb4-72"><a href="#cb4-72"></a><span class="co">    id: file1</span></span>
-<span id="cb4-73"><a href="#cb4-73"></a><span class="co">    type: file</span></span>
-<span id="cb4-74"><a href="#cb4-74"></a><span class="co">    label: Upload a file</span></span>
-<span id="cb4-75"><a href="#cb4-75"></a><span class="co">---</span></span>
-<span id="cb4-76"><a href="#cb4-76"></a></span>
-<span id="cb4-77"><a href="#cb4-77"></a>This page demonstrates how to use the <span class="in">`form`</span> shortcode.  A form consists of a set of YAML keys and a shortcode.</span>
-<span id="cb4-78"><a href="#cb4-78"></a></span>
-<span id="cb4-79"><a href="#cb4-79"></a>Insert the shortcode where you want the form to appear.  The form is wrapped in a <span class="in">`div`</span> which you can use to style the form, using CSS.  The default form style uses whatever theme you have chosen from the <span class="co">[</span><span class="ot">Bootswatch</span><span class="co">](https://bootswatch.com/)</span> themes supported by Quarto.</span>
-<span id="cb4-80"><a href="#cb4-80"></a></span>
-<span id="cb4-81"><a href="#cb4-81"></a>If you use a custom theme, you will likely need to provide CSS for the form element classes, if you don't like the default.</span>
-<span id="cb4-82"><a href="#cb4-82"></a></span>
-<span id="cb4-83"><a href="#cb4-83"></a></span>
-<span id="cb4-84"><a href="#cb4-84"></a><span class="fu"># Form Elements</span></span>
-<span id="cb4-85"><a href="#cb4-85"></a></span>
-<span id="cb4-86"><a href="#cb4-86"></a>:::{.warning}</span>
-<span id="cb4-87"><a href="#cb4-87"></a>For most of the form elements that are not intended as labels, you should use HTML-safe names.  Calling an form's name <span class="in">`"?&gt;&lt;div ali --: !---`</span> is probably a bad idea and will break your form.</span>
-<span id="cb4-88"><a href="#cb4-88"></a>:::</span>
-<span id="cb4-89"><a href="#cb4-89"></a></span>
-<span id="cb4-90"><a href="#cb4-90"></a>The form elements are:</span>
-<span id="cb4-91"><a href="#cb4-91"></a></span>
-<span id="cb4-92"><a href="#cb4-92"></a>| Key     | Purpose     | Values | Required? | </span>
-<span id="cb4-93"><a href="#cb4-93"></a>|---------|------------|---------|--------|</span>
-<span id="cb4-94"><a href="#cb4-94"></a>| <span class="in">`action`</span>| path to action | <span class="in">`filepath`</span> | Required |</span>
-<span id="cb4-95"><a href="#cb4-95"></a>| <span class="in">`submit`</span>| text for submit button | <span class="in">`string`</span> | Optional (Default: <span class="in">`Submit`</span>) |</span>
-<span id="cb4-96"><a href="#cb4-96"></a>| <span class="in">`fields`</span>| list of fields | <span class="in">`...`</span> | <span class="in">`fields`</span> | Required |</span>
-<span id="cb4-97"><a href="#cb4-97"></a>| <span class="in">`id`</span> | an id for the form | <span class="in">`string`</span> | Option (Default: <span class="in">`form`</span>) | </span>
-<span id="cb4-98"><a href="#cb4-98"></a></span>
-<span id="cb4-99"><a href="#cb4-99"></a></span>
-<span id="cb4-100"><a href="#cb4-100"></a>This is specified as follows:</span>
-<span id="cb4-101"><a href="#cb4-101"></a></span>
-<span id="cb4-102"><a href="#cb4-102"></a></span>
-<span id="cb4-103"><a href="#cb4-103"></a><span class="in">```yaml</span></span>
-<span id="cb4-104"><a href="#cb4-104"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb4-105"><a href="#cb4-105"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">"pathto/action/file.js"</span></span>
-<span id="cb4-106"><a href="#cb4-106"></a><span class="at">  </span><span class="fu">submit</span><span class="kw">:</span><span class="at"> </span><span class="st">"Submit Form"</span></span>
-<span id="cb4-107"><a href="#cb4-107"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> FormID</span></span>
-<span id="cb4-108"><a href="#cb4-108"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb4-109"><a href="#cb4-109"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span>...</span>
-<span id="cb4-110"><a href="#cb4-110"></a><span class="in">```</span></span>
-<span id="cb4-111"><a href="#cb4-111"></a><span class="fu">## Form Fields</span></span>
-<span id="cb4-112"><a href="#cb4-112"></a></span>
-<span id="cb4-113"><a href="#cb4-113"></a>The <span class="in">`fields`</span> element is a list of fields, as outlined below.  All inputs are strings, unless mentioned:</span>
-<span id="cb4-114"><a href="#cb4-114"></a></span>
-<span id="cb4-115"><a href="#cb4-115"></a>| Key      |  Description                                   |  Required? |</span>
-<span id="cb4-116"><a href="#cb4-116"></a>|----------|--------------------------------------------|------------|</span>
-<span id="cb4-117"><a href="#cb4-117"></a>|<span class="in">`name`</span>    | The name for the field       | Yes        |</span>
-<span id="cb4-118"><a href="#cb4-118"></a>| <span class="in">`type`</span>   | The input type: see list below | Yes       |</span>
-<span id="cb4-119"><a href="#cb4-119"></a>| <span class="in">`id`</span>     | The id for the input           | Yes       |</span>
-<span id="cb4-120"><a href="#cb4-120"></a>| <span class="in">`label`</span>  | The label to display for the input | Yes   |</span>
-<span id="cb4-121"><a href="#cb4-121"></a>| <span class="in">`values`</span> | A list of values for multiple inputs | <span class="in">`radio`</span>, <span class="in">`checkbox`</span>, <span class="in">`select`</span> |</span>
-<span id="cb4-122"><a href="#cb4-122"></a>| <span class="in">`width`</span>  | <span class="in">`integer`</span>: Width of input | No |</span>
-<span id="cb4-123"><a href="#cb4-123"></a>| <span class="in">`height`</span> | <span class="in">`integer`</span>: Height of input | No |</span>
-<span id="cb4-124"><a href="#cb4-124"></a>| <span class="in">`required`</span> | <span class="in">`boolean`</span>: Require a response^<span class="co">[</span><span class="ot">Only works for certain types of fields</span><span class="co">]</span> | No |</span>
-<span id="cb4-125"><a href="#cb4-125"></a>| <span class="in">`multiple`</span> | <span class="in">`boolean`</span>: Allow multiple values | No |</span>
-<span id="cb4-126"><a href="#cb4-126"></a>| <span class="in">`size`</span> | <span class="in">`integer`</span>: Number of inputs to display | No |</span>
-<span id="cb4-127"><a href="#cb4-127"></a></span>
-<span id="cb4-128"><a href="#cb4-128"></a></span>
-<span id="cb4-129"><a href="#cb4-129"></a>The currently supported input <span class="in">`type`</span>-s are:</span>
-<span id="cb4-130"><a href="#cb4-130"></a></span>
-<span id="cb4-131"><a href="#cb4-131"></a></span>
-<span id="cb4-132"><a href="#cb4-132"></a>| Type           | Description                       | Requireable?  |  Multiple valued |</span>
-<span id="cb4-133"><a href="#cb4-133"></a>|----------------|-----------------------------------|-------------|-------------|</span>
-<span id="cb4-134"><a href="#cb4-134"></a>| <span class="in">`text`</span> | Single-line text input                    | Yes | No |</span>
-<span id="cb4-135"><a href="#cb4-135"></a>| <span class="in">`textarea`</span> | A large, multi-line text input  | No | No |</span>
-<span id="cb4-136"><a href="#cb4-136"></a>| <span class="in">`checkbox`</span> | A series of checkboxes | Yes^<span class="co">[</span><span class="ot">*poorly</span><span class="co">]</span> | Yes |</span>
-<span id="cb4-137"><a href="#cb4-137"></a>| <span class="in">`radio`</span> | Series of radio options | Yes^<span class="co">[</span><span class="ot">*poorly</span><span class="co">]</span> | No |</span>
-<span id="cb4-138"><a href="#cb4-138"></a>| <span class="in">`select`</span>| Dropdown selection, styled by CSS | Yes | No</span>
-<span id="cb4-139"><a href="#cb4-139"></a>| <span class="in">`email`</span> | Email-only text input | No | No |</span>
-<span id="cb4-140"><a href="#cb4-140"></a>| <span class="in">`file`</span> | File-submission button | No | No |</span>
-<span id="cb4-141"><a href="#cb4-141"></a></span>
-<span id="cb4-142"><a href="#cb4-142"></a><span class="fu">## Form Field Values</span></span>
-<span id="cb4-143"><a href="#cb4-143"></a>The <span class="in">`values`</span> for multi-line inputs are specified as</span>
-<span id="cb4-144"><a href="#cb4-144"></a></span>
-<span id="cb4-145"><a href="#cb4-145"></a><span class="in">```yaml</span></span>
-<span id="cb4-146"><a href="#cb4-146"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb4-147"><a href="#cb4-147"></a><span class="at">  </span>...</span>
-<span id="cb4-148"><a href="#cb4-148"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb4-149"><a href="#cb4-149"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">...</span><span class="kw">:</span></span>
-<span id="cb4-150"><a href="#cb4-150"></a><span class="at">    </span><span class="fu">values</span><span class="kw">:</span></span>
-<span id="cb4-151"><a href="#cb4-151"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Radio 1</span></span>
-<span id="cb4-152"><a href="#cb4-152"></a><span class="at">      </span><span class="fu">value</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb4-153"><a href="#cb4-153"></a><span class="in">```</span></span>
-<span id="cb4-154"><a href="#cb4-154"></a></span>
-<span id="cb4-155"><a href="#cb4-155"></a><span class="ss">* </span><span class="in">`text`</span> is the label text for the option to be displayed</span>
-<span id="cb4-156"><a href="#cb4-156"></a><span class="ss">* </span><span class="in">`value`</span> is the value selecting the option will select</span>
-<span id="cb4-157"><a href="#cb4-157"></a></span>
-<span id="cb4-158"><a href="#cb4-158"></a><span class="fu">## Non-field Form Entries</span></span>
-<span id="cb4-159"><a href="#cb4-159"></a></span>
-<span id="cb4-160"><a href="#cb4-160"></a>You can also add arbitrary text using the <span class="in">`text`</span> field:</span>
-<span id="cb4-161"><a href="#cb4-161"></a></span>
-<span id="cb4-162"><a href="#cb4-162"></a><span class="in">```yaml</span></span>
-<span id="cb4-163"><a href="#cb4-163"></a><span class="fu">form</span><span class="kw">:</span></span>
-<span id="cb4-164"><a href="#cb4-164"></a><span class="at">  </span>...</span>
-<span id="cb4-165"><a href="#cb4-165"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span></span>
-<span id="cb4-166"><a href="#cb4-166"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Some  text"</span></span>
-<span id="cb4-167"><a href="#cb4-167"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> ---</span></span>
-<span id="cb4-168"><a href="#cb4-168"></a><span class="in">```</span></span>
-<span id="cb4-169"><a href="#cb4-169"></a></span>
-<span id="cb4-170"><a href="#cb4-170"></a>Using <span class="in">`---`</span> will insert a horizontal rule in the form.</span>
-<span id="cb4-171"><a href="#cb4-171"></a></span>
-<span id="cb4-172"><a href="#cb4-172"></a></span>
-<span id="cb4-173"><a href="#cb4-173"></a><span class="fu"># Example Form</span></span>
-<span id="cb4-174"><a href="#cb4-174"></a></span>
-<span id="cb4-175"><a href="#cb4-175"></a>{{&lt; form &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Formulario de Contacto"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">  html:</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">    include-in-header: </span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">    - file: submit_form.md</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">    toc: true</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="an">form:</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">  id: MyFormID</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">  submit: "Enviar"</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">  action: "javascript:submit()"</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">  fields:</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">  - text: "Sugerencias? Queres formar parte? Ponete en contacto!"</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">  - name: Text1</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">    type: text</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">    id: textid</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">    label: "Nombre"</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co">    required: true</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">  - name: Text2</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co">    type: text</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co">    id: textid2</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">    label: "Apellido"</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">    required: true</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">  - name: BigText</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co">    id: textarea1</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co">    type: textarea</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co">    label: "Tu mensaje :)"</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">    width: 30 #in rows</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">    height: 30 #in cols</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">    required: true</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">  - name: MyEmail</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co">    id: email1</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="co">    type: email</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="co">    label: "Un mail de contacto"</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co">    required: true</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="co">---</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a></span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="fu"># Formulario en construccion</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a></span>
+<span id="cb1-43"><a href="#cb1-43"></a>{{&lt; form &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
