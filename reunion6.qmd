@@ -13,16 +13,16 @@ library(tidyverse) # Manejo de datos
 
 library(apaTables) # Tablas formato apa
 
-library(apa) # Tablas en formato apa
+library(rempsyc) # Tablas en formato apa
 
-library(gt) # Gramatica de tablas
+library(report) # Para trabajar junto a rempsyc
 
 library(readxl) # Para leer datos de excel
 ```
 
 ## Haciendo tablas con R
 
-Datos
+## Datos
 
 ```{r datos}
 #| echo: true
@@ -36,7 +36,7 @@ datos %>% glimpse() # Le damos un primer vistazo a los datos
 
 ```
 
-Ordenando un poco...
+### Ordenando un poco...
 
 ```{r datos_orden}
 #| echo: true
@@ -73,7 +73,7 @@ Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:
     |      |      |      |
     |      |      |      |
 
-Luego se llevan a cabo las correlaciones
+### Luego se llevan a cabo las correlaciones
 
 ```{r correlaciones}
 
@@ -85,7 +85,9 @@ correlation::correlation(datos_ordenados)
 
 Y lo que restaría seria armar la tabla resultado por resultado. El problema de esto es que no es muy reproducible que digamos, es tedioso y puede llevarnos a cometer errores.
 
-Entonces, una de las opciones que podemos utilizar para evitar lo de arriba es el paquete `apaTables`. Este paquete genera tablas en formato apa luego de realizar la estadística.
+## ApaTables
+
+Entonces, una de las opciones que podemos utilizar para evitar lo de arriba es el paquete `apaTables` [@tablasAPA1]. Este paquete genera tablas en formato apa luego de realizar la estadística.
 
 Para utilizarlo, primero lo instalamos (Si ya lo tienen, entonces omitir esto)
 
@@ -126,10 +128,49 @@ valencia_esp <- datos_ordenados %>%
 
 valencia_pais <- bind_cols(valencia_arg, valencia_esp) %>% select(-contains("pais"))
 
-apa.cor.table(data = valencia_pais, filename = "resultados/mitabla3.doc", landscape = T)
+# apa.cor.table(data = valencia_pais, filename = "resultados/mitabla3.doc", landscape = T)
 
 ```
 
 Si vamos al archivo...
 
 ![](imgagenes/tablaEj.png){fig-align="center"}
+
+## Paquete rempsyc
+
+```{r diff}
+
+modelo_Dif <- nice_t_test(data = datos_ordenados,
+                                 response = "arousal_media_general",
+                                 group = "pais_factor",
+                                 warning = FALSE)
+
+#nice_table(modelo_Dif)
+
+```
+
+![](imgagenes/nice_tabla.png){fig-align="center"}
+
+### Integrado con el paquete report
+
+```{r diff2}
+
+modelo_diferencias <- t.test(arousal_media_general ~ pais_factor, datos_ordenados)
+
+modelo_diferencias
+
+tabla_diferencias <- as.data.frame(report(modelo_diferencias))
+
+tabla_diferencias %>% rename("Media España" = Mean_Group1,
+                             "Media Argentina" = Mean_Group2,
+                             Respuesta = Parameter,
+                             Grupo = Group) %>% 
+  select(-Difference) %>% 
+  nice_table(., report = "t.test", short = T) %>% 
+  flextable::save_as_docx(., path = "resultados/t-tests.docx")
+
+```
+
+**Si vamos al archivo...**
+
+![](imgagenes/t_test_tabla.png){fig-align="center"}
