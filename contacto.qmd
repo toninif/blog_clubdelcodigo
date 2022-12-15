@@ -1,7 +1,11 @@
+
+
+
 ---
-title: "Contacto"
-editor: visual
+title: Contacto
+format: html
 ---
+
 
 
 Formulario de contacto en construcción
