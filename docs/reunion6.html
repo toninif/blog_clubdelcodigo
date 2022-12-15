@@ -228,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a>datos <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>() <span class="co"># Le damos un primer vistazo a los datos </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code>Rows: 348
+<pre><code>Rows: 347
 Columns: 10
 $ set                      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
 $ numero                   &lt;chr&gt; "1030", "1040", "1070", "1080", "1200", "1220…
@@ -245,7 +245,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <p>Ordenando un poco…</p>
 <div class="cell">
 <details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>datos_ordenados <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(pais, <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"valencia"</span>, <span class="st">"arousal"</span>, <span class="st">"dominancia"</span>))) <span class="sc">%&gt;%</span> <span class="co"># Con esto selecciono todas las que arrancon con "texto"</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(set, pais, <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"valencia"</span>, <span class="st">"arousal"</span>, <span class="st">"dominancia"</span>))) <span class="sc">%&gt;%</span> <span class="co"># Con esto selecciono todas las que arrancon con "texto"</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb3-4"><a href="#cb3-4"></a>    <span class="at">pais_factor =</span> <span class="fu">as_factor</span>(pais)</span>
 <span id="cb3-5"><a href="#cb3-5"></a>  ) <span class="sc">%&gt;%</span> </span>
@@ -261,16 +261,18 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 </details><div class="cell-output-display">
 <table class="table table-sm table-striped">
 <colgroup>
+<col style="width: 2%">
 <col style="width: 15%">
 <col style="width: 13%">
 <col style="width: 14%">
 <col style="width: 12%">
 <col style="width: 16%">
 <col style="width: 14%">
-<col style="width: 8%">
+<col style="width: 7%">
 <col style="width: 3%">
 </colgroup>
 <thead><tr class="header">
+<th style="text-align: right;">set</th>
 <th style="text-align: right;">valencia_media_general</th>
 <th style="text-align: right;">valencia_DE_general</th>
 <th style="text-align: right;">arousal_media_general</th>
@@ -282,6 +284,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">4.22</td>
 <td style="text-align: right;">2.01</td>
 <td style="text-align: right;">6.22</td>
@@ -292,6 +295,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <td style="text-align: left;">esp</td>
 </tr>
 <tr class="even">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">3.86</td>
 <td style="text-align: right;">2.10</td>
 <td style="text-align: right;">7.01</td>
@@ -302,6 +306,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <td style="text-align: left;">esp</td>
 </tr>
 <tr class="odd">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">3.54</td>
 <td style="text-align: right;">2.01</td>
 <td style="text-align: right;">6.94</td>
@@ -312,6 +317,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <td style="text-align: left;">esp</td>
 </tr>
 <tr class="even">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">3.93</td>
 <td style="text-align: right;">2.00</td>
 <td style="text-align: right;">6.35</td>
@@ -322,6 +328,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <td style="text-align: left;">esp</td>
 </tr>
 <tr class="odd">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">3.89</td>
 <td style="text-align: right;">1.89</td>
 <td style="text-align: right;">6.42</td>
@@ -332,6 +339,7 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 <td style="text-align: left;">esp</td>
 </tr>
 <tr class="even">
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">4.02</td>
 <td style="text-align: right;">1.89</td>
 <td style="text-align: right;">6.60</td>
@@ -344,6 +352,99 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 </tbody>
 </table>
 </div>
+</div>
+<p>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla “a mano”. Tendriamos que hacer las correlaciones y luego incrustar los resultados en cada seccion de una tabla.</p>
+<p>Veamos:</p>
+<p>Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:</p>
+<pre><code>| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |</code></pre>
+<p>Luego se llevan a cabo las correlaciones</p>
+<div class="cell">
+<details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># El paquete correlation esta muy bueno para este analisis</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>correlation<span class="sc">::</span><span class="fu">correlation</span>(datos_ordenados) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># Correlation Matrix (pearson-method)
+
+Parameter1               |               Parameter2 |     r |         95% CI | t(345) |         p
+-------------------------------------------------------------------------------------------------
+set                      |   valencia_media_general |  0.01 | [-0.09,  0.12] |   0.25 | &gt; .999   
+set                      |      valencia_DE_general | -0.11 | [-0.22, -0.01] |  -2.11 | 0.429    
+set                      |    arousal_media_general |  0.08 | [-0.02,  0.19] |   1.58 | &gt; .999   
+set                      |       arousal_DE_general | -0.07 | [-0.18,  0.03] |  -1.32 | &gt; .999   
+set                      | dominancia_media_general | -0.03 | [-0.14,  0.07] |  -0.60 | &gt; .999   
+set                      |    dominancia_DE_general | -0.22 | [-0.32, -0.12] |  -4.29 | &lt; .001***
+valencia_media_general   |      valencia_DE_general |  0.06 | [-0.04,  0.16] |   1.13 | &gt; .999   
+valencia_media_general   |    arousal_media_general | -0.66 | [-0.71, -0.59] | -16.18 | &lt; .001***
+valencia_media_general   |       arousal_DE_general | -0.03 | [-0.14,  0.07] |  -0.62 | &gt; .999   
+valencia_media_general   | dominancia_media_general |  0.38 | [ 0.28,  0.46] |   7.55 | &lt; .001***
+valencia_media_general   |    dominancia_DE_general | -0.34 | [-0.43, -0.24] |  -6.73 | &lt; .001***
+valencia_DE_general      |    arousal_media_general |  0.14 | [ 0.03,  0.24] |   2.61 | 0.123    
+valencia_DE_general      |       arousal_DE_general |  0.08 | [-0.02,  0.19] |   1.55 | &gt; .999   
+valencia_DE_general      | dominancia_media_general | -0.06 | [-0.17,  0.04] |  -1.18 | &gt; .999   
+valencia_DE_general      |    dominancia_DE_general |  0.35 | [ 0.25,  0.44] |   6.93 | &lt; .001***
+arousal_media_general    |       arousal_DE_general |  0.09 | [-0.01,  0.20] |   1.77 | 0.857    
+arousal_media_general    | dominancia_media_general | -0.39 | [-0.47, -0.30] |  -7.84 | &lt; .001***
+arousal_media_general    |    dominancia_DE_general |  0.39 | [ 0.30,  0.48] |   7.95 | &lt; .001***
+arousal_DE_general       | dominancia_media_general | -0.04 | [-0.14,  0.07] |  -0.68 | &gt; .999   
+arousal_DE_general       |    dominancia_DE_general |  0.05 | [-0.05,  0.16] |   0.95 | &gt; .999   
+dominancia_media_general |    dominancia_DE_general | -0.21 | [-0.31, -0.11] |  -3.96 | 0.001**  
+
+p-value adjustment method: Holm (1979)
+Observations: 347</code></pre>
+</div>
+</div>
+<p>Y lo que restaría seria armar la tabla resultado por resultado. El problema de esto es que no es muy reproducible que digamos, es tedioso y puede llevarnos a cometer errores.</p>
+<p>Entonces, una de las opciones que podemos utilizar para evitar lo de arriba es el paquete <code>apaTables</code>. Este paquete genera tablas en formato apa luego de realizar la estadística.</p>
+<p>Para utilizarlo, primero lo instalamos (Si ya lo tienen, entonces omitir esto)</p>
+<div class="cell">
+
+</div>
+<p>Luego lo cargamos</p>
+<div class="cell">
+
+</div>
+<p>Ahora si podemos generar nuestra tabla de correlaciones.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `pais_factor` -&gt; `pais_factor...1`
+• `pais_factor` -&gt; `pais_factor...4`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+Means, standard deviations, and correlations with confidence intervals
+ 
+
+  Variable              M    SD   1            2           3           
+  1. valencia_argentina 5.27 1.72                                      
+                                                                       
+  2. arousal_argentina  4.39 1.15 -.65**                               
+                                  [-.78, -.47]                         
+                                                                       
+  3. valencia_esp       5.36 1.63 .09          -.06                    
+                                  [-.17, .34]  [-.31, .20]             
+                                                                       
+  4. arousal_esp        4.98 1.15 -.02         .03         -.62**      
+                                  [-.27, .24]  [-.23, .28] [-.76, -.43]
+                                                                       
+
+Note. M and SD are used to represent mean and standard deviation, respectively.
+Values in square brackets indicate the 95% confidence interval.
+The confidence interval is a plausible range of population correlations 
+that could have caused the sample correlation (Cumming, 2014).
+ * indicates p &lt; .05. ** indicates p &lt; .01.
+ </code></pre>
+</div>
+</div>
+<p>Si vamos al archivo…</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="imgagenes/tablaEj.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 
 
@@ -648,79 +749,141 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "Sexta Reunión"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="an">bibliography:</span><span class="co"> biblio.bib</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">---</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">```{r}</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#| eval: true</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#| warning: false</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="fu">library</span>(tidyverse) <span class="co"># Manejo de datos</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">library</span>(apaTables) <span class="co"># Tablas formato apa</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="fu">library</span>(apa) <span class="co"># Tablas en formato apa</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="fu">library</span>(gt) <span class="co"># Gramatica de tablas</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="fu">library</span>(readxl) <span class="co"># Para leer datos de excel</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="in">```</span></span>
-<span id="cb4-24"><a href="#cb4-24"></a></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="fu">## Haciendo tablas con R</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a></span>
-<span id="cb4-27"><a href="#cb4-27"></a>Datos </span>
-<span id="cb4-28"><a href="#cb4-28"></a></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="in">```{r datos}</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a><span class="co">#| echo: true</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a><span class="co">#| eval: true</span></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="co">#| warning: false</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a></span>
-<span id="cb4-34"><a href="#cb4-34"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datos/argentina_esp.xlsx"</span>) <span class="co"># Asi cargamos los datos</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a></span>
-<span id="cb4-36"><a href="#cb4-36"></a></span>
-<span id="cb4-37"><a href="#cb4-37"></a>datos <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>() <span class="co"># Le damos un primer vistazo a los datos </span></span>
-<span id="cb4-38"><a href="#cb4-38"></a></span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="in">```</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a></span>
-<span id="cb4-41"><a href="#cb4-41"></a></span>
-<span id="cb4-42"><a href="#cb4-42"></a>Ordenando un poco...</span>
-<span id="cb4-43"><a href="#cb4-43"></a></span>
-<span id="cb4-44"><a href="#cb4-44"></a><span class="in">```{r datos_orden}</span></span>
-<span id="cb4-45"><a href="#cb4-45"></a><span class="co">#| echo: true</span></span>
-<span id="cb4-46"><a href="#cb4-46"></a><span class="co">#| eval: true</span></span>
-<span id="cb4-47"><a href="#cb4-47"></a><span class="co">#| warning: false</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a></span>
-<span id="cb4-49"><a href="#cb4-49"></a></span>
-<span id="cb4-50"><a href="#cb4-50"></a>datos_ordenados <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> </span>
-<span id="cb4-51"><a href="#cb4-51"></a>  <span class="fu">select</span>(pais, <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"valencia"</span>, <span class="st">"arousal"</span>, <span class="st">"dominancia"</span>))) <span class="sc">%&gt;%</span> <span class="co"># Con esto selecciono todas las que arrancon con "texto"</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-53"><a href="#cb4-53"></a>    <span class="at">pais_factor =</span> <span class="fu">as_factor</span>(pais)</span>
-<span id="cb4-54"><a href="#cb4-54"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-55"><a href="#cb4-55"></a>  <span class="fu">relocate</span>(</span>
-<span id="cb4-56"><a href="#cb4-56"></a>    <span class="fu">c</span>(<span class="st">"pais_factor"</span>, <span class="st">"pais"</span>), <span class="at">.after =</span> dominancia_DE_general <span class="co"># Acomodo dos variables</span></span>
-<span id="cb4-57"><a href="#cb4-57"></a>  )</span>
-<span id="cb4-58"><a href="#cb4-58"></a></span>
-<span id="cb4-59"><a href="#cb4-59"></a><span class="co"># Esta es una manera de hacer tablas.</span></span>
-<span id="cb4-60"><a href="#cb4-60"></a><span class="co"># Usar la función kable de knitr (que es el paquete</span></span>
-<span id="cb4-61"><a href="#cb4-61"></a><span class="co"># que renderea el documento)</span></span>
-<span id="cb4-62"><a href="#cb4-62"></a></span>
-<span id="cb4-63"><a href="#cb4-63"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(datos_ordenados))  </span>
-<span id="cb4-64"><a href="#cb4-64"></a></span>
-<span id="cb4-65"><a href="#cb4-65"></a><span class="in">```</span></span>
-<span id="cb4-66"><a href="#cb4-66"></a></span>
-<span id="cb4-67"><a href="#cb4-67"></a></span>
-<span id="cb4-68"><a href="#cb4-68"></a></span>
-<span id="cb4-69"><a href="#cb4-69"></a></span>
-<span id="cb4-70"><a href="#cb4-70"></a></span>
-<span id="cb4-71"><a href="#cb4-71"></a></span>
-<span id="cb4-72"><a href="#cb4-72"></a></span>
-<span id="cb4-73"><a href="#cb4-73"></a></span>
-<span id="cb4-74"><a href="#cb4-74"></a></span>
-<span id="cb4-75"><a href="#cb4-75"></a></span>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="an">title:</span><span class="co"> "Sexta Reunión"</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="an">bibliography:</span><span class="co"> biblio.bib</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co">---</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="in">```{r}</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co">#| eval: true</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="fu">library</span>(tidyverse) <span class="co"># Manejo de datos</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="fu">library</span>(apaTables) <span class="co"># Tablas formato apa</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="fu">library</span>(apa) <span class="co"># Tablas en formato apa</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="fu">library</span>(gt) <span class="co"># Gramatica de tablas</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="fu">library</span>(readxl) <span class="co"># Para leer datos de excel</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a><span class="in">```</span></span>
+<span id="cb9-24"><a href="#cb9-24"></a></span>
+<span id="cb9-25"><a href="#cb9-25"></a><span class="fu">## Haciendo tablas con R</span></span>
+<span id="cb9-26"><a href="#cb9-26"></a></span>
+<span id="cb9-27"><a href="#cb9-27"></a>Datos</span>
+<span id="cb9-28"><a href="#cb9-28"></a></span>
+<span id="cb9-29"><a href="#cb9-29"></a><span class="in">```{r datos}</span></span>
+<span id="cb9-30"><a href="#cb9-30"></a><span class="co">#| echo: true</span></span>
+<span id="cb9-31"><a href="#cb9-31"></a><span class="co">#| eval: true</span></span>
+<span id="cb9-32"><a href="#cb9-32"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-33"><a href="#cb9-33"></a></span>
+<span id="cb9-34"><a href="#cb9-34"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"datos/argentina_esp.xlsx"</span>) <span class="co"># Asi cargamos los datos</span></span>
+<span id="cb9-35"><a href="#cb9-35"></a></span>
+<span id="cb9-36"><a href="#cb9-36"></a></span>
+<span id="cb9-37"><a href="#cb9-37"></a>datos <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>() <span class="co"># Le damos un primer vistazo a los datos </span></span>
+<span id="cb9-38"><a href="#cb9-38"></a></span>
+<span id="cb9-39"><a href="#cb9-39"></a><span class="in">```</span></span>
+<span id="cb9-40"><a href="#cb9-40"></a></span>
+<span id="cb9-41"><a href="#cb9-41"></a>Ordenando un poco...</span>
+<span id="cb9-42"><a href="#cb9-42"></a></span>
+<span id="cb9-43"><a href="#cb9-43"></a><span class="in">```{r datos_orden}</span></span>
+<span id="cb9-44"><a href="#cb9-44"></a><span class="co">#| echo: true</span></span>
+<span id="cb9-45"><a href="#cb9-45"></a><span class="co">#| eval: true</span></span>
+<span id="cb9-46"><a href="#cb9-46"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-47"><a href="#cb9-47"></a></span>
+<span id="cb9-48"><a href="#cb9-48"></a></span>
+<span id="cb9-49"><a href="#cb9-49"></a>datos_ordenados <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span> </span>
+<span id="cb9-50"><a href="#cb9-50"></a>  <span class="fu">select</span>(set, pais, <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"valencia"</span>, <span class="st">"arousal"</span>, <span class="st">"dominancia"</span>))) <span class="sc">%&gt;%</span> <span class="co"># Con esto selecciono todas las que arrancon con "texto"</span></span>
+<span id="cb9-51"><a href="#cb9-51"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-52"><a href="#cb9-52"></a>    <span class="at">pais_factor =</span> <span class="fu">as_factor</span>(pais)</span>
+<span id="cb9-53"><a href="#cb9-53"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-54"><a href="#cb9-54"></a>  <span class="fu">relocate</span>(</span>
+<span id="cb9-55"><a href="#cb9-55"></a>    <span class="fu">c</span>(<span class="st">"pais_factor"</span>, <span class="st">"pais"</span>), <span class="at">.after =</span> dominancia_DE_general <span class="co"># Acomodo dos variables</span></span>
+<span id="cb9-56"><a href="#cb9-56"></a>  )</span>
+<span id="cb9-57"><a href="#cb9-57"></a></span>
+<span id="cb9-58"><a href="#cb9-58"></a><span class="co"># Esta es una manera de hacer tablas.</span></span>
+<span id="cb9-59"><a href="#cb9-59"></a><span class="co"># Usar la función kable de knitr (que es el paquete</span></span>
+<span id="cb9-60"><a href="#cb9-60"></a><span class="co"># que renderea el documento)</span></span>
+<span id="cb9-61"><a href="#cb9-61"></a></span>
+<span id="cb9-62"><a href="#cb9-62"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(datos_ordenados))  </span>
+<span id="cb9-63"><a href="#cb9-63"></a></span>
+<span id="cb9-64"><a href="#cb9-64"></a><span class="in">```</span></span>
+<span id="cb9-65"><a href="#cb9-65"></a></span>
+<span id="cb9-66"><a href="#cb9-66"></a>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla "a mano". Tendriamos que hacer las correlaciones y luego incrustar los resultados en cada seccion de una tabla.</span>
+<span id="cb9-67"><a href="#cb9-67"></a></span>
+<span id="cb9-68"><a href="#cb9-68"></a>Veamos:</span>
+<span id="cb9-69"><a href="#cb9-69"></a></span>
+<span id="cb9-70"><a href="#cb9-70"></a>Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:</span>
+<span id="cb9-71"><a href="#cb9-71"></a></span>
+<span id="cb9-72"><a href="#cb9-72"></a><span class="in">    | Col1 | Col2 | Col3 |</span></span>
+<span id="cb9-73"><a href="#cb9-73"></a><span class="in">    |------|------|------|</span></span>
+<span id="cb9-74"><a href="#cb9-74"></a><span class="in">    |      |      |      |</span></span>
+<span id="cb9-75"><a href="#cb9-75"></a><span class="in">    |      |      |      |</span></span>
+<span id="cb9-76"><a href="#cb9-76"></a><span class="in">    |      |      |      |</span></span>
+<span id="cb9-77"><a href="#cb9-77"></a></span>
+<span id="cb9-78"><a href="#cb9-78"></a>Luego se llevan a cabo las correlaciones</span>
+<span id="cb9-79"><a href="#cb9-79"></a></span>
+<span id="cb9-80"><a href="#cb9-80"></a><span class="in">```{r correlaciones}</span></span>
+<span id="cb9-81"><a href="#cb9-81"></a></span>
+<span id="cb9-82"><a href="#cb9-82"></a><span class="co"># El paquete correlation esta muy bueno para este analisis</span></span>
+<span id="cb9-83"><a href="#cb9-83"></a></span>
+<span id="cb9-84"><a href="#cb9-84"></a>correlation<span class="sc">::</span><span class="fu">correlation</span>(datos_ordenados) </span>
+<span id="cb9-85"><a href="#cb9-85"></a></span>
+<span id="cb9-86"><a href="#cb9-86"></a><span class="in">```</span></span>
+<span id="cb9-87"><a href="#cb9-87"></a></span>
+<span id="cb9-88"><a href="#cb9-88"></a>Y lo que restaría seria armar la tabla resultado por resultado. El problema de esto es que no es muy reproducible que digamos, es tedioso y puede llevarnos a cometer errores.</span>
+<span id="cb9-89"><a href="#cb9-89"></a></span>
+<span id="cb9-90"><a href="#cb9-90"></a>Entonces, una de las opciones que podemos utilizar para evitar lo de arriba es el paquete <span class="in">`apaTables`</span>. Este paquete genera tablas en formato apa luego de realizar la estadística.</span>
+<span id="cb9-91"><a href="#cb9-91"></a></span>
+<span id="cb9-92"><a href="#cb9-92"></a>Para utilizarlo, primero lo instalamos (Si ya lo tienen, entonces omitir esto)</span>
+<span id="cb9-93"><a href="#cb9-93"></a></span>
+<span id="cb9-94"><a href="#cb9-94"></a><span class="in">```{r instalar}</span></span>
+<span id="cb9-95"><a href="#cb9-95"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-96"><a href="#cb9-96"></a><span class="co">#| eval: false</span></span>
+<span id="cb9-97"><a href="#cb9-97"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-98"><a href="#cb9-98"></a></span>
+<span id="cb9-99"><a href="#cb9-99"></a><span class="fu">install.packages</span>(<span class="st">"apaTables"</span>)</span>
+<span id="cb9-100"><a href="#cb9-100"></a><span class="in">```</span></span>
+<span id="cb9-101"><a href="#cb9-101"></a></span>
+<span id="cb9-102"><a href="#cb9-102"></a>Luego lo cargamos</span>
+<span id="cb9-103"><a href="#cb9-103"></a></span>
+<span id="cb9-104"><a href="#cb9-104"></a><span class="in">```{r cargar}</span></span>
+<span id="cb9-105"><a href="#cb9-105"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-106"><a href="#cb9-106"></a><span class="co">#| eval: false</span></span>
+<span id="cb9-107"><a href="#cb9-107"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-108"><a href="#cb9-108"></a></span>
+<span id="cb9-109"><a href="#cb9-109"></a><span class="fu">library</span>(apaTables)</span>
+<span id="cb9-110"><a href="#cb9-110"></a><span class="in">```</span></span>
+<span id="cb9-111"><a href="#cb9-111"></a></span>
+<span id="cb9-112"><a href="#cb9-112"></a>Ahora si podemos generar nuestra tabla de correlaciones.</span>
+<span id="cb9-113"><a href="#cb9-113"></a></span>
+<span id="cb9-114"><a href="#cb9-114"></a><span class="in">```{r correlaciones2}</span></span>
+<span id="cb9-115"><a href="#cb9-115"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-116"><a href="#cb9-116"></a></span>
+<span id="cb9-117"><a href="#cb9-117"></a>valencia_arg <span class="ot">&lt;-</span> datos_ordenados <span class="sc">%&gt;%</span> </span>
+<span id="cb9-118"><a href="#cb9-118"></a>  <span class="fu">filter</span>(pais_factor <span class="sc">==</span> <span class="st">"arg"</span> <span class="sc">&amp;</span> set <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-119"><a href="#cb9-119"></a>  <span class="fu">select</span>(pais_factor, valencia_media_general, arousal_media_general) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-120"><a href="#cb9-120"></a>  <span class="fu">rename</span>(<span class="at">valencia_argentina =</span> valencia_media_general,</span>
+<span id="cb9-121"><a href="#cb9-121"></a>         <span class="at">arousal_argentina =</span> arousal_media_general)</span>
+<span id="cb9-122"><a href="#cb9-122"></a></span>
+<span id="cb9-123"><a href="#cb9-123"></a>valencia_esp <span class="ot">&lt;-</span> datos_ordenados <span class="sc">%&gt;%</span> </span>
+<span id="cb9-124"><a href="#cb9-124"></a>  <span class="fu">filter</span>(pais_factor <span class="sc">==</span> <span class="st">"esp"</span> <span class="sc">&amp;</span> set <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-125"><a href="#cb9-125"></a>  <span class="fu">select</span>(pais_factor, valencia_media_general, arousal_media_general) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-126"><a href="#cb9-126"></a>  <span class="fu">rename</span>(<span class="at">valencia_esp =</span> valencia_media_general,</span>
+<span id="cb9-127"><a href="#cb9-127"></a>         <span class="at">arousal_esp =</span> arousal_media_general)</span>
+<span id="cb9-128"><a href="#cb9-128"></a></span>
+<span id="cb9-129"><a href="#cb9-129"></a>valencia_pais <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(valencia_arg, valencia_esp) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="st">"pais"</span>))</span>
+<span id="cb9-130"><a href="#cb9-130"></a></span>
+<span id="cb9-131"><a href="#cb9-131"></a><span class="fu">apa.cor.table</span>(<span class="at">data =</span> valencia_pais, <span class="at">filename =</span> <span class="st">"resultados/mitabla3.doc"</span>, <span class="at">landscape =</span> T)</span>
+<span id="cb9-132"><a href="#cb9-132"></a></span>
+<span id="cb9-133"><a href="#cb9-133"></a><span class="in">```</span></span>
+<span id="cb9-134"><a href="#cb9-134"></a></span>
+<span id="cb9-135"><a href="#cb9-135"></a>Si vamos al archivo...</span>
+<span id="cb9-136"><a href="#cb9-136"></a></span>
+<span id="cb9-137"><a href="#cb9-137"></a><span class="al">![](imgagenes/tablaEj.png)</span>{fig-align="center"}</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

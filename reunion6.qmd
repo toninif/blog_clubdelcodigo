@@ -22,7 +22,7 @@ library(readxl) # Para leer datos de excel
 
 ## Haciendo tablas con R
 
-Datos 
+Datos
 
 ```{r datos}
 #| echo: true
@@ -36,7 +36,6 @@ datos %>% glimpse() # Le damos un primer vistazo a los datos
 
 ```
 
-
 Ordenando un poco...
 
 ```{r datos_orden}
@@ -46,7 +45,7 @@ Ordenando un poco...
 
 
 datos_ordenados <- datos %>% 
-  select(pais, starts_with(c("valencia", "arousal", "dominancia"))) %>% # Con esto selecciono todas las que arrancon con "texto"
+  select(set, pais, starts_with(c("valencia", "arousal", "dominancia"))) %>% # Con esto selecciono todas las que arrancon con "texto"
   mutate(
     pais_factor = as_factor(pais)
   ) %>% 
@@ -62,13 +61,75 @@ knitr::kable(head(datos_ordenados))
 
 ```
 
+Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla "a mano". Tendriamos que hacer las correlaciones y luego incrustar los resultados en cada seccion de una tabla.
 
+Veamos:
 
+Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:
 
+    | Col1 | Col2 | Col3 |
+    |------|------|------|
+    |      |      |      |
+    |      |      |      |
+    |      |      |      |
 
+Luego se llevan a cabo las correlaciones
 
+```{r correlaciones}
 
+# El paquete correlation esta muy bueno para este analisis
 
+correlation::correlation(datos_ordenados) 
 
+```
 
+Y lo que restaría seria armar la tabla resultado por resultado. El problema de esto es que no es muy reproducible que digamos, es tedioso y puede llevarnos a cometer errores.
 
+Entonces, una de las opciones que podemos utilizar para evitar lo de arriba es el paquete `apaTables`. Este paquete genera tablas en formato apa luego de realizar la estadística.
+
+Para utilizarlo, primero lo instalamos (Si ya lo tienen, entonces omitir esto)
+
+```{r instalar}
+#| echo: false
+#| eval: false
+#| warning: false
+
+install.packages("apaTables")
+```
+
+Luego lo cargamos
+
+```{r cargar}
+#| echo: false
+#| eval: false
+#| warning: false
+
+library(apaTables)
+```
+
+Ahora si podemos generar nuestra tabla de correlaciones.
+
+```{r correlaciones2}
+#| echo: false
+
+valencia_arg <- datos_ordenados %>% 
+  filter(pais_factor == "arg" & set == 1) %>% 
+  select(pais_factor, valencia_media_general, arousal_media_general) %>% 
+  rename(valencia_argentina = valencia_media_general,
+         arousal_argentina = arousal_media_general)
+
+valencia_esp <- datos_ordenados %>% 
+  filter(pais_factor == "esp" & set == 3) %>% 
+  select(pais_factor, valencia_media_general, arousal_media_general) %>% 
+  rename(valencia_esp = valencia_media_general,
+         arousal_esp = arousal_media_general)
+
+valencia_pais <- bind_cols(valencia_arg, valencia_esp) %>% select(-contains("pais"))
+
+apa.cor.table(data = valencia_pais, filename = "resultados/mitabla3.doc", landscape = T)
+
+```
+
+Si vamos al archivo...
+
+![](imgagenes/tablaEj.png){fig-align="center"}
