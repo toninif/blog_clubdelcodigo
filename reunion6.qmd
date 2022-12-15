@@ -25,7 +25,7 @@ library(readxl) # Para leer datos de excel
 Datos 
 
 ```{r datos}
-#| echo: false
+#| echo: true
 #| eval: true
 #| warning: false
 
@@ -40,21 +40,25 @@ datos %>% glimpse() # Le damos un primer vistazo a los datos
 Ordenando un poco...
 
 ```{r datos_orden}
-#| echo: false
+#| echo: true
 #| eval: true
 #| warning: false
 
 
 datos_ordenados <- datos %>% 
-  select(pais, starts_with(c("valencia", "arousal", "dominancia"))) %>% 
+  select(pais, starts_with(c("valencia", "arousal", "dominancia"))) %>% # Con esto selecciono todas las que arrancon con "texto"
   mutate(
     pais_factor = as_factor(pais)
   ) %>% 
   relocate(
-    c("pais_factor", "pais"), .after = dominancia_DE_general
+    c("pais_factor", "pais"), .after = dominancia_DE_general # Acomodo dos variables
   )
 
-datos_ordenados
+# Esta es una manera de hacer tablas.
+# Usar la función kable de knitr (que es el paquete
+# que renderea el documento)
+
+knitr::kable(head(datos_ordenados))  
 
 ```
 
