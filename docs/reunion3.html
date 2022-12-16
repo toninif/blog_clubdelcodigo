@@ -99,7 +99,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -237,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header><section id="manejo-de-datos-intro" class="level1"><h1>Manejo de datos: Intro</h1>
 <p>El manejo de datos (carga, limpieza, orden, visualización, modelado, <em>ver imagen de abajo</em>) es una de las tareas a las que mayor tiempo le dedicaremos cuando estemos trabajando con R. Uno de los paquetes más utilizados para llevar adelante esta tarea es <code>dplyr</code>. Este paquete forma parte del <code>tidyverse</code> y contiene una serie de funciones que nos dejaran <code>seleccionar</code>, <code>renombrar</code>, <code>filtrar</code>, <code>re-acomodar</code> y <code>resumir</code> las variables de nuestra base de datos. Conviene pensar en <code>dplyr</code> como una gramática para el manejo de datos.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src=".\imgagenes/flowDatos.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><a href="./imgagenes/flowDatos.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src=".\imgagenes/flowDatos.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <section id="datos-utilizaremos" class="level2"><h2 class="anchored" data-anchor-id="datos-utilizaremos">Datos utilizaremos</h2>
@@ -667,7 +670,10 @@ A tener en cuenta!
 <pre><code>Warning: Removed 6 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="reunion3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion3_files/figure-html/unnamed-chunk-17-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="reunion3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p><em>Con %&gt;%</em></p>
@@ -691,7 +697,10 @@ A tener en cuenta!
 <pre><code>Warning: Removed 6 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="reunion3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion3_files/figure-html/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="reunion3_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -1287,7 +1296,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
 
 
 </body></html>

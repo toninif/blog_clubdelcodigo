@@ -34,6 +34,8 @@ format:
     code-block-border-left: true
     code-line-numbers: true
     code-link: true
-
+filters: 
+  - lightbox
+lightbox: auto
 editor: visual
 

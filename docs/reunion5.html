@@ -118,7 +118,10 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -315,7 +318,10 @@ div.csl-indent {
 <div class="cell">
 <details open=""><summary>Ver/Ocultar código</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 1-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="reunion5_files/figure-html/capa 1-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Esta seria la capa principal. Como si fuera la base del gráfico. Sobre esta base es que luego se agregan los demás aspectos del gráfico.</p>
@@ -330,7 +336,10 @@ div.csl-indent {
 <span id="cb15-4"><a href="#cb15-4"></a></span>
 <span id="cb15-5"><a href="#cb15-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 2-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="reunion5_files/figure-html/capa 2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
@@ -345,7 +354,10 @@ div.csl-indent {
 <span id="cb16-5"><a href="#cb16-5"></a></span>
 <span id="cb16-6"><a href="#cb16-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 2.2-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 2.2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="reunion5_files/figure-html/capa 2.2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>El resultado que se obtiene en esta instancia es que ahora a la base del gráfico se le suman los ejes y el rango de valores. Esto puede variar en función del tipo de variable que incluyamos en cada eje. Arriba graficamos dos variables <em>numéricas</em>, mientras que en el resultado de abajo se grafica una variable <em>numérica</em> y otra <em>categórica</em> con tres niveles (A; B; C)</p>
@@ -356,7 +368,10 @@ div.csl-indent {
 <span id="cb17-4"><a href="#cb17-4"></a></span>
 <span id="cb17-5"><a href="#cb17-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="co"># En el eje X incluimos la variable categórica</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 2.2cat-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 2.2cat-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="reunion5_files/figure-html/capa 2.2cat-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
@@ -373,7 +388,10 @@ div.csl-indent {
 <span id="cb18-6"><a href="#cb18-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span> <span class="co"># Con el + sumamos la siguiente capa</span></span>
 <span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 3-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="reunion5_files/figure-html/capa 3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Pueden utilizarse varios <code>geom</code> dentro del mismo gráfico. Se agrega una capa más y listo.</p>
@@ -389,7 +407,10 @@ div.csl-indent {
 <span id="cb19-9"><a href="#cb19-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># En este caso son puntos</span></span>
 <span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_Xinvertido, <span class="at">y =</span> Eje_Yinvertido))  <span class="co"># Incluso puede sumarse otra capa mas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 3.2-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 3.2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="reunion5_files/figure-html/capa 3.2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>En el caso de la base con variables numéricas y categóricas. En este caso, podria sernos de utilidad <code>geom_col</code></p>
@@ -401,7 +422,10 @@ div.csl-indent {
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
 <span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 3.2cat-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 3.2cat-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="reunion5_files/figure-html/capa 3.2cat-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Si necesitamos dar un poco más de información, entonces podríamos usar <code>geom_boxplot</code> o <code>geom_violin</code>. Con el primero hacemos un gráfico de cajas y con el según un gráfico con violines</p>
@@ -416,7 +440,10 @@ div.csl-indent {
 <span id="cb21-5"><a href="#cb21-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
 <span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 3.3-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 3.3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="reunion5_files/figure-html/capa 3.3-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
@@ -432,7 +459,10 @@ div.csl-indent {
 <pre><code>Warning: Removed 2 rows containing non-finite values (`stat_ydensity()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa 3.4-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa 3.4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="reunion5_files/figure-html/capa 3.4-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="más-y-más-capas" class="level2"><h2 class="anchored" data-anchor-id="más-y-más-capas"><strong>Más y más capas</strong></h2>
@@ -448,7 +478,10 @@ div.csl-indent {
 <span id="cb24-8"><a href="#cb24-8"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
 <span id="cb24-9"><a href="#cb24-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa titulos-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa titulos-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="reunion5_files/figure-html/capa titulos-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es <code>coord_flip</code> Por ejemplo, rotemos el gráfico de arriba</p>
@@ -464,7 +497,10 @@ div.csl-indent {
 <span id="cb25-9"><a href="#cb25-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
 <span id="cb25-10"><a href="#cb25-10"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa rotar-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa rotar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="reunion5_files/figure-html/capa rotar-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>¿Y donde esta el color?</strong></p>
@@ -481,7 +517,10 @@ div.csl-indent {
 <span id="cb26-9"><a href="#cb26-9"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
 <span id="cb26-10"><a href="#cb26-10"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa color-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa color-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="reunion5_files/figure-html/capa color-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo</p>
@@ -498,7 +537,10 @@ div.csl-indent {
 <span id="cb27-10"><a href="#cb27-10"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
 <span id="cb27-11"><a href="#cb27-11"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa mascolor-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa mascolor-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="reunion5_files/figure-html/capa mascolor-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.</p>
@@ -512,7 +554,10 @@ div.csl-indent {
 <span id="cb28-7"><a href="#cb28-7"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
 <span id="cb28-8"><a href="#cb28-8"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa mascolor2-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa mascolor2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="reunion5_files/figure-html/capa mascolor2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="ultima-capa" class="level2"><h2 class="anchored" data-anchor-id="ultima-capa">Ultima capa</h2>
@@ -557,7 +602,10 @@ div.csl-indent {
 <span id="cb29-36"><a href="#cb29-36"></a></span>
 <span id="cb29-37"><a href="#cb29-37"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> p4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="reunion5_files/figure-html/capa mascolor2bw-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="reunion5_files/figure-html/capa mascolor2bw-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="reunion5_files/figure-html/capa mascolor2bw-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -1273,7 +1321,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
+<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 </body></html>
