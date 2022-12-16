@@ -37,8 +37,6 @@ form:
     required: true
 ---
 
-
-
-# Formulario en construccion
+# Formulario en construcción
 
 {{< form >}}

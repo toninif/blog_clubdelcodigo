@@ -67,10 +67,10 @@ Veamos:
 
 Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:
 
-    | Col1 | Col2 | Col3 |
+    | nombre | est1 | Col3 |
     |------|------|------|
-    |      |      |      |
-    |      |      |      |
+    |   asd   |  asd    | asd     |
+    |   asd   |   ads   |      |
     |      |      |      |
 
 ### Luego se llevan a cabo las correlaciones
