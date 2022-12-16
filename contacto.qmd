@@ -2,41 +2,7 @@
 title: "Formulario de Contacto"
 format: 
   html:
-    include-in-header: 
-    - file: submit_form.md
-    toc: true
     code-tools: false
-
-form:
-  id: MyFormID
-  submit: "Enviar"
-  action: "javascript:submit()"
-  fields:
-  - text: "Sugerencias? Queres formar parte? Ponete en contacto!"
-  - name: Text1
-    type: text
-    id: textid
-    label: "Nombre"
-    required: true
-  - name: Text2
-    type: text
-    id: textid2
-    label: "Apellido"
-    required: true
-  - name: BigText
-    id: textarea1
-    type: textarea
-    label: "Tu mensaje :)"
-    width: 30 #in rows
-    height: 30 #in cols
-    required: true
-  - name: MyEmail
-    id: email1
-    type: email
-    label: "Un mail de contacto"
-    required: true
 ---
 
-# Formulario en construcción
-
-{{< form >}}
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesxfllec34hvrHBj3EhYguwGFq5H-V3D_ter8T-q3emhe9Tg/viewform?embedded=true" width="640" height="672" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>

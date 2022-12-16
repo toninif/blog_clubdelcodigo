@@ -41,6 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/forms/forms.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script> function submit() { alert("Mensaje enviado!"); } </script> 
 
 
 <link rel="stylesheet" href="styles.css">
@@ -86,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Sobre el club</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./contacto.html" aria-current="page">
+    <a class="nav-link" href="./contacto.html">
  <span class="menu-text">Formulario de Contacto</span></a>
   </li>  
   <li class="nav-item">
@@ -147,7 +149,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#formulario-en-construcción" id="toc-formulario-en-construcción" class="nav-link active" data-scroll-target="#formulario-en-construcción">Formulario en construcción</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -169,11 +177,36 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesxfllec34hvrHBj3EhYguwGFq5H-V3D_ter8T-q3emhe9Tg/viewform?embedded=true" width="640" height="672" frameborder="0" marginheight="0" marginwidth="0">
-Cargando…
-</iframe>
+<section id="formulario-en-construcción" class="level1">
+<h1>Formulario en construcción</h1>
+<p></p><div id="form-div" class="form-wrapper">
+ <form id="form" action="javascript:submit()">
+<br><p>Sugerencias? Queres formar parte? Ponete en contacto!</p>
+<div class="form-group">
+<label for="textid" class="form-label mt-4">Nombre</label>
+  <input type="text" id="textid" name="Text1" class="form-control" required="">
+</div>
+<div class="form-group">
+<label for="textid2" class="form-label mt-4">Apellido</label>
+  <input type="text" id="textid2" name="Text2" class="form-control" required="">
+</div>
+<div class="form-group">
+<label for="textarea1">Tu mensaje :)</label>
+<textarea name="BigText" id="textarea1" rows="..&quot;30&quot;" cols="30" class="form-control"></textarea>
+</div>
+<div class="form-group">
+<label for="email1" class="form-label mt-4">Un mail de contacto</label>
+<input type="email" id="email1" name="" class="form-control" required="">
+</div>
+<br>
+<div class="form-group">
+  <input type="submit" value="Enviar" class="btn btn-primary">
+</div>
+</form></div>
+<p></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

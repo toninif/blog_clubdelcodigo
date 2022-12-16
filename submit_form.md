@@ -1,1 +1,1 @@
-<script> function submit() { alert("Submitted!"); } </script> 
+<script> function submit() { alert("Mensaje enviado!"); } </script> 
