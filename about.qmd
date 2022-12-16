@@ -1,6 +1,8 @@
 ---
 title: "Sobre el club"
 image: imgagenes/del.png
+filters: 
+  - social-share
 about:
   template: solana
   links:
@@ -10,6 +12,14 @@ about:
 format: 
   html:
     code-tools: false
+share: 
+  permalink: "https://toninif.github.io/blog_clubdelcodigo/about.html"
+  description: "Información sobre el club! "
+  twitter: true
+  facebook: true
+  reddit: true
+  linkedin: true
+  email: true
 ---
 
 La idea es que podamos reunirnos para comenzar a programar usando R y RStudio. Si bien al principio vamos a ver temas muy introductorios, a medida de que avancen las reuniones se van a poner tocar temas más complejos y que estén relacionados con sus áreas de interés.
@@ -20,11 +30,15 @@ Otra de mis intenciones es que esta pagina (acá o en otro lado) se actualice co
 
 -   [Link a la reunión de cada Jueves](https://us02web.zoom.us/j/84578688435)
 
-| Tópico                                                                                                                     | Reuniones                                                               |
-|:---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| **Arrancando con R - RStudio y Proyectos**                                                                                 | [Reunión 1](https://toninif.github.io/blog_clubdelcodigo/reunion1.html) |
-| **Crear primer Proyecto y Reporte Reproducible**                                                                           | [Reunión 2](https://toninif.github.io/blog_clubdelcodigo/reunion2.html) |
-| **Manejo de datos: `dplyr`**                                                                                               | [Reunion 3](https://toninif.github.io/blog_clubdelcodigo/reunion3.html) |
-| **Trabajando con referencias**                                                                                             | [Reunion 4](https://toninif.github.io/blog_clubdelcodigo/reunion4.html) |
-| **A graficar!!** :construction: :construction: :construction: (En desarrollo) :construction: :construction: :construction: | [Reunion 5](https://toninif.github.io/blog_clubdelcodigo/reunion5.html) |
-| **Varios**                                                                                                                 | [Recursos](https://toninif.github.io/blog_clubdelcodigo/recursos.html)  |
+| Tópico                                           |                                Reuniones                                |
+|:--------------------------------------------|:-------------------------:|
+| **Arrancando con R - RStudio y Proyectos**       | [Reunión 1](https://toninif.github.io/blog_clubdelcodigo/reunion1.html) |
+| **Crear primer Proyecto y Reporte Reproducible** | [Reunión 2](https://toninif.github.io/blog_clubdelcodigo/reunion2.html) |
+| **Manejo de datos: `dplyr`**                     | [Reunion 3](https://toninif.github.io/blog_clubdelcodigo/reunion3.html) |
+| **Trabajando con referencias**                   | [Reunion 4](https://toninif.github.io/blog_clubdelcodigo/reunion4.html) |
+| **A graficar!!**                                 | [Reunion 5](https://toninif.github.io/blog_clubdelcodigo/reunion5.html) |
+| **Tablas**                                       | [Reunion 6](https://toninif.github.io/blog_clubdelcodigo/reunion6.html) |
+|                                                  |                                                                         |
+| *Receso de fin de año*                           |                                                                         |
+|                                                  |                                                                         |
+| **Varios**                                       | [Recursos](https://toninif.github.io/blog_clubdelcodigo/recursos.html)  |

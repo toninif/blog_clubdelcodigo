@@ -5,4 +5,4 @@ format:
     code-tools: false
 ---
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesxfllec34hvrHBj3EhYguwGFq5H-V3D_ter8T-q3emhe9Tg/viewform?embedded=true" width="640" height="672" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesxfllec34hvrHBj3EhYguwGFq5H-V3D_ter8T-q3emhe9Tg/viewform?embedded=true" width="800" height="672" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
