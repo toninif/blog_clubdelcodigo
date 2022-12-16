@@ -174,3 +174,6 @@ tabla_diferencias %>% rename("Media España" = Mean_Group1,
 **Si vamos al archivo...**
 
 ![](imgagenes/t_test_tabla.png){fig-align="center"}
+
+
+{{< elevator "Ir arriba" >}}

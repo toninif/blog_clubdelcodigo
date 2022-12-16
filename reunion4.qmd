@@ -97,3 +97,6 @@ En este ejemplo podemos notar dos cosas. La primera es que se genero la cita con
 | `[@ggplot; @ggstatsplot]` | [@ggplot; @ggstatsplot] |
 | \[-\@ggplot\]             | [-@ggplot]              |
 :::
+
+
+{{< elevator "Ir arriba" >}}

@@ -203,7 +203,6 @@ ggplot(data = datosEj, mapping = aes(x = species, y = body_mass_g)) +
 
 Otras capas muy utilizadas son las del titulo, subtitulo y nombres de los ejes. Esto se puede modificar agregando otra capa que incluya labs
 
-
 ```{r capa titulos}
 #| echo: true
 #| eval: true
@@ -221,9 +220,7 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
 
 ```
 
-
 Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es `coord_flip` Por ejemplo, rotemos el gráfico de arriba
-
 
 ```{r capa rotar}
 #| echo: true
@@ -242,7 +239,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y)) +
 
 
 ```
-
 
 **¿Y donde esta el color?**
 
@@ -268,7 +264,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y, fill = "orange")) +
 
 No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo
 
-
 ```{r capa mascolor}
 #| echo: true
 #| eval: true
@@ -288,7 +283,6 @@ ggplot(data = datosEj, mapping = aes(x = Eje_X, y = Eje_Y, fill = mascolor)) +
 
 ```
 
-
 Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.
 
 ```{r capa mascolor2}
@@ -307,14 +301,11 @@ ggplot(data = datosEj, mapping = aes(x = body_mass_g, y = bill_length_mm, colour
 
 ```
 
-
 ## Ultima capa
 
 Lo último que suele agregarse a un gráfico es el tema (traducción directa de `theme`). Esto lo que hace es cambiar el aspecto general del gráfico. Existen `themes` predeterminados como por ejemplo: `theme_bw`, `theme_light`, `theme_linedraw`, `theme_minimal` y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).
 
 ¿Como se agrega el theme? Como todas las capas, con el `+` y la función `theme_NOMBRE`. Veamos algunos de los mencionados arriba.
-
-
 
 ```{r capa mascolor2bw}
 #| echo: true
@@ -363,29 +354,4 @@ p1 + p2 + p3 + p4
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{< elevator "Ir arriba" >}}

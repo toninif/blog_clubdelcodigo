@@ -35,6 +35,7 @@ format:
     code-line-numbers: true
     code-link: true
 filters: 
+  - nutshell
   - lightbox
 lightbox: auto
 editor: visual

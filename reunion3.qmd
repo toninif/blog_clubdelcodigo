@@ -42,7 +42,7 @@ glimpse() # Esto es para darle un vistazo a la base
 Podemos pensar el manejo de datos con dplyr como si las funciones del paquete fueran verbos. Cuales son esos verbos?
 
 | Verbo       | Función       | Descripción                                                                                                                                                                                                                                   |
-|-------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------|---------|-----------------------------------------------------|
 | Filtrar     | `filter()`    | Esta función maneja los datos según sus filas. Lo que hace es filtrar datos según la lógica que le indiquemos.                                                                                                                                |
 | Seleccionar | `select()`    | Esta funciona maneja los datos según las columnas. Lo que hace es seleccionar (*o también quitar*) variables (columnas de nuestra base de datos)                                                                                              |
 | Crear       | `mutate()`    | Esta función también modifica columnas y lo que hace es crear variables nuevas.                                                                                                                                                               |
@@ -273,3 +273,7 @@ starwars %>% # Selecciono los datos Y DESPUES
 
 -   Existe otra pipa que fue introducida recientemente. Yo le digo el pinguinito. Es la pipa nativa de R y es así \|\>. En general cumple la misma función. Yo como soy viejo y me acostumbre a usar %\>% entonces sigo con esa. Ustedes usen la que mas les guste y cumpla mejor con sus objetivos. Hay debate sobre que pipa usar. Quedara para otro momento.
 :::
+
+
+{{< elevator "Ir arriba" >}}
+

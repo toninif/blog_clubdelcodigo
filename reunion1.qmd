@@ -87,3 +87,5 @@ File -\> New Project -\> New Directory -\> New Project Ahi ponemos nombre del pr
 **En nuestro RStudio...**
 
 ![](/imgagenes/proyecto.png){fig-align="center"}
+
+{{< elevator "Ir arriba" >}}
