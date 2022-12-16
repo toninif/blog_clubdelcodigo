@@ -100,9 +100,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/elevatorjs-1.0.0/elevator.min.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -278,9 +280,9 @@ ATENCIÓN!!
 <p>Podemos pensar el manejo de datos con dplyr como si las funciones del paquete fueran verbos. Cuales son esos verbos?</p>
 <table class="table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 89%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 74%">
 </colgroup>
 <thead><tr class="header">
 <th>Verbo</th>
@@ -722,6 +724,7 @@ Aspectos a tener en cuenta!!
 </div>
 </div>
 </div>
+<p><script>window.onload = function() { var elevator = new Elevator({ element: document.querySelector(".elevator-button"),  mainAudio: "", endAudio: "ding.mp3" }); }</script><button class="btn btn-outline-primary elevator-button" type="submit">Ir arriba</button></p>
 
 
 <!-- -->
@@ -1069,7 +1072,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-42"><a href="#cb49-42"></a>Podemos pensar el manejo de datos con dplyr como si las funciones del paquete fueran verbos. Cuales son esos verbos?</span>
 <span id="cb49-43"><a href="#cb49-43"></a></span>
 <span id="cb49-44"><a href="#cb49-44"></a>| Verbo       | Función       | Descripción                                                                                                                                                                                                                                   |</span>
-<span id="cb49-45"><a href="#cb49-45"></a>|-------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|</span>
+<span id="cb49-45"><a href="#cb49-45"></a>|---------|---------|-----------------------------------------------------|</span>
 <span id="cb49-46"><a href="#cb49-46"></a>| Filtrar     | <span class="in">`filter()`</span>    | Esta función maneja los datos según sus filas. Lo que hace es filtrar datos según la lógica que le indiquemos.                                                                                                                                |</span>
 <span id="cb49-47"><a href="#cb49-47"></a>| Seleccionar | <span class="in">`select()`</span>    | Esta funciona maneja los datos según las columnas. Lo que hace es seleccionar (*o también quitar*) variables (columnas de nuestra base de datos)                                                                                              |</span>
 <span id="cb49-48"><a href="#cb49-48"></a>| Crear       | <span class="in">`mutate()`</span>    | Esta función también modifica columnas y lo que hace es crear variables nuevas.                                                                                                                                                               |</span>
@@ -1293,10 +1296,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-284"><a href="#cb49-284"></a></span>
 <span id="cb49-285"><a href="#cb49-285"></a><span class="ss">-   </span>Existe otra pipa que fue introducida recientemente. Yo le digo el pinguinito. Es la pipa nativa de R y es así \|<span class="sc">\&gt;</span>. En general cumple la misma función. Yo como soy viejo y me acostumbre a usar %<span class="sc">\&gt;</span>% entonces sigo con esa. Ustedes usen la que mas les guste y cumpla mejor con sus objetivos. Hay debate sobre que pipa usar. Quedara para otro momento.</span>
 <span id="cb49-286"><a href="#cb49-286"></a>:::</span>
+<span id="cb49-287"><a href="#cb49-287"></a></span>
+<span id="cb49-288"><a href="#cb49-288"></a></span>
+<span id="cb49-289"><a href="#cb49-289"></a>{{&lt; elevator "Ir arriba" &gt;}}</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
 
 
 </body></html>

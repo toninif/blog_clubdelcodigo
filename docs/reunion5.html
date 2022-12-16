@@ -119,9 +119,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/elevatorjs-1.0.0/elevator.min.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -608,6 +610,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p><script>window.onload = function() { var elevator = new Elevator({ element: document.querySelector(".elevator-button"),  mainAudio: "", endAudio: "ding.mp3" }); }</script><button class="btn btn-outline-primary elevator-button" type="submit">Ir arriba</button></p>
 
 
 <!-- -->
@@ -1133,195 +1136,162 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb30-207"><a href="#cb30-207"></a></span>
 <span id="cb30-208"><a href="#cb30-208"></a>Otras capas muy utilizadas son las del titulo, subtitulo y nombres de los ejes. Esto se puede modificar agregando otra capa que incluya labs</span>
 <span id="cb30-209"><a href="#cb30-209"></a></span>
-<span id="cb30-210"><a href="#cb30-210"></a></span>
-<span id="cb30-211"><a href="#cb30-211"></a><span class="in">```{r capa titulos}</span></span>
-<span id="cb30-212"><a href="#cb30-212"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-213"><a href="#cb30-213"></a><span class="co">#| eval: true</span></span>
-<span id="cb30-214"><a href="#cb30-214"></a></span>
-<span id="cb30-215"><a href="#cb30-215"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb30-216"><a href="#cb30-216"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb30-210"><a href="#cb30-210"></a><span class="in">```{r capa titulos}</span></span>
+<span id="cb30-211"><a href="#cb30-211"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-212"><a href="#cb30-212"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-213"><a href="#cb30-213"></a></span>
+<span id="cb30-214"><a href="#cb30-214"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb30-215"><a href="#cb30-215"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb30-216"><a href="#cb30-216"></a></span>
 <span id="cb30-217"><a href="#cb30-217"></a></span>
-<span id="cb30-218"><a href="#cb30-218"></a></span>
-<span id="cb30-219"><a href="#cb30-219"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
-<span id="cb30-220"><a href="#cb30-220"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb30-221"><a href="#cb30-221"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
-<span id="cb30-222"><a href="#cb30-222"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
-<span id="cb30-223"><a href="#cb30-223"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>)</span>
+<span id="cb30-218"><a href="#cb30-218"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb30-219"><a href="#cb30-219"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb30-220"><a href="#cb30-220"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb30-221"><a href="#cb30-221"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb30-222"><a href="#cb30-222"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>)</span>
+<span id="cb30-223"><a href="#cb30-223"></a></span>
 <span id="cb30-224"><a href="#cb30-224"></a></span>
-<span id="cb30-225"><a href="#cb30-225"></a></span>
-<span id="cb30-226"><a href="#cb30-226"></a><span class="in">```</span></span>
-<span id="cb30-227"><a href="#cb30-227"></a></span>
+<span id="cb30-225"><a href="#cb30-225"></a><span class="in">```</span></span>
+<span id="cb30-226"><a href="#cb30-226"></a></span>
+<span id="cb30-227"><a href="#cb30-227"></a>Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es <span class="in">`coord_flip`</span> Por ejemplo, rotemos el gráfico de arriba</span>
 <span id="cb30-228"><a href="#cb30-228"></a></span>
-<span id="cb30-229"><a href="#cb30-229"></a>Tambien pueden rotarse los ejes. A veces es útil para visualizar mejor los datos. La función que nos permite eso es <span class="in">`coord_flip`</span> Por ejemplo, rotemos el gráfico de arriba</span>
-<span id="cb30-230"><a href="#cb30-230"></a></span>
-<span id="cb30-231"><a href="#cb30-231"></a></span>
-<span id="cb30-232"><a href="#cb30-232"></a><span class="in">```{r capa rotar}</span></span>
-<span id="cb30-233"><a href="#cb30-233"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-234"><a href="#cb30-234"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-229"><a href="#cb30-229"></a><span class="in">```{r capa rotar}</span></span>
+<span id="cb30-230"><a href="#cb30-230"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-231"><a href="#cb30-231"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-232"><a href="#cb30-232"></a></span>
+<span id="cb30-233"><a href="#cb30-233"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb30-234"><a href="#cb30-234"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
 <span id="cb30-235"><a href="#cb30-235"></a></span>
-<span id="cb30-236"><a href="#cb30-236"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb30-237"><a href="#cb30-237"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb30-238"><a href="#cb30-238"></a></span>
-<span id="cb30-239"><a href="#cb30-239"></a></span>
-<span id="cb30-240"><a href="#cb30-240"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
-<span id="cb30-241"><a href="#cb30-241"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb30-242"><a href="#cb30-242"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
-<span id="cb30-243"><a href="#cb30-243"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
-<span id="cb30-244"><a href="#cb30-244"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
-<span id="cb30-245"><a href="#cb30-245"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb30-236"><a href="#cb30-236"></a></span>
+<span id="cb30-237"><a href="#cb30-237"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y)) <span class="sc">+</span></span>
+<span id="cb30-238"><a href="#cb30-238"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb30-239"><a href="#cb30-239"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb30-240"><a href="#cb30-240"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb30-241"><a href="#cb30-241"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb30-242"><a href="#cb30-242"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb30-243"><a href="#cb30-243"></a></span>
+<span id="cb30-244"><a href="#cb30-244"></a></span>
+<span id="cb30-245"><a href="#cb30-245"></a><span class="in">```</span></span>
 <span id="cb30-246"><a href="#cb30-246"></a></span>
-<span id="cb30-247"><a href="#cb30-247"></a></span>
-<span id="cb30-248"><a href="#cb30-248"></a><span class="in">```</span></span>
-<span id="cb30-249"><a href="#cb30-249"></a></span>
+<span id="cb30-247"><a href="#cb30-247"></a>**¿Y donde esta el color?**</span>
+<span id="cb30-248"><a href="#cb30-248"></a></span>
+<span id="cb30-249"><a href="#cb30-249"></a>Los colores pueden incluirse de muchas maneras. Una de ellas es incluir colour o color (como gusten) en las aes del principio. Otra opcion es rellenar el geom con fill. Por ejemplo:</span>
 <span id="cb30-250"><a href="#cb30-250"></a></span>
-<span id="cb30-251"><a href="#cb30-251"></a>**¿Y donde esta el color?**</span>
-<span id="cb30-252"><a href="#cb30-252"></a></span>
-<span id="cb30-253"><a href="#cb30-253"></a>Los colores pueden incluirse de muchas maneras. Una de ellas es incluir colour o color (como gusten) en las aes del principio. Otra opcion es rellenar el geom con fill. Por ejemplo:</span>
+<span id="cb30-251"><a href="#cb30-251"></a><span class="in">```{r capa color}</span></span>
+<span id="cb30-252"><a href="#cb30-252"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-253"><a href="#cb30-253"></a><span class="co">#| eval: true</span></span>
 <span id="cb30-254"><a href="#cb30-254"></a></span>
-<span id="cb30-255"><a href="#cb30-255"></a><span class="in">```{r capa color}</span></span>
-<span id="cb30-256"><a href="#cb30-256"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-257"><a href="#cb30-257"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-255"><a href="#cb30-255"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb30-256"><a href="#cb30-256"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb30-257"><a href="#cb30-257"></a></span>
 <span id="cb30-258"><a href="#cb30-258"></a></span>
-<span id="cb30-259"><a href="#cb30-259"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb30-260"><a href="#cb30-260"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb30-261"><a href="#cb30-261"></a></span>
-<span id="cb30-262"><a href="#cb30-262"></a></span>
-<span id="cb30-263"><a href="#cb30-263"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> <span class="st">"orange"</span>)) <span class="sc">+</span></span>
-<span id="cb30-264"><a href="#cb30-264"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb30-265"><a href="#cb30-265"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
-<span id="cb30-266"><a href="#cb30-266"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
-<span id="cb30-267"><a href="#cb30-267"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
-<span id="cb30-268"><a href="#cb30-268"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb30-269"><a href="#cb30-269"></a></span>
+<span id="cb30-259"><a href="#cb30-259"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> <span class="st">"orange"</span>)) <span class="sc">+</span></span>
+<span id="cb30-260"><a href="#cb30-260"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb30-261"><a href="#cb30-261"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb30-262"><a href="#cb30-262"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb30-263"><a href="#cb30-263"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb30-264"><a href="#cb30-264"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb30-265"><a href="#cb30-265"></a></span>
+<span id="cb30-266"><a href="#cb30-266"></a></span>
+<span id="cb30-267"><a href="#cb30-267"></a><span class="in">```</span></span>
+<span id="cb30-268"><a href="#cb30-268"></a></span>
+<span id="cb30-269"><a href="#cb30-269"></a>No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo</span>
 <span id="cb30-270"><a href="#cb30-270"></a></span>
-<span id="cb30-271"><a href="#cb30-271"></a><span class="in">```</span></span>
-<span id="cb30-272"><a href="#cb30-272"></a></span>
-<span id="cb30-273"><a href="#cb30-273"></a>No solo pueden incluirse colores, sino que tambien pueden usarse otras variables categoricas. Por ejemplo</span>
+<span id="cb30-271"><a href="#cb30-271"></a><span class="in">```{r capa mascolor}</span></span>
+<span id="cb30-272"><a href="#cb30-272"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-273"><a href="#cb30-273"></a><span class="co">#| eval: true</span></span>
 <span id="cb30-274"><a href="#cb30-274"></a></span>
-<span id="cb30-275"><a href="#cb30-275"></a></span>
-<span id="cb30-276"><a href="#cb30-276"></a><span class="in">```{r capa mascolor}</span></span>
-<span id="cb30-277"><a href="#cb30-277"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-278"><a href="#cb30-278"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-275"><a href="#cb30-275"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
+<span id="cb30-276"><a href="#cb30-276"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb30-277"><a href="#cb30-277"></a>                  <span class="at">mascolor =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>), <span class="dv">3</span>))</span>
+<span id="cb30-278"><a href="#cb30-278"></a></span>
 <span id="cb30-279"><a href="#cb30-279"></a></span>
-<span id="cb30-280"><a href="#cb30-280"></a>datosEj <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Eje_X =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">3</span>), <span class="co"># Creamos la variable categórica. Repetimos A B y C tres veces</span></span>
-<span id="cb30-281"><a href="#cb30-281"></a>                  <span class="at">Eje_Y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb30-282"><a href="#cb30-282"></a>                  <span class="at">mascolor =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>), <span class="dv">3</span>))</span>
-<span id="cb30-283"><a href="#cb30-283"></a></span>
-<span id="cb30-284"><a href="#cb30-284"></a></span>
-<span id="cb30-285"><a href="#cb30-285"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> mascolor)) <span class="sc">+</span></span>
-<span id="cb30-286"><a href="#cb30-286"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb30-287"><a href="#cb30-287"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
-<span id="cb30-288"><a href="#cb30-288"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
-<span id="cb30-289"><a href="#cb30-289"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
-<span id="cb30-290"><a href="#cb30-290"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb30-280"><a href="#cb30-280"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Eje_X, <span class="at">y =</span> Eje_Y, <span class="at">fill =</span> mascolor)) <span class="sc">+</span></span>
+<span id="cb30-281"><a href="#cb30-281"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb30-282"><a href="#cb30-282"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grafico con tres columnas"</span>,</span>
+<span id="cb30-283"><a href="#cb30-283"></a>       <span class="at">x =</span> <span class="st">"Variable categorica"</span>,</span>
+<span id="cb30-284"><a href="#cb30-284"></a>       <span class="at">y =</span> <span class="st">"Variable numerica"</span>) <span class="sc">+</span></span>
+<span id="cb30-285"><a href="#cb30-285"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb30-286"><a href="#cb30-286"></a></span>
+<span id="cb30-287"><a href="#cb30-287"></a></span>
+<span id="cb30-288"><a href="#cb30-288"></a><span class="in">```</span></span>
+<span id="cb30-289"><a href="#cb30-289"></a></span>
+<span id="cb30-290"><a href="#cb30-290"></a>Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.</span>
 <span id="cb30-291"><a href="#cb30-291"></a></span>
-<span id="cb30-292"><a href="#cb30-292"></a></span>
-<span id="cb30-293"><a href="#cb30-293"></a><span class="in">```</span></span>
-<span id="cb30-294"><a href="#cb30-294"></a></span>
+<span id="cb30-292"><a href="#cb30-292"></a><span class="in">```{r capa mascolor2}</span></span>
+<span id="cb30-293"><a href="#cb30-293"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-294"><a href="#cb30-294"></a><span class="co">#| eval: true</span></span>
 <span id="cb30-295"><a href="#cb30-295"></a></span>
-<span id="cb30-296"><a href="#cb30-296"></a>Con datos que no son inventados esto cobra mucho más sentido. Veamos con pinguinos.</span>
+<span id="cb30-296"><a href="#cb30-296"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
 <span id="cb30-297"><a href="#cb30-297"></a></span>
-<span id="cb30-298"><a href="#cb30-298"></a><span class="in">```{r capa mascolor2}</span></span>
-<span id="cb30-299"><a href="#cb30-299"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-300"><a href="#cb30-300"></a><span class="co">#| eval: true</span></span>
-<span id="cb30-301"><a href="#cb30-301"></a></span>
-<span id="cb30-302"><a href="#cb30-302"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
-<span id="cb30-303"><a href="#cb30-303"></a></span>
+<span id="cb30-298"><a href="#cb30-298"></a></span>
+<span id="cb30-299"><a href="#cb30-299"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-300"><a href="#cb30-300"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-301"><a href="#cb30-301"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
+<span id="cb30-302"><a href="#cb30-302"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb30-303"><a href="#cb30-303"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) </span>
 <span id="cb30-304"><a href="#cb30-304"></a></span>
-<span id="cb30-305"><a href="#cb30-305"></a><span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb30-306"><a href="#cb30-306"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-307"><a href="#cb30-307"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tamaño del pico en función del peso"</span>,</span>
-<span id="cb30-308"><a href="#cb30-308"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb30-309"><a href="#cb30-309"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) </span>
-<span id="cb30-310"><a href="#cb30-310"></a></span>
+<span id="cb30-305"><a href="#cb30-305"></a></span>
+<span id="cb30-306"><a href="#cb30-306"></a><span class="in">```</span></span>
+<span id="cb30-307"><a href="#cb30-307"></a></span>
+<span id="cb30-308"><a href="#cb30-308"></a><span class="fu">## Ultima capa</span></span>
+<span id="cb30-309"><a href="#cb30-309"></a></span>
+<span id="cb30-310"><a href="#cb30-310"></a>Lo último que suele agregarse a un gráfico es el tema (traducción directa de <span class="in">`theme`</span>). Esto lo que hace es cambiar el aspecto general del gráfico. Existen <span class="in">`themes`</span> predeterminados como por ejemplo: <span class="in">`theme_bw`</span>, <span class="in">`theme_light`</span>, <span class="in">`theme_linedraw`</span>, <span class="in">`theme_minimal`</span> y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).</span>
 <span id="cb30-311"><a href="#cb30-311"></a></span>
-<span id="cb30-312"><a href="#cb30-312"></a><span class="in">```</span></span>
+<span id="cb30-312"><a href="#cb30-312"></a>¿Como se agrega el theme? Como todas las capas, con el <span class="in">`+`</span> y la función <span class="in">`theme_NOMBRE`</span>. Veamos algunos de los mencionados arriba.</span>
 <span id="cb30-313"><a href="#cb30-313"></a></span>
-<span id="cb30-314"><a href="#cb30-314"></a></span>
-<span id="cb30-315"><a href="#cb30-315"></a><span class="fu">## Ultima capa</span></span>
-<span id="cb30-316"><a href="#cb30-316"></a></span>
-<span id="cb30-317"><a href="#cb30-317"></a>Lo último que suele agregarse a un gráfico es el tema (traducción directa de <span class="in">`theme`</span>). Esto lo que hace es cambiar el aspecto general del gráfico. Existen <span class="in">`themes`</span> predeterminados como por ejemplo: <span class="in">`theme_bw`</span>, <span class="in">`theme_light`</span>, <span class="in">`theme_linedraw`</span>, <span class="in">`theme_minimal`</span> y asi. Pueden ir probando todos y luego decidir cual queda mejor en su trabajo. Y tambien pueden customizar su propia theme, pero eso es una tarea un poco más compleja (pueden leer de eso aca).</span>
-<span id="cb30-318"><a href="#cb30-318"></a></span>
-<span id="cb30-319"><a href="#cb30-319"></a>¿Como se agrega el theme? Como todas las capas, con el <span class="in">`+`</span> y la función <span class="in">`theme_NOMBRE`</span>. Veamos algunos de los mencionados arriba.</span>
+<span id="cb30-314"><a href="#cb30-314"></a><span class="in">```{r capa mascolor2bw}</span></span>
+<span id="cb30-315"><a href="#cb30-315"></a><span class="co">#| echo: true</span></span>
+<span id="cb30-316"><a href="#cb30-316"></a><span class="co">#| eval: true</span></span>
+<span id="cb30-317"><a href="#cb30-317"></a></span>
+<span id="cb30-318"><a href="#cb30-318"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
+<span id="cb30-319"><a href="#cb30-319"></a></span>
 <span id="cb30-320"><a href="#cb30-320"></a></span>
-<span id="cb30-321"><a href="#cb30-321"></a></span>
-<span id="cb30-322"><a href="#cb30-322"></a></span>
-<span id="cb30-323"><a href="#cb30-323"></a><span class="in">```{r capa mascolor2bw}</span></span>
-<span id="cb30-324"><a href="#cb30-324"></a><span class="co">#| echo: true</span></span>
-<span id="cb30-325"><a href="#cb30-325"></a><span class="co">#| eval: true</span></span>
-<span id="cb30-326"><a href="#cb30-326"></a></span>
-<span id="cb30-327"><a href="#cb30-327"></a>datosEj <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins <span class="sc">|&gt;</span> <span class="fu">na.omit</span>()</span>
+<span id="cb30-321"><a href="#cb30-321"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-322"><a href="#cb30-322"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-323"><a href="#cb30-323"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_bw"</span>,</span>
+<span id="cb30-324"><a href="#cb30-324"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb30-325"><a href="#cb30-325"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
+<span id="cb30-326"><a href="#cb30-326"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb30-327"><a href="#cb30-327"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
 <span id="cb30-328"><a href="#cb30-328"></a></span>
-<span id="cb30-329"><a href="#cb30-329"></a></span>
-<span id="cb30-330"><a href="#cb30-330"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb30-331"><a href="#cb30-331"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-332"><a href="#cb30-332"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_bw"</span>,</span>
-<span id="cb30-333"><a href="#cb30-333"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb30-334"><a href="#cb30-334"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
-<span id="cb30-335"><a href="#cb30-335"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb30-336"><a href="#cb30-336"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb30-337"><a href="#cb30-337"></a></span>
-<span id="cb30-338"><a href="#cb30-338"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb30-339"><a href="#cb30-339"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-340"><a href="#cb30-340"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_light"</span>,</span>
-<span id="cb30-341"><a href="#cb30-341"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb30-342"><a href="#cb30-342"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
-<span id="cb30-343"><a href="#cb30-343"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb30-344"><a href="#cb30-344"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb30-345"><a href="#cb30-345"></a></span>
-<span id="cb30-346"><a href="#cb30-346"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb30-347"><a href="#cb30-347"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-348"><a href="#cb30-348"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_minimal"</span>,</span>
-<span id="cb30-349"><a href="#cb30-349"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb30-350"><a href="#cb30-350"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
-<span id="cb30-351"><a href="#cb30-351"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb30-352"><a href="#cb30-352"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb30-329"><a href="#cb30-329"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-330"><a href="#cb30-330"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-331"><a href="#cb30-331"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_light"</span>,</span>
+<span id="cb30-332"><a href="#cb30-332"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb30-333"><a href="#cb30-333"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
+<span id="cb30-334"><a href="#cb30-334"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb30-335"><a href="#cb30-335"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb30-336"><a href="#cb30-336"></a></span>
+<span id="cb30-337"><a href="#cb30-337"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-338"><a href="#cb30-338"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-339"><a href="#cb30-339"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_minimal"</span>,</span>
+<span id="cb30-340"><a href="#cb30-340"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb30-341"><a href="#cb30-341"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
+<span id="cb30-342"><a href="#cb30-342"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-343"><a href="#cb30-343"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb30-344"><a href="#cb30-344"></a></span>
+<span id="cb30-345"><a href="#cb30-345"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
+<span id="cb30-346"><a href="#cb30-346"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-347"><a href="#cb30-347"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_linedraw"</span>,</span>
+<span id="cb30-348"><a href="#cb30-348"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
+<span id="cb30-349"><a href="#cb30-349"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
+<span id="cb30-350"><a href="#cb30-350"></a>  <span class="fu">theme_linedraw</span>() <span class="sc">+</span></span>
+<span id="cb30-351"><a href="#cb30-351"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb30-352"><a href="#cb30-352"></a></span>
 <span id="cb30-353"><a href="#cb30-353"></a></span>
-<span id="cb30-354"><a href="#cb30-354"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datosEj, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">colour =</span> species)) <span class="sc">+</span></span>
-<span id="cb30-355"><a href="#cb30-355"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-356"><a href="#cb30-356"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"theme_linedraw"</span>,</span>
-<span id="cb30-357"><a href="#cb30-357"></a>       <span class="at">x =</span> <span class="st">"Peso en gramos"</span>,</span>
-<span id="cb30-358"><a href="#cb30-358"></a>       <span class="at">y =</span> <span class="st">"Tamaño del pico"</span>) <span class="sc">+</span></span>
-<span id="cb30-359"><a href="#cb30-359"></a>  <span class="fu">theme_linedraw</span>() <span class="sc">+</span></span>
-<span id="cb30-360"><a href="#cb30-360"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb30-361"><a href="#cb30-361"></a></span>
-<span id="cb30-362"><a href="#cb30-362"></a></span>
-<span id="cb30-363"><a href="#cb30-363"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> p4</span>
-<span id="cb30-364"><a href="#cb30-364"></a></span>
-<span id="cb30-365"><a href="#cb30-365"></a></span>
-<span id="cb30-366"><a href="#cb30-366"></a><span class="in">```</span></span>
-<span id="cb30-367"><a href="#cb30-367"></a></span>
-<span id="cb30-368"><a href="#cb30-368"></a></span>
-<span id="cb30-369"><a href="#cb30-369"></a></span>
-<span id="cb30-370"><a href="#cb30-370"></a></span>
-<span id="cb30-371"><a href="#cb30-371"></a></span>
-<span id="cb30-372"><a href="#cb30-372"></a></span>
-<span id="cb30-373"><a href="#cb30-373"></a></span>
-<span id="cb30-374"><a href="#cb30-374"></a></span>
-<span id="cb30-375"><a href="#cb30-375"></a></span>
-<span id="cb30-376"><a href="#cb30-376"></a></span>
-<span id="cb30-377"><a href="#cb30-377"></a></span>
-<span id="cb30-378"><a href="#cb30-378"></a></span>
-<span id="cb30-379"><a href="#cb30-379"></a></span>
-<span id="cb30-380"><a href="#cb30-380"></a></span>
-<span id="cb30-381"><a href="#cb30-381"></a></span>
-<span id="cb30-382"><a href="#cb30-382"></a></span>
-<span id="cb30-383"><a href="#cb30-383"></a></span>
-<span id="cb30-384"><a href="#cb30-384"></a></span>
-<span id="cb30-385"><a href="#cb30-385"></a></span>
-<span id="cb30-386"><a href="#cb30-386"></a></span>
-<span id="cb30-387"><a href="#cb30-387"></a></span>
-<span id="cb30-388"><a href="#cb30-388"></a></span>
-<span id="cb30-389"><a href="#cb30-389"></a></span>
-<span id="cb30-390"><a href="#cb30-390"></a></span>
-<span id="cb30-391"><a href="#cb30-391"></a></span>
-<span id="cb30-392"><a href="#cb30-392"></a></span>
-<span id="cb30-393"><a href="#cb30-393"></a></span>
-<span id="cb30-394"><a href="#cb30-394"></a></span>
+<span id="cb30-354"><a href="#cb30-354"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 <span class="sc">+</span> p4</span>
+<span id="cb30-355"><a href="#cb30-355"></a></span>
+<span id="cb30-356"><a href="#cb30-356"></a></span>
+<span id="cb30-357"><a href="#cb30-357"></a><span class="in">```</span></span>
+<span id="cb30-358"><a href="#cb30-358"></a></span>
+<span id="cb30-359"><a href="#cb30-359"></a></span>
+<span id="cb30-360"><a href="#cb30-360"></a></span>
+<span id="cb30-361"><a href="#cb30-361"></a>{{&lt; elevator "Ir arriba" &gt;}}</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
 
 
 </body></html>

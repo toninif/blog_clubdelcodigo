@@ -119,9 +119,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/elevatorjs-1.0.0/elevator.min.js"></script><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -389,13 +391,13 @@ $ pais                     &lt;chr&gt; "esp", "esp", "esp", "esp", "esp", "esp",
 </table>
 </div>
 </div>
-<p>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla “a mano”. Tendriamos que hacer las correlaciones y luego incrustar los resultados en cada seccion de una tabla.</p>
+<p>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla “a mano”. Tendríamos que hacer las correlaciones y luego incrustar los resultados en cada sección de una tabla.</p>
 <p>Veamos:</p>
-<p>Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:</p>
-<pre><code>| nombre | est1 | Col3 |
+<p>Para crear la tabla se utiliza <code>markdown</code>. Lo que se debe hacer es lo siguiente:</p>
+<pre><code>| Col1 | Col2 | Col3 |
 |------|------|------|
-|   asd   |  asd    | asd     |
-|   asd   |   ads   |      |
+|      |      |      |
+|      |  s   |      |
 |      |      |      |</code></pre>
 </section><section id="luego-se-llevan-a-cabo-las-correlaciones" class="level3"><h3 class="anchored" data-anchor-id="luego-se-llevan-a-cabo-las-correlaciones">Luego se llevan a cabo las correlaciones</h3>
 <div class="cell">
@@ -508,6 +510,7 @@ mean in group esp mean in group arg
 <figure class="figure"><p><a href="imgagenes/t_test_tabla.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="imgagenes/t_test_tabla.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
+<p><script>window.onload = function() { var elevator = new Elevator({ element: document.querySelector(".elevator-button"),  mainAudio: "", endAudio: "ding.mp3" }); }</script><button class="btn btn-outline-primary elevator-button" type="submit">Ir arriba</button></p>
 
 
 <!-- -->
@@ -879,16 +882,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-63"><a href="#cb14-63"></a></span>
 <span id="cb14-64"><a href="#cb14-64"></a><span class="in">```</span></span>
 <span id="cb14-65"><a href="#cb14-65"></a></span>
-<span id="cb14-66"><a href="#cb14-66"></a>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla "a mano". Tendriamos que hacer las correlaciones y luego incrustar los resultados en cada seccion de una tabla.</span>
+<span id="cb14-66"><a href="#cb14-66"></a>Una vez que tenemos los datos que queremos ya podemos generar la tabla. Hay muchas opciones para generar tablas. Una de estas opciones es generarla "a mano". Tendríamos que hacer las correlaciones y luego incrustar los resultados en cada sección de una tabla.</span>
 <span id="cb14-67"><a href="#cb14-67"></a></span>
 <span id="cb14-68"><a href="#cb14-68"></a>Veamos:</span>
 <span id="cb14-69"><a href="#cb14-69"></a></span>
-<span id="cb14-70"><a href="#cb14-70"></a>Para crear la tabla se utiliza markdown. Lo que se debe hacer es lo siguiente:</span>
+<span id="cb14-70"><a href="#cb14-70"></a>Para crear la tabla se utiliza <span class="in">`markdown`</span>. Lo que se debe hacer es lo siguiente:</span>
 <span id="cb14-71"><a href="#cb14-71"></a></span>
-<span id="cb14-72"><a href="#cb14-72"></a><span class="in">    | nombre | est1 | Col3 |</span></span>
+<span id="cb14-72"><a href="#cb14-72"></a><span class="in">    | Col1 | Col2 | Col3 |</span></span>
 <span id="cb14-73"><a href="#cb14-73"></a><span class="in">    |------|------|------|</span></span>
-<span id="cb14-74"><a href="#cb14-74"></a><span class="in">    |   asd   |  asd    | asd     |</span></span>
-<span id="cb14-75"><a href="#cb14-75"></a><span class="in">    |   asd   |   ads   |      |</span></span>
+<span id="cb14-74"><a href="#cb14-74"></a><span class="in">    |      |      |      |</span></span>
+<span id="cb14-75"><a href="#cb14-75"></a><span class="in">    |      |  s   |      |</span></span>
 <span id="cb14-76"><a href="#cb14-76"></a><span class="in">    |      |      |      |</span></span>
 <span id="cb14-77"><a href="#cb14-77"></a></span>
 <span id="cb14-78"><a href="#cb14-78"></a><span class="fu">### Luego se llevan a cabo las correlaciones</span></span>
@@ -992,10 +995,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-176"><a href="#cb14-176"></a>**Si vamos al archivo...**</span>
 <span id="cb14-177"><a href="#cb14-177"></a></span>
 <span id="cb14-178"><a href="#cb14-178"></a><span class="al">![](imgagenes/t_test_tabla.png)</span>{fig-align="center"}</span>
+<span id="cb14-179"><a href="#cb14-179"></a></span>
+<span id="cb14-180"><a href="#cb14-180"></a>{{&lt; elevator "Ir arriba" &gt;}}</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 </body></html>
